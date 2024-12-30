@@ -91,9 +91,9 @@ The repositories for this version have been taken offline in spring 2024.
   * It is possible to flash a recent Armbian version, but it takes more than just a few mouseclicks.  
      See these guides:
     * Rebuilding from scratch using Maxim's Armbian bookworm:
-      * My guide: [Rebuilding](rebuilding.md)
+      * My guide: [Rebuilding](rebuilding.html)
       * Vasyl's guide: <https://github.com/vasyl83/SV07update>
-    * You can also find a readily prepared image (built as on my guide) here: [Image](image.md)
+    * You can also find a readily prepared image (built as on my guide) here: [Image](image.html)
 
 
 ### KlipperScreen / Python 3.8
@@ -117,4 +117,4 @@ See Gergo's [Youtube guide](https://www.youtube.com/watch?v=86CFV_CbrvQ&t=457s)
 
 
 ----
-Back to [start](index.md)
+Back to [start](index.html)

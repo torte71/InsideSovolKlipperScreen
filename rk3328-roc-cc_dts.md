@@ -2986,8 +2986,8 @@ Patch to get spi-dev working:
 ```
 
 ----
-Back to [rebuilding](rebuilding.md)
+Back to [rebuilding](rebuilding.html)
 
 ----
-Back to [start](index.md)
+Back to [start](index.html)
 

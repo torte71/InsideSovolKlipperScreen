@@ -99,4 +99,4 @@ To make the eMMC card unbootable:
 The device will now try to boot from the USB-stick.
 
 ----
-Back to [start](index.md)
+Back to [start](index.html)

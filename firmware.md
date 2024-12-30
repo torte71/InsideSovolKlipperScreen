@@ -34,4 +34,4 @@ Klipper screen firmware location: (no permanent link given by Sovol)
 Some info about SD-cards taken from [here](https://forum.sovol3d.com/t/sv06-mainboard-brick-after-updating-sovol-firmware/862/68).
 
 ----
-Back to [start](index.md)
+Back to [start](index.html)

@@ -40,7 +40,7 @@ Thanks to Vasyl Gontar for his additions/corrections to this list.
 
   * u-boot (bootloader)
     * <del>Sovols bootloader allows booting from an external device (USB-stick)</del>
-    * [Booting](booting.md) from an external device (USB-stick)
+    * [Booting](booting.html) from an external device (USB-stick)
 
 
 ----
@@ -90,7 +90,7 @@ Thanks to Vasyl Gontar for his additions/corrections to this list.
 /home/mks/klipper/lib/hidflash/main.c:* This version of hid-flash has been modified to work with Klipper.
 /home/mks/klipper/lib/hidflash/main.c:    printf("Usage: hid-flash <bin_firmware_file> <comport (optional)> <delay (optional)>\n");
 /home/mks/klipper/lib/.gitignore:hidflash/hid-flash
-/home/mks/klipper/scripts/flash_usb.py:    args = ["lib/hidflash/hid-flash", binfile.md)
+/home/mks/klipper/scripts/flash_usb.py:    args = ["lib/hidflash/hid-flash", binfile.html)
 /home/mks/klipper/scripts/flash_usb.py:        raise error("Error running hid-flash")
 /home/mks/klipper/scripts/flash_usb.py:# Flash via call to hid-flash
 /home/mks/findfiles:find / -xdev -type f -print0 | xargs -0 grep "\<hid-flash\>"
@@ -123,7 +123,7 @@ Binary file /var/lib/selinux/default/active/policy.kern matches
 
 ### makerbase-auto-fresh.service
   * **Installs system updates**
-  * Files: [makerbase-auto-fresh-files](makerbase-auto-fresh-files.md)
+  * Files: [makerbase-auto-fresh-files](makerbase-auto-fresh-files.html)
   * Unofficial package: [makerbase-auto-fresh-service.deb](files/makerbase-auto-fresh-service.deb)
   * Details:
     * if existing: install `/root/system_deb/*.deb` and reboot
@@ -136,13 +136,13 @@ Binary file /var/lib/selinux/default/active/policy.kern matches
 
 ### makerbase-automount@.service
   * **Mounts all storage devices/partitions under /home/mks/printer_data/gcodes/USB/**
-  * Files: [makerbase-automount-files](makerbase-automount-files.md)
+  * Files: [makerbase-automount-files](makerbase-automount-files.html)
   * Unofficial package: [makerbase-automount-service.deb](files/makerbase-automount-service.deb)
   * Useful for those who want to have USB-drives automatically mounted as gcode storage
 
 ### makerbase-beep.service
   * **Beeps if touchscreen is touched**
-  * Files: [makerbase-beep-files](makerbase-beep-files.md)
+  * Files: [makerbase-beep-files](makerbase-beep-files.html)
   * Unofficial package: [makerbase-beep-service.deb](files/makerbase-beep-service.deb)
   * Details:
     * initializes GPIO#82 (beeper pin)
@@ -152,34 +152,34 @@ Binary file /var/lib/selinux/default/active/policy.kern matches
 
 ### makerbase-byid.service
   * **Updates `serial:` from section `[mcu]` in `home/mks/printer_data/config/printer.cfg`**
-  * Files: [makerbase-byid-files](makerbase-byid-files.md)
+  * Files: [makerbase-byid-files](makerbase-byid-files.html)
   * Unofficial package: [makerbase-byid-service.deb](files/makerbase-byid-service.deb)
   * Probably useless, the name of the serial connection doesn't change
 
 ### makerbase-net-mods.service
   * **copies `/boot/wpa_supplicant-wlan0.conf` (if existing) into `/etc/wpa_supplicant/`**
-  * Files: [makerbase-net-mods-files](makerbase-net-mods-files.md)
+  * Files: [makerbase-net-mods-files](makerbase-net-mods-files.html)
   * Unofficial package: [makerbase-net-mods-service.deb ](files/makerbase-net-mods-service.deb )
   * Probably useless, you can configure wifi on the screen
 
 ### makerbase-soft-shutdown.service
   * **looks disabled**
   * does something with the "supper" capacitor
-  * Files: [makerbase-soft-shutdown-files](makerbase-soft-shutdown-files.md)
+  * Files: [makerbase-soft-shutdown-files](makerbase-soft-shutdown-files.html)
   * Unofficial package: [makerbase-soft-shutdown-service.deb](files/makerbase-soft-shutdown-service.deb)
   * Useless
 
 ### makerbase-timezone-monitor.service
   * **Fetches time via NTP every 3 seconds** (spamming syslog)
   * Update timezone to that from `/home/mks/target_timezone.txt`
-  * Files: [makerbase-timezone-monitor-files](makerbase-timezone-monitor-files.md)
+  * Files: [makerbase-timezone-monitor-files](makerbase-timezone-monitor-files.html)
   * Unofficial package: [makerbase-timezone-monitor-service.deb](files/makerbase-timezone-monitor-service.deb)
   * requires `/home/mks/target_timezone.txt`
   * Probably useless, works fine without
 
 ### makerbase-wlan0.service
   * **configures wpa_supplicant**
-  * Files: [makerbase-wlan0-files](makerbase-wlan0-files.md)
+  * Files: [makerbase-wlan0-files](makerbase-wlan0-files.html)
   * Unofficial package: [makerbase-wlan0-service.deb](files/makerbase-wlan0-service.deb)
   * Probably useless, works fine without
 
@@ -234,4 +234,4 @@ gcode:
 ```
 
 ----
-Back to [start](index.md)
+Back to [start](index.html)

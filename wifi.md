@@ -21,4 +21,4 @@ There is a nice replacement case for the KlipperScreen, which offers a hole for 
 (Another big advantage of that replacement case is that it allows mounting a cooling fan for the KlipperScreen. The original design only uses passive cooling, the CPU easily reaches 60°C, which is far too high. With a fan, it stays between safe 40°C-45°C.)
 
 ----
-Back to [start](index.md)
+Back to [start](index.html)

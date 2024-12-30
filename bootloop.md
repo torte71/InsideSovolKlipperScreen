@@ -14,7 +14,7 @@ nav_order: 8
 ## Some causes for the looping boot animation
   * Damaged "saved_variables.cfg"
   * Other damaged configuration files (printer.cfg, moonraker.cfg, etc.)
-  * KlipperScreen in a too recent version (depends on python-3.8, which is not available for Sovol's outdated armbian buster). See [klipperscreen:python-3.8](updating.md#klipperscreen--python-38) for a fix.
+  * KlipperScreen in a too recent version (depends on python-3.8, which is not available for Sovol's outdated armbian buster). See [klipperscreen:python-3.8](updating.html#klipperscreen--python-38) for a fix.
 
 ## Typical causes for the damaged files
   * No more space left on the filesystem
@@ -67,8 +67,8 @@ was_interrupted = False
   * It is also possible to flash the eMMC card without the eMMC adapter by booting from a thumb drive, but it is more complicated:
     * ThomasOlsson's guide using a single thumb drive: <https://github.com/TomasOlsson/BrickedSv07-Sv07Plus>
     * vasyl83's guide using two thumb drives: <https://github.com/vasyl83/SV07update>
-    * You may also want to take a look on my guides how to [boot from external devices](booting.md) or [getting access](access.md) (both are quite technical)
+    * You may also want to take a look on my guides how to [boot from external devices](booting.html) or [getting access](access.md) (both are quite technical)
 
 
 ----
-Back to [start](index.md)
+Back to [start](index.html)

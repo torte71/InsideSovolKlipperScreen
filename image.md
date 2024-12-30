@@ -46,7 +46,7 @@ Instructions for updating the "mcu_firmware.bin" can be found in the following l
   * <https://github.com/3DPrintDemon/How-to-Update-Sovol-Klipper-Screen-To-Latest-Klipper-SV06-and-SV07/tree/main#updating-the-host-mcu-rpi--mcu-firmware>
 
 
-The image was created as described here: [rebuilding](rebuilding.md)  
+The image was created as described here: [rebuilding](rebuilding.html)  
     
 Contents of the image:
   * [Maxims image](https://github.com/redrathnure/armbian-mkspi/releases) (Version 0.3.4-24.2.0-trunk; bookworm; current-6.6.17 kernel)
@@ -75,4 +75,4 @@ Thanks to all who helped testing, bug chasing and documenting.
 Special thanks to Vasyl Gontar for his support and of course to Maxim Medvedev for his work re-creating the build-system for the Makerbase boards.
 
 ----
-Back to [start](index.md)
+Back to [start](index.html)

@@ -127,7 +127,7 @@ You will probably have to change "spidev0.0" to "spidev0.2" inside your "printer
 
 Modifications from Sovol useful for this image:  
     
-(See [sovol_mods](sovol_mods.md) for details about the packages)
+(See [sovol_mods](sovol_mods.html) for details about the packages)
 
   * Beeps when pressing touchscreen
     * Download: [makerbase-beep-service.deb](files/makerbase-beep-service.deb)
@@ -151,7 +151,7 @@ Modifications from Sovol useful for this image:
   * Powerloss recovery (plr)
     * Unofficial package: [plr-klipper.deb](files/plr-klipper.deb)
     * Install/uninstall with `dpkg -i`/`dpkg -r` as shown above
-    * Sovol's [printer.cfg](https://github.com/Sovol3d/SOVOL_KLIPAD50_SYSTEM/tree/main/klipper_configuration) makes use of `plr`, so it's recommended to either install this package, or remove these entries as shown [here](sovol_mods.md#reverting)
+    * Sovol's [printer.cfg](https://github.com/Sovol3d/SOVOL_KLIPAD50_SYSTEM/tree/main/klipper_configuration) makes use of `plr`, so it's recommended to either install this package, or remove these entries as shown [here](sovol_mods.html#reverting)
 
   * Splash screen
     * Afaik it's not possible to directly use Sovols original boot animation, as it is in a different format (old kernel based vs. actual plymouth). The file resides in `/usr/lib/firmware/bootsplash.armbian` and is ~250MB big. I haven't found a way to decompile it into separate pictures - if someone does, it will probably be possible to "cook" a plymouth style boot animation from it.
@@ -183,7 +183,7 @@ With the following change, `/dev/spidev0.0` will be created as well.
  			spi-max-frequency = <0x4c4b40>;
 ```
 
-Source of Sovol's rk3328-roc-cc.dtb from 5.16.20 kernel [rk3328-roc-cc_dts](rk3328-roc-cc_dts.md)
+Source of Sovol's rk3328-roc-cc.dtb from 5.16.20 kernel [rk3328-roc-cc_dts](rk3328-roc-cc_dts.html)
 
 Successfully tested with these [images](https://github.com/redrathnure/armbian-mkspi/releases):  
     
@@ -217,5 +217,5 @@ Download and replace `/boot/dtb/rockchip/rk3328-roc-cc.dtb` with this version an
       * Make sure there aren't any backup copies of `~/printer_data/systemd/crowsnest.env`, as they might override the new setting.
 
 ----
-Back to [start](index.md)
+Back to [start](index.html)
 

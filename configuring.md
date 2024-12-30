@@ -35,4 +35,4 @@ Edit `/root/set-timezone.sh` (around line 33), replace unconditional `sleep 3` s
 ```
 
 ----
-Back to [start](index.md)
+Back to [start](index.html)
