@@ -1,0 +1,10 @@
+title: Inside Sovol KlipperScreen
+description: Unofficial Resources for Sovol's MKS Klipad50 Armbian Setup
+theme: jekyll-theme-slate
+#logo: "your_logo_path"
+#favicon_ico: "favicon.ico"
+
+url: https://github.com/torte71/InsideSovolKlipperScreen
+
+aux_links:
+  Repository: https://github.com/torte71/InsideSovolKlipperScreen
