@@ -4,7 +4,7 @@ theme: just-the-docs
 #logo: "your_logo_path"
 favicon_ico: "favicon.ico"
 # search does not work with jekyll-relative-links :(
-search_enabled: false
+#search_enabled: false
 # requires footer generation
 #back_to_top: true
 #back_to_top_text: "Back to top"
@@ -14,8 +14,8 @@ callouts:
     title: Warning
     color: red
 
-plugins:
-  - jekyll-relative-links
+#plugins:
+#  - jekyll-relative-links
 
 url: https://torte71.github.io/InsideSovolKlipperScreen
 
