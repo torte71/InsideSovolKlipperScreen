@@ -1,4 +1,16 @@
-## Rebuilding
+---
+title: Rebuilding
+layout: page
+nav_order: 16
+has_toc: false
+---
+# Rebuilding
+{: .no_toc }
+### Contents:
+{: .no_toc }
+- TOC
+{:toc}
+----
 
 Sovol's KlipperScreen is running on debian buster, which is outdated now, meaning you can no longer update system packages like ssh, etc.
 
@@ -14,7 +26,7 @@ These images do not support the KLIPAD50's internal wifi out of the box, so you 
 
 Steps to set up:
 
-### Base system
+## Base system
 
   - Select and download an image from <https://github.com/redrathnure/armbian-mkspi/releases>
     * if unsure, use `Armbian-unofficial_24.2.0-trunk_Mkspi_bookworm_current_6.6.17.img.xz`
@@ -35,7 +47,7 @@ Steps to set up:
     * if unsure, choose "Y"
     * otherwise, choose the setting according to your location/needs
 
-### Klipper
+## Klipper
   - Log into device using ssh, putty or serial connection
   - cd into home dir: ```cd```
   - install KIAUH: ```git clone https://github.com/dw-0/kiauh```
@@ -111,7 +123,7 @@ You will probably have to change "spidev0.0" to "spidev0.2" inside your "printer
     
 (unless you've installed the wifi-enabled dtb below - in that case, it will be spidev0.0 again).
 
-### Sovol mods
+## Sovol mods
 
 Modifications from Sovol useful for this image:  
     
@@ -152,7 +164,7 @@ Modifications from Sovol useful for this image:
       * Themes are defined in `/usr/share/plymouth/themes/`
 
 
-### Internal wifi + spidev
+## Internal wifi + spidev
 
 Replacing the dtb from the `redrathnure` image with Sovol's version of `rk3328-roc-cc.dtb` enables the internal wifi of the KLIPAD50 board, but does not create the spi device.
 With the following change, `/dev/spidev0.0` will be created as well.
@@ -195,7 +207,7 @@ Here is a compiled version of the devicetree file: [rk3328-roc-cc.dtb](files/rk3
 Download and replace `/boot/dtb/rockchip/rk3328-roc-cc.dtb` with this version and reboot.
 
 
-### crowsnest / camera streaming
+## crowsnest / camera streaming
   * The camera device will probably change after the update. Use `v4l2-ctl --list-devices` to check the available devices and change `crowsnest.conf` accordingly. (My camera now uses `/dev/video3`)
   * crowsnest may have problems initializing the camera after reboot. Workarounds:
     * Manually restart crowsnest service (works reliably, but sucks)

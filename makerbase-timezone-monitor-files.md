@@ -1,6 +1,17 @@
-### makerbase-timezone-monitor.service files
+---
+title: makerbase-timezone-monitor.service files
+layout: page
+parent: Modifications by Sovol
+---
+# makerbase-timezone-monitor.service files
+{: .no_toc }
+### Contents:
+{: .no_toc }
+- TOC
+{:toc}
+----
 
-#### /usr/lib/systemd/system/makerbase-timezone-monitor.service
+## /usr/lib/systemd/system/makerbase-timezone-monitor.service
 ```
 [Unit]
 Description=Timezone Monitor Service
@@ -13,7 +24,7 @@ ExecStart=/root/set-timezone.sh
 WantedBy=multi-user.target
 ```
 
-#### /root/set-timezone.sh
+## /root/set-timezone.sh
   * Update timezone to that from `/home/mks/target_timezone.txt`
   * Fetches time via NTP every 3 seconds, effectively spams syslog
 

@@ -1,6 +1,17 @@
-### makerbase-automount.service files
+---
+title: makerbase-automount.service files
+layout: page
+parent: Modifications by Sovol
+---
+# makerbase-automount.service files
+{: .no_toc }
+### Contents:
+{: .no_toc }
+- TOC
+{:toc}
+----
 
-#### /usr/lib/systemd/system/makerbase-automount.service
+## /usr/lib/systemd/system/makerbase-automount.service
 ```
 [Service]
 Type=forking
@@ -8,7 +19,7 @@ GuessMainPID=no
 ExecStart=/usr/bin/makerbase-automount %I
 ```
 
-#### /usr/bin/makerbase-automount
+## /usr/bin/makerbase-automount
 ```
 #!/bin/sh
 #$1 = <dev>
@@ -141,7 +152,7 @@ else
 fi
 ```
 
-#### /usr/lib/udev/rules.d/60-usbmount.rules
+## /usr/lib/udev/rules.d/60-usbmount.rules
 ```
 # KERNEL==sd[a-z]", NAME="%k", SYMLINK+="%k", GROUP="users"
 
@@ -162,12 +173,12 @@ KERNEL==sd[a-z]*", ACTION==add",      RUN+="/usr/bin/systemctl --no-block restar
 KERNEL==sd[a-z]*", ACTION==remove",   RUN+="/usr/bin/systemctl --no-block restart makerbase-automount@%k.service"
 ```
 
-#### /usr/lib/udev/rules.d/99-makerbase-automount.rules
+## /usr/lib/udev/rules.d/99-makerbase-automount.rules
 ```
 # none
 ```
 
-#### /etc/makerbase-automount.d/auto
+## /etc/makerbase-automount.d/auto
 ```
 # -*- sh -*-
 
@@ -178,7 +189,7 @@ AUTOMOUNT_OPTS='users'
 AUTOMOUNT_TYPE=auto
 ```
 
-#### /etc/makerbase-automount.d/hfsplus
+## /etc/makerbase-automount.d/hfsplus
 ```
 # -*- sh -*-
 
@@ -186,7 +197,7 @@ AUTOMOUNT_TYPE=auto
 AUTOMOUNT_OPTS=ro,users,relatime
 ```
 
-#### /etc/makerbase-automount.d/ntfs
+## /etc/makerbase-automount.d/ntfs
 ```
 # -*- sh -*-
 
@@ -197,7 +208,7 @@ AUTOMOUNT_OPTS='errors=remount-ro,relatime,utf8,users,flush'
 hash ntfs-3g && AUTOMOUNT_TYPE="ntfs-3g"
 ```
 
-#### /etc/makerbase-automount.d/vfat
+## /etc/makerbase-automount.d/vfat
 ```
 # -*- sh -*-
 

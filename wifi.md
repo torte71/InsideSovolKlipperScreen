@@ -1,4 +1,15 @@
-### Wifi
+---
+title: Wifi
+layout: page
+nav_order: 10
+---
+# Wifi
+{: .no_toc }
+### Contents:
+{: .no_toc }
+- TOC
+{:toc}
+----
 
 Wifi signal quality can be improved by switching to a better antenna.
 

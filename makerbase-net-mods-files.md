@@ -1,6 +1,17 @@
-### makerbase-net-mods.service files
+---
+title: makerbase-net-mods.service files
+layout: page
+parent: Modifications by Sovol
+---
+# makerbase-net-mods.service files
+{: .no_toc }
+### Contents:
+{: .no_toc }
+- TOC
+{:toc}
+----
 
-#### /usr/lib/systemd/system/makerbase-net-mods.service
+## /usr/lib/systemd/system/makerbase-net-mods.service
 ```
 [Unit]
 Description=Copy user wpa_supplicant.conf

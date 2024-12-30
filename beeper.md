@@ -1,4 +1,15 @@
-### Beeper
+---
+title: Beeper
+layout: page
+nav_order: 11
+---
+# Beeper
+{: .no_toc }
+### Contents:
+{: .no_toc }
+- TOC
+{:toc}
+----
 
   * Beeper script:
     * Based on solution by "Bastian" on <https://forum.sovol3d.com>

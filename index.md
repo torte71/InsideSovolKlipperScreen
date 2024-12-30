@@ -1,12 +1,18 @@
+---
+title: Home
+layout: home
+nav_order: 1
+---
 # General 3D printing
 
 ## Slicing / Design
-  * [Orca profiles](orca_profiles.md)
-    * [joescalon SV06+ profile+buildplate](orca_profiles.md#joescalon-sv06-profilebuildplate)
-      * [my (based on joescalon)](orca_profiles.md#my-based-on-joescalon)
-      * [Modified buildplate texture](orca_profiles.md#my-based-on-joescalon)
-    * [joescalon SV07+ profile+buildplate](orca_profiles.md#joescalon-sv07-profilebuildplate)
-    * [Christian Vicks profiles](orca_profiles.md#christian-vicks-profiles)
+
+### [Orca profiles](orca_profiles.md)
+  * [joescalon SV06+ profile+buildplate](orca_profiles.md#joescalon-sv06-profilebuildplate)
+    * [my (based on joescalon)](orca_profiles.md#my-based-on-joescalon)
+    * [Modified buildplate texture](orca_profiles.md#my-based-on-joescalon)
+  * [joescalon SV07+ profile+buildplate](orca_profiles.md#joescalon-sv07-profilebuildplate)
+  * [Christian Vicks profiles](orca_profiles.md#christian-vicks-profiles)
   * [Automatic z-offset adjustment per filament](orca_profiles.md#automatic-z-offset-adjustment-per-filament)
 
 ## Klipperized Sovol SV06+/SV07+ (mostly)

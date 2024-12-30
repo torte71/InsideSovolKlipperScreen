@@ -1,4 +1,15 @@
-### Expand G-Code storage space
+---
+title: Expand G-Code storage space
+layout: page
+nav_order: 9
+---
+# Expand G-Code storage space
+{: .no_toc }
+### Contents:
+{: .no_toc }
+- TOC
+{:toc}
+----
 
 Experienced Linux users: Scroll down to [For the linux gurus](#for-the-linux-gurus) for a short sum-up what is required.
 
@@ -17,19 +28,19 @@ Sadly, it is not an easy task getting the system to just use this "USB" subdirec
 But it is possible to mount the usb-drive directly to `~/printer_data/gcodes`. This way the gcode files will be written to the usb-drive, but to Klipper it looks like the usual directory. So none of Klipper's config files have to be changed, no matter if the drive is inserted or not.
 
 
-#### Requirements
+## Requirements
   * The usb-drive has to be formatted as linux-ext filesystem (it has to support linux-style access rights), otherwise it will give errors when uploading gcodes.
   * Preparing the partition and formatting ext is not possible on Windows, that has to be done from linux (it can be done from within the KlipperScreen).
   * When inserting/partitioning/formatting the disk, the automounter will mount it to `~/printer_data/gcodes`, so we will have to unmount it before each step.
   * When the usb-drive is not inserted, the system should boot up normally (by default it would wait very long at boot and raise an error afterwards). That can be achieved by mount options in the fstab.
   * To do all these steps, you have to log into the device by using ssh/putty.
 
-#### Beware: If all that sounds very gibberish to you and you are a complete linux novice, then it might be better to just leave the system as-is and just clean up the old gcode files manually.
-#### If you mistakenly format or partition the wrong drive, you can brick your device in a way, that you have to reflash the whole emmc card!
-#### You have been warned!
+## Beware: If all that sounds very gibberish to you and you are a complete linux novice, then it might be better to just leave the system as-is and just clean up the old gcode files manually.
+## If you mistakenly format or partition the wrong drive, you can brick your device in a way, that you have to reflash the whole emmc card!
+## You have been warned!
 
 
-#### Instructions
+## Instructions
   * Boot up the Klipperscreen.
   * Insert a usb-drive to one of its usb ports.
   * Have a look at mainsails "G-CODE FILES" tab:  
@@ -146,7 +157,7 @@ It should boot without problems. In Mainsail, the list of gcode files should now
 If everything is OK, power off the device, insert the usb-drive again and power it up.
 We are done.
 
-#### Things to keep in mind
+## Things to keep in mind
   * From now on, the automounter will ignore this specific drive (because it is managed by the system, the `/etc/fstab` file)
   * All other usb-drives will be used by the automounter as before, i.e. they will be mounted as a subdirectories "USB" under the "gcodes" directory
   * Only remove the usb-drive after shutting down the device
@@ -154,7 +165,7 @@ We are done.
   * By default, you cannot access the files on the usb-drive by Windows. But there are several free programs that allow it (e.g. SysInternals LinuxReader or Ext2explore), just search the web for "windows ext4".
 
 
-#### For the linux gurus
+## For the linux gurus
   * Set the partition type to "83 linux".
   * Format the partition to "ext", e.g. ext4 (a filesystem with linux access rights is required).
   * Make sure to unmount after each step (automounter is still active)
@@ -163,7 +174,7 @@ We are done.
   * Make the filesystem writable for users (`chown -R mks:mks <YOUR_MOUNTPOINT>`).
 
 
-#### A last tip
+## A last tip
 When there is no usb-drive inserted, create a directory called "_NO_USB_MOUNTED_" (or whatever name you like) in the gcode directory. If the usb-drive is not inserted or broken, this directory will be visible and you know, that gcode files will not end up on the usb-drive, but on the internal file system.
 
 ----

@@ -1,6 +1,17 @@
-### makerbase-beep.service files
+---
+title: makerbase-beep.service files
+layout: page
+parent: Modifications by Sovol
+---
+# makerbase-beep.service files
+{: .no_toc }
+### Contents:
+{: .no_toc }
+- TOC
+{:toc}
+----
 
-#### /usr/lib/systemd/system/makerbase-beep.service
+## /usr/lib/systemd/system/makerbase-beep.service
 ```
 [Unit]
 Description=Touch beep Service
@@ -13,7 +24,7 @@ ExecStart=/root/beep.sh
 WantedBy=multi-user.target
 ```
 
-#### /root/beep.sh
+## /root/beep.sh
 ```
 #!/bin/bash
 
@@ -96,7 +107,7 @@ if [ -d "/sys/class/gpio/gpio$BEEP_GPIO" ]; then
 fi
 ```
 
-#### required changes for recent images (redrathnure)
+## required changes for recent images (redrathnure)
 change `/root/beep.sh`
   * from:
 ```

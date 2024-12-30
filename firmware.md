@@ -1,6 +1,18 @@
-### Firmware
+---
+title: Firmware
+layout: page
+nav_order: 3
+---
+# Firmware
+{: .no_toc }
+### Contents:
+{: .no_toc }
+- TOC
+{:toc}
+----
 
-#### Where to download
+
+## Where to download
 Klipper screen firmware location: (no permanent link given by Sovol)
   * browse to: <https://sovol3d.com>
   * menu: "3D Printer" -> "Sovol SV06 Plus"
@@ -9,7 +21,7 @@ Klipper screen firmware location: (no permanent link given by Sovol)
   * scroll down to "Sovol SV06 Plus Klipper Screen Firmware"  
     (currently points to <https://drive.google.com/drive/folders/1vpKWQXOMGV58dYcx2wK9wJC0HJNqU8tg?usp=sharing>)
 
-#### SD-card not accepted
+## SD-card not accepted
   * Firmware.md file has to be renamed for each(!) update (\*1)
   * Use a card smaller than 32GB but bigger than 2GB (\*2)
   * Format only as "FAT32" (do NOT use "exFAT" or "NTFS")

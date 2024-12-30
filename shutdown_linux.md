@@ -1,6 +1,18 @@
-## Klipper Shutdown (Linux version)
+---
+title: Shutdown (Linux Version)
+layout: page
+nav_order: 4.2
+parent: Shutdown
+---
+# Klipper Shutdown (Linux version)
+{: .no_toc }
+### Contents:
+{: .no_toc }
+- TOC
+{:toc}
+----
 
-### Requirements
+## Requirements
   * HS110 wifi power plug
   * python (should already be on your system, otherwise use `sudo apt install python3`)
   * For simple setup using clear text passwords:
@@ -11,7 +23,7 @@
     * see `man ssh` and `man ssh-keygen` for further help
   * softScheck "tplink_smartplug.py" from <https://github.com/softScheck/tplink-smartplug/tree/master>
 
-### Setup
+## Setup
 
 Copy the 5 files `hs110_off`, `hs110_on`, `mks_poweroff `, `shutdown_sv06` (from below) and `tplink_smartplug.py` (from above link) into a single directory.
 

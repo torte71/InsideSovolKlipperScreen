@@ -1,8 +1,19 @@
-## Getting Access / Log In
+---
+title: Getting Access / Log In
+layout: page
+nav_order: 14
+---
+# Getting Access / Log In
+{: .no_toc }
+### Contents:
+{: .no_toc }
+- TOC
+{:toc}
+----
 
 Here you will find several ways to log into the KlipperScreen.
 
-### Serial (over USB)
+## Serial (over USB)
   * Allows access even in bootloader stage
   * Requirements:
     * USB-C cable
@@ -47,7 +58,7 @@ Here you will find several ways to log into the KlipperScreen.
       * Enter `boot` to continue normal booting
       * Enter `help` for a list of supported commands.
 
-### USB-Keyboard
+## USB-Keyboard
   * Requirements:
     * USB-keyboard
     * Working display on the KlipperScreen
@@ -63,7 +74,7 @@ Here you will find several ways to log into the KlipperScreen.
       * Enter the password: `makerbase`
     * The last line is barely visible because of the black frame. Once you are logged in, you can enter `clear` to clear the screen and put the cursor in the top row, so you can see, what you type.
 
-### SSH (putty)
+## SSH (putty)
   * Requirements:
     * Terminal software (e.g. [putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html))
     * KlipperScreen needs working network access (wifi, ethernet)
@@ -92,12 +103,12 @@ Here you will find several ways to log into the KlipperScreen.
         * If the numerical IP-address changes, the name "mkspi" will still point to the old address for some time, because it is cached. The easiest fix is to reboot your PC.
 
 
-### Accounts
+## Accounts
   * The default username is `mks`
   * The default password is `makerbase`
   * You can use `root` as username as well (at least in most situations), it also uses `makerbase` as the password.
 
-### Downloads
+## Downloads
 
   * Putty: <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>
 

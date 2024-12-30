@@ -1,6 +1,17 @@
-### makerbase-soft-shutdown.service files
+---
+title: makerbase-soft-shutdown.service files
+layout: page
+parent: Modifications by Sovol
+---
+# makerbase-soft-shutdown.service files
+{: .no_toc }
+### Contents:
+{: .no_toc }
+- TOC
+{:toc}
+----
 
-#### /usr/lib/systemd/system/makerbase-soft-shutdown.service
+## /usr/lib/systemd/system/makerbase-soft-shutdown.service
 ```
 [Unit]
 Description=makerbase-soft-shutdown
@@ -15,7 +26,7 @@ Type=oneshot
 ExecStart=/root/soft_shutdown.sh
 ```
 
-#### /root/soft_shutdown.sh
+## /root/soft_shutdown.sh
   * Sets up GPIO for the **supper** capacitor
   * does nothing more, because logic is commented out
 

@@ -1,3 +1,8 @@
+---
+title: rk3328-roc-cc
+layout: page
+parent: Rebuilding
+---
 ## rk3328-roc-cc
 
 Source of Sovol's rk3328-roc-cc.dtb from 5.16.20 kernel [download](files/rk3328-roc-cc.dts)

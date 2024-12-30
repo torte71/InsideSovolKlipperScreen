@@ -1,6 +1,17 @@
-### makerbase-byid.service files
+---
+title: makerbase-byid.service files
+layout: page
+parent: Modifications by Sovol
+---
+# makerbase-byid.service files
+{: .no_toc }
+### Contents:
+{: .no_toc }
+- TOC
+{:toc}
+----
 
-#### /usr/lib/systemd/system/makerbase-byid.service
+## /usr/lib/systemd/system/makerbase-byid.service
 ```
 [Unit]
 Description=get usb id
@@ -15,7 +26,7 @@ Type=oneshot
 ExecStart=/root/get_id
 ```
 
-#### /root/get_id
+## /root/get_id
 Updates `serial:` from section `[mcu]` in `home/mks/printer_data/config/printer.cfg`
 ```
 #include <stdio.h>

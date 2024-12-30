@@ -1,6 +1,17 @@
-### makerbase-auto-fresh.service files
+---
+title: makerbase-auto-fresh.service files
+layout: page
+parent: Modifications by Sovol
+---
+# makerbase-auto-fresh.service files
+{: .no_toc }
+### Contents:
+{: .no_toc }
+- TOC
+{:toc}
+----
 
-#### /usr/lib/systemd/system/makerbase-auto-fresh.service
+## /usr/lib/systemd/system/makerbase-auto-fresh.service
 ```
 [Unit]
 Description=MKS-auto-refresh
@@ -15,7 +26,7 @@ Type=oneshot
 ExecStart=/root/auto_refresh
 ```
 
-#### /root/auto_refresh.cpp
+## /root/auto_refresh.cpp
 source code for "/root/auto_refresh" (no makefile)
 ```
 #include <stdio.h>

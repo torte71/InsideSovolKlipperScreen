@@ -1,16 +1,27 @@
-## Klipper Shutdown (Windows version)
+---
+title: Shutdown
+layout: page
+nav_order: 4.1
+has_toc: false
+---
+# Klipper Shutdown (Windows version)
+{: .no_toc }
+### Contents:
+{: .no_toc }
+- TOC
+{:toc}
+----
+
+{: .warning }
+> **Do not simply power off the device by the switch.**
+> 
+> **Shut it down using either the web interface or the buttons on the KlipperScreen first.**
+> 
+> **Just powering it off can -and does- lead to damaged files.**
 
 ----
 
-**Do not simply power off the device by the switch.**
-
-**Shut it down using either the web interface or the buttons on the KlipperScreen first.**
-
-**Just powering it off can -and does- lead to damaged files.**
-
-----
-
-### Shutdown using scripts
+## Shutdown using scripts
 
 I am using a set of batch files to power my printer on and off safely by first sending a "shutdown" command to the device via ssh (actually Putty's plink.exe) and then sending a shutdown command to my hs110 wifi power plug.
 
@@ -18,7 +29,7 @@ I am using a set of batch files to power my printer on and off safely by first s
 
 These scripts are not limited to Sovol's KlipperScreen, they can be used with any hardware running linux (they do not even depend on klipper). Just make sure to a) adjust the variable `PRINTER` in `mks_poweroff.cmd` and `shutdown_sv06.cmd` to the name or IP-address of your device and b) adjust the variable `USERNAME` in `mks_poweroff.cmd` to the username on your device.
 
-### Requirements
+## Requirements
   * HS110 wifi power plug
   * Putty "plink.exe" from <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>
   * Putty "puttygen.exe" key generator from <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>
@@ -28,7 +39,7 @@ These scripts are not limited to Sovol's KlipperScreen, they can be used with an
     * ssh key on the KlipperScreen device to allow passwordless login
     * modified /etc/sudoers.conf to allow passwordless shutdown
 
-### The files
+## The files
   * `hs110_off.cmd`: Sends a power off command to the HS110 wifi plug
   * `hs110_on.cmd`: Sends a power on command to the HS110 wifi plug
   * `mks_poweroff.cmd`: Sends a shutdown command to the KlipperScreen
@@ -146,9 +157,9 @@ call hs110_off
 
 ----
 
-## Advanced: Passwordless login and shutdown using ssh key and visudo
+# Advanced: Passwordless login and shutdown using ssh key and visudo
 
-### Preparing the ssh key
+## Preparing the ssh key
   * Start `puttygen.exe`
   * Select the "EdDSA" radiobox
   * Click the "Generate" button
@@ -170,7 +181,7 @@ call hs110_off
     * Press `Y` to confirm saving
     * Press `ENTER` to confirm the filename
 
-### Testing the ssh key
+## Testing the ssh key
   * Open a command prompt
   * Adjust the paths to plink and the saved key, and replace "mkspi" by the name or IP address of your KlipperScreen, then execute it:  
     `c:\putty\plink.exe -i c:\putty\printer.ppk -batch mks@mkspi sudo poweroff`  
@@ -179,7 +190,7 @@ call hs110_off
   * You should now be logged into the KlipperScreen without any further input/password prompts.  
     If not, then you've either made a mistake copying the public key to the `authorized_keys` file or selected a wrong private key file.
 
-### Preparing `/etc/sudoers.conf`
+## Preparing `/etc/sudoers.conf`
   * Execute `sudo visudo`
   * Append following line in the editor that just opened:
   * `mks ALL=NOPASSWD: /sbin/halt, /sbin/reboot, /sbin/poweroff`
@@ -189,7 +200,7 @@ call hs110_off
 
 ----
 
-## Troubleshooting
+# Troubleshooting
   * HS110 not turning on or off
     * Ensure that the IP-address of the HS110 is correctly set in `hs110_on.cmd` and `hs110_off.cmd`
     * Check if python is correctly installed (see link at the top of this page)
@@ -201,7 +212,7 @@ call hs110_off
       * Adjust `hs110_on.cmd` to point to this executable:
         * `c:\python\pythonw.exe tplink_smartplug.py -t 192.168.1.60 -c on`
 
-## Linux version
+# Linux version
 Linux versions of these scripts are [available here](shutdown_linux).
 
 ----
