@@ -1,10 +1,24 @@
 title: Inside Sovol KlipperScreen
 description: Unofficial Resources for Sovol's MKS Klipad50 Armbian Setup
-theme: jekyll-theme-slate
+theme: just-the-docs
 #logo: "your_logo_path"
-#favicon_ico: "favicon.ico"
+favicon_ico: "favicon.ico"
+# search does not work with jekyll-relative-links :(
+search_enabled: false
+# requires footer generation
+#back_to_top: true
+#back_to_top_text: "Back to top"
 
-url: https://github.com/torte71/InsideSovolKlipperScreen
+callouts:
+  warning:
+    title: Warning
+    color: red
+
+plugins:
+  - jekyll-relative-links
+
+url: https://torte71.github.io/InsideSovolKlipperScreen
 
 aux_links:
   Repository: https://github.com/torte71/InsideSovolKlipperScreen
+  #Template Repository: https://github.com/just-the-docs/just-the-docs-template
