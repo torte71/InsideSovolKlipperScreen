@@ -3,6 +3,12 @@ title: Home
 layout: home
 nav_order: 1
 ---
+
+{: .note }
+> This is a private project, no guarantees or liabilities apply.  
+> The author and this site are not affiliated to Sovol in any kind.  
+> The information provided here has been gathered from the web and by analyzing Sovol's KlipperScreen.
+
 # General 3D printing
 
 ## Slicing / Design
