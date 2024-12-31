@@ -10,6 +10,17 @@ favicon_ico: "favicon.ico"
 #back_to_top_text: "Back to top"
 
 callouts:
+  highlight:
+    color: yellow
+  important:
+    title: Important
+    color: blue
+  new:
+    title: New
+    color: green
+  note:
+    title: Note
+    color: purple
   warning:
     title: Warning
     color: red
