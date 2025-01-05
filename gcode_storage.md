@@ -35,10 +35,16 @@ But it is possible to mount the usb-drive directly to `~/printer_data/gcodes`. T
   * When the usb-drive is not inserted, the system should boot up normally (by default it would wait very long at boot and raise an error afterwards). That can be achieved by mount options in the fstab.
   * To do all these steps, you have to log into the device by using ssh/putty.
 
-## Beware: If all that sounds very gibberish to you and you are a complete linux novice, then it might be better to just leave the system as-is and just clean up the old gcode files manually.
-## If you mistakenly format or partition the wrong drive, you can brick your device in a way, that you have to reflash the whole emmc card!
-## You have been warned!
+----
 
+{: .warning }
+> **Beware: If all that sounds very gibberish to you and you are a complete linux novice, then it might be better to just leave the system as-is and just clean up the old gcode files manually.**
+> 
+> **If you mistakenly format or partition the wrong drive, you can brick your device in a way, that you have to reflash the whole emmc card!**
+> 
+> **You have been warned!**
+
+----
 
 ## Instructions
   * Boot up the Klipperscreen.
