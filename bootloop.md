@@ -36,8 +36,8 @@ nav_order: 8
   * Replace the content of that file with the following lines, then save and reboot the device:
 ```
 [Variables]
-filepath = `
-last_file = `
+filepath = ''
+last_file = ''
 was_interrupted = False
 ```
 
