@@ -123,6 +123,16 @@ You will probably have to change "spidev0.0" to "spidev0.2" inside your "printer
     
 (unless you've installed the wifi-enabled dtb below - in that case, it will be spidev0.0 again).
 
+## Numpy
+
+Numpy is required for input shaping, so it's a good idea to install it right now.  
+(Thanks to Vasyl Gontar for this hint)
+```
+sudo apt-get update
+sudo apt-get install python3-numpy python3-matplotlib libatlas-base-dev libopenblas-dev
+~/klippy-env/bin/pip install -v numpy
+```
+
 ## Sovol mods
 
 Modifications from Sovol useful for this image:  
@@ -207,7 +217,7 @@ Here is a compiled version of the devicetree file: [rk3328-roc-cc.dtb](files/rk3
 Download and replace `/boot/dtb/rockchip/rk3328-roc-cc.dtb` with this version and reboot.
 
 
-## crowsnest / camera streaming
+## Crowsnest / camera streaming
   * The camera device will probably change after the update. Use `v4l2-ctl --list-devices` to check the available devices and change `crowsnest.conf` accordingly. (My camera now uses `/dev/video3`)
   * crowsnest may have problems initializing the camera after reboot. Workarounds:
     * Manually restart crowsnest service (works reliably, but sucks)
