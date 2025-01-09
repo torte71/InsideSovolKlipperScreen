@@ -106,7 +106,7 @@ Section "InputClass"
         Option "TransformationMatrix" "0 1 0 -1 0 1 0 0 1"
 EndSection
 ```
-    - press <CTRL-X> to quit
+    - press \<CTRL-X\> to quit
     - press "Y" to save
     - press ENTER to confirm filename
     - restart KlipperScreen:```sudo service KlipperScreen restart```
