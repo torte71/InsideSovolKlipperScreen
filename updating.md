@@ -57,13 +57,13 @@ See also: <https://github.com/3DPrintDemon/How-to-Update-Sovol-Klipper-Screen-To
 
 ### Klipper-0.12.80+ (secondary mcu update)
 ```
-- Compiling klipper for "mcu"
+- Compiling klipper for "mcu rpi" (virtual mcu of the Klipper screen)
   # cd klipper
   # make menuconfig
   - select "Micro-controller Architecture" and set to "Linux process"
   # make clean ; make ; make flash
   - ("make flash" replaces "/usr/local/bin/klipper_mcu" with "out/klipper.elf")
-- Compiling klipper for "mcu linux"
+- Compiling klipper for "mcu" (the printer board)
   (as from https://github.com/bassamanator/Sovol-SV06-firmware/discussions/111):
   # cd klipper
   # make menuconfig
