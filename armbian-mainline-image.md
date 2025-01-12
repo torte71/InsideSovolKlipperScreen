@@ -55,19 +55,21 @@ Contents of the image:
   * Default Klipper install: KIAUH, Klipper (v0.12.0-410-gcf3b0475), Moonraker (v0.9.3-4-ga4604e33), Mainsail (v2.13.2), Fluidd (v1.31.4), KlipperScreen (v0.4.5-40-g7ed39038), Crowsnest (v4.1.10-1-gdd390b60), G-Code-Shell-Command
   * Numpy for input shaper (see [Vasyl's guide](https://github.com/vasyl83/SV07update#15-accelerometer-input-shaper))
   * Makerbase/Sovol [additions](sovol_mods#services): makerbase-beep-service, makerbase-automount-service, Powerloss recovery/plr-klipper
-  * Sovol's original [printer.cfg for SV06](https://github.com/Sovol3d/SOVOL_KLIPAD50_SYSTEM/blob/main/klipper_configuration/SV06/printer.cfg)
+  * Sovol's [printer.cfg for SV06](https://github.com/Sovol3d/SOVOL_KLIPAD50_SYSTEM/blob/main/klipper_configuration/SV06/printer.cfg) with following changes:
+    * Removed deprecated option "accel_to_decel" to avoid warning
+    * Included "BEEP" gcode and shell command
   * Screen [rotation](screen#rotation) (portrait mode)
-  * g-code-macro ["BEEP"](beeper) (needs to be activated in printer.cfg, as it is not part of Sovol's original file)
+  * g-code-macro ["BEEP"](beeper) (already added to printer.cfg)
   * [Klipad50-dtb-fix](files/klipad50-dtb-fix.deb) (restores DTB file whenever a dtb-package install/removal is detected)
-  * Packages and files of the Makerbase/Sovol additions can be found in "/root/sovolize/" for easy install/deinstall using dpkg.
-
+  * Packages and files of the Makerbase/Sovol additions can be found in "/root/" for easy install/deinstall using dpkg.  
+    The sources for these packages can be found in "/root/sources/"
 
 Settings you might want to change (or at least know):
   * Password for user "root": `makerbase`
   * Password for user "mks": `makerbase`
   * Location/Timezone: Europe/Germany
 
-To change the timezone, execute `sudo armbian-config` and select "Personal" and then "Timezone".
+To change the timezone, execute `sudo armbian-config` and select "Personal" and then "Timezone" (or use `tzselect`).
 
 The language has to be changed in KlipperScreen, Mainsail and Fluidd separately.
 

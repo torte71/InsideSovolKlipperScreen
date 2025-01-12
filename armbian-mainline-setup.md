@@ -275,6 +275,9 @@ dpkg -i makerbase-beep-service.deb
         * Execute `nano /etc/rc.local`
         * Add following lines (before the `exit 0` line)
 ```
+if [ ! -d "/sys/class/gpio/gpioi82" ]; then
+  echo 82 > /sys/class/gpio/export
+fi
 chgrp mks /sys/class/gpio/gpio82/value
 chmod g+w /sys/class/gpio/gpio82/value
 ```

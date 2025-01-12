@@ -44,7 +44,7 @@ verbose: False
 ```
 {% endraw  %}
 
-  * /home/mks/printer_data/config/macros/macro_beep.sh:
+  * /home/mks/printer_data/config/macros/macro-beep.sh:
 
 ```
 #!/bin/bash
