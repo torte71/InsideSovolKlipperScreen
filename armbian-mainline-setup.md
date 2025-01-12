@@ -264,7 +264,7 @@ cd
 >
 > And when you are done, execute `exit` to switch back to the default user.
 
-  * Beeps when pressing touchscreen
+  * **Beeps when pressing touchscreen**
     * Uses [makerbase-beep-service.deb](files/makerbase-beep-service.deb)
     * To install, execute 
 ```
@@ -285,7 +285,7 @@ chmod g+w /sys/class/gpio/gpio82/value
     * To uninstall:
       * Execute `sudo dpkg -r makerbase-beep-service`
 
-  * Automounting USB-drive
+  * **Automounting USB-drive**
     * Uses [makerbase-automount-service.deb](files/makerbase-automount-service.deb)
     * To install, execute 
 ```
@@ -305,7 +305,7 @@ dpkg -i makerbase-soft-shutdown-service.deb
     * To uninstall:
       * Execute `sudo dpkg -r makerbase-soft-shutdown-service`
 
-  * Powerloss recovery (plr)
+  * **Powerloss recovery (plr)**
     * Uses unofficial package: [plr-klipper.deb](files/plr-klipper.deb)
     * To install, execute 
 ```
@@ -316,7 +316,7 @@ dpkg -i plr-klipper.deb
       * Execute `sudo dpkg -r plr-klipper`
     * Sovol's [printer.cfg](https://github.com/Sovol3d/SOVOL_KLIPAD50_SYSTEM/tree/main/klipper_configuration) makes use of `plr`, so it's recommended to either install this package, or remove these entries as shown [here](sovol_mods.html#reverting)
 
-  * Splash screen
+  * **Splash screen**
     * Afaik it's not possible to directly use Sovols original boot animation, as it is in a different format (old kernel based vs. actual plymouth). The file resides in `/usr/lib/firmware/bootsplash.armbian` and is ~250MB big. I haven't found a way to decompile it into separate pictures - if someone does, it will probably be possible to "cook" a plymouth style boot animation from it.
     * Enable plymouth splash screen:
       * Become root: Execute `sudo su` (enter password when asked)
