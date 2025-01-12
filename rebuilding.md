@@ -1,16 +1,20 @@
 ---
-title: Rebuilding
+title: Rebuilding on Armbian v24.2
 layout: page
 nav_order: 16
+parent: Rebuilding on Armbian-mainline v25.2
 has_toc: false
 ---
-# Rebuilding
+# Rebuilding on Armbian v24.2
 {: .no_toc }
 ### Contents:
 {: .no_toc }
 - TOC
 {:toc}
 ----
+
+{: .note }
+> There is a [newer version](armbian-mainline-setup.html) for mainline Armbian v25.2
 
 Sovol's KlipperScreen is running on debian buster, which is outdated now, meaning you can no longer update system packages like ssh, etc.
 

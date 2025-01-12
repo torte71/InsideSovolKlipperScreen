@@ -1,11 +1,13 @@
 ---
-title: rk3328-roc-cc
+title: rk3328-roc-cc / rk3328-mkspi
 layout: page
-parent: Rebuilding
+parent: Modifications by Sovol
 ---
-## rk3328-roc-cc
+## rk3328-roc-cc / rk3328-mkspi
 
 Source of Sovol's rk3328-roc-cc.dtb from 5.16.20 kernel [download](files/rk3328-roc-cc.dts)
+
+The files rk3328-roc-cc.dtb and rk3328-mkspi.dtb are identical, rk3328-mkspi is the new name since Armbian v25.2.
 
 (This does not yet include the [wifi-patch](#wifi-patch))
 

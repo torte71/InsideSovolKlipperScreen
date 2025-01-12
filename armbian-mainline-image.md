@@ -1,10 +1,10 @@
 ---
-title: Sovolized Armbian Klipper Image v24.2
+title: Sovolized Armbian-mainline Klipper Image v25.2
 layout: page
-parent: Rebuilding on Armbian v24.2
+parent: Rebuilding on Armbian-mainline v25.2
 nav_order: 17
 ---
-# Sovolized Armbian Klipper Image v24.2
+# Sovolized Armbian-mainline Klipper Image v25.2
 {: .no_toc }
 ### Contents:
 {: .no_toc }
@@ -12,25 +12,22 @@ nav_order: 17
 {:toc}
 ----
 
-{: .note }
-> There is a [newer version](armbian-mainline-image.html) for mainline Armbian v25.2
-
 ## For SV06/SV06+/SV07/SV07+ KlipperScreen (Makerbase MKS KLIPAD50)
 
 A ready-to-use replacement image for Sovol's KlipperScreen can be downloaded at:  
-    
-<https://drive.google.com/file/d/1xy5em404ZeeOhga0X9CXQ6KVAzr-tuLX/view?usp=sharing>
-    
+
+<https://drive.google.com/file/d/1qZes9nlnvvQR_9BVPbI9lHu7wbLTkyp-/view?usp=drive_link>
+
 (Extract it using [7zip](https://www.7-zip.org/))
 
 It is based on Maxims Medvedevs image for Makerbase boards and using a recent armbian-bookworm.
-(Sovol's image based on armbian-buster is outdated, there are no packages available for it any longer. So you can't easily add any additional packages.)  
-    
-Maxims image: [Release 0.3.4-24.2.0-trunk; Armbian-unofficial_24.2.0-trunk_Mkspi_bookworm_current_6.6.17.img.xz](https://github.com/redrathnure/armbian-mkspi/releases)
+(Sovol's image based on armbian-buster is outdated, there are no packages available for it any longer. So you can't easily add any additional packages.)
+
+Maxims image: [1.0.1-25.2.0-trunk; Armbian-unofficial_25.02.0-trunk_Mkspi_bookworm_current_6.12.8.img.xz](https://github.com/redrathnure/armbian-mkspi/releases/download/mkspi%2F1.0.1-25.2.0-trunk/Armbian-unofficial_25.02.0-trunk_Mkspi_bookworm_current_6.12.8.img.xz)
 
 
 Please note that the **printer itself ("mcu") needs to be updated as well** (not just the KlipperScreen), otherwise it will complain about an outdated klipper version on the mcu and not be able to print.
-For convenience, there is a **ready compiled mcu_firmware.bin** in the image (which you can easily access directly after flashing, it's located in the root of the eMMC/USB-stick).
+For convenience, there is a **ready compiled klipper.bin** in the image (which you can easily access directly after flashing, it's located in the root of the eMMC/USB-stick).
 
 
 If you have an eMMC adapter, you can use these guides to flash the image:
@@ -50,17 +47,18 @@ Instructions for updating the "mcu_firmware.bin" can be found in the following l
   * <https://github.com/3DPrintDemon/How-to-Update-Sovol-Klipper-Screen-To-Latest-Klipper-SV06-and-SV07/tree/main#updating-the-host-mcu-rpi--mcu-firmware>
 
 
-The image was created as described here: [rebuilding](rebuilding.html)  
-    
+The image was created as described here: [Rebuilding on Armbian-mainline v25.2](armbian-mainline-setup.html)
+
 Contents of the image:
-  * [Maxims image](https://github.com/redrathnure/armbian-mkspi/releases) (Version 0.3.4-24.2.0-trunk; bookworm; current-6.6.17 kernel)
-  * [Customized dtb](files/rk3328-roc-cc.dtb) for enabling wifi & spidev
-  * Default Klipper install: KIAUH, Klipper (v0.12.0-131-gd9043345), Moonraker (v0.8.0-324-ga3e4dac5), Mainsail (v2.10.0), Fluidd (v1.29.0), KlipperScreen (v0.3.9-64-g1c9d82a), Crowsnest (v4.1.6-1-ge96cd46f), G-Code-Shell-Command
+  * [Maxims image](https://github.com/redrathnure/armbian-mkspi/releases) (1.0.1-25.2.0-trunk; Armbian-unofficial_25.02.0-trunk_Mkspi_bookworm_current_6.12.8.img.xz)
+  * [Customized dtb](files/rk3328-mkspi.dtb) for enabling wifi & spidev
+  * Default Klipper install: KIAUH, Klipper (v0.12.0-410-gcf3b0475), Moonraker (v0.9.3-4-ga4604e33), Mainsail (v2.13.2), Fluidd (v1.31.4), KlipperScreen (v0.4.5-40-g7ed39038), Crowsnest (v4.1.10-1-gdd390b60), G-Code-Shell-Command
   * Numpy for input shaper (see [Vasyl's guide](https://github.com/vasyl83/SV07update#15-accelerometer-input-shaper))
   * Makerbase/Sovol [additions](sovol_mods#services): makerbase-beep-service, makerbase-automount-service, Powerloss recovery/plr-klipper
   * Sovol's original [printer.cfg for SV06](https://github.com/Sovol3d/SOVOL_KLIPAD50_SYSTEM/blob/main/klipper_configuration/SV06/printer.cfg)
   * Screen [rotation](screen#rotation) (portrait mode)
   * g-code-macro ["BEEP"](beeper) (needs to be activated in printer.cfg, as it is not part of Sovol's original file)
+  * [Klipad50-dtb-fix](files/klipad50-dtb-fix.deb) (restores DTB file whenever a dtb-package install/removal is detected)
   * Packages and files of the Makerbase/Sovol additions can be found in "/root/sovolize/" for easy install/deinstall using dpkg.
 
 
@@ -80,3 +78,4 @@ Special thanks to Vasyl Gontar for his support and of course to Maxim Medvedev f
 
 ----
 Back to [start](index.html)
+
