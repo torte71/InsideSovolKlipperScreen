@@ -167,7 +167,8 @@ Binary file /var/lib/selinux/default/active/policy.kern matches
   * does something with the "supper" capacitor
   * Files: [makerbase-soft-shutdown-files](makerbase-soft-shutdown-files.html)
   * Unofficial package: [makerbase-soft-shutdown-service.deb](files/makerbase-soft-shutdown-service.deb)
-  * Useless
+  * Unsure, if it is useful:  
+    It writes "0" to gpio100 at boot time (whatever that does) and then syncs the filesystem every 2 seconds. The syncing might be of some use, if the device is not shut down before cutting the power.
 
 ### makerbase-timezone-monitor.service
   * **Fetches time via NTP every 3 seconds** (spamming syslog)

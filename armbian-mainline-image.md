@@ -54,7 +54,7 @@ Contents of the image:
   * [Customized dtb](files/rk3328-mkspi.dtb) for enabling wifi & spidev
   * Default Klipper install: KIAUH, Klipper (v0.12.0-410-gcf3b0475), Moonraker (v0.9.3-4-ga4604e33), Mainsail (v2.13.2), Fluidd (v1.31.4), KlipperScreen (v0.4.5-40-g7ed39038), Crowsnest (v4.1.10-1-gdd390b60), G-Code-Shell-Command
   * Numpy for input shaper (see [Vasyl's guide](https://github.com/vasyl83/SV07update#15-accelerometer-input-shaper))
-  * Makerbase/Sovol [additions](sovol_mods#services): makerbase-beep-service, makerbase-automount-service, Powerloss recovery/plr-klipper
+  * Makerbase/Sovol [additions](sovol_mods#services): makerbase-beep-service, makerbase-automount-service, makerbase-soft-shutdown-service, Powerloss recovery/plr-klipper
   * Sovol's [printer.cfg for SV06](https://github.com/Sovol3d/SOVOL_KLIPAD50_SYSTEM/blob/main/klipper_configuration/SV06/printer.cfg) with following changes:
     * Removed deprecated option "accel_to_decel" to avoid warning
     * Included "BEEP" gcode and shell command

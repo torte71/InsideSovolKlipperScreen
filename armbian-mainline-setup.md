@@ -295,6 +295,16 @@ dpkg -i makerbase-automount-service.deb
     * To uninstall:
       * Execute `sudo dpkg -r makerbase-automount-service`
 
+  * **Makerbase-soft-shutdown**
+    * Uses [makerbase-soft-shutdown-service.deb](files/makerbase-soft-shutdown-service.deb)
+    * To install, execute 
+```
+wget https://torte71.github.io/InsideSovolKlipperScreen/files/makerbase-soft-shutdown-service.deb
+dpkg -i makerbase-soft-shutdown-service.deb
+```
+    * To uninstall:
+      * Execute `sudo dpkg -r makerbase-soft-shutdown-service`
+
   * Powerloss recovery (plr)
     * Uses unofficial package: [plr-klipper.deb](files/plr-klipper.deb)
     * To install, execute 
