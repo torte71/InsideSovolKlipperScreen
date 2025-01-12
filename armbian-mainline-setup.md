@@ -43,7 +43,7 @@ You have the choice between the [community-builds](https://github.com/armbian/co
 - Extract the image (e.g. using [7zip](https://www.7-zip.org/)).
 - Write the extracted .img file to the eMMC card (e.g. using [Balena Etcher](https://www.balena.io/etcher/)).
 
-### Preparing the image
+### Replacing rk3328-mkspi.dtb for WiFi
 - Don't remove the eMMC card from the PC yet.
 - Use the Explorer to navigate to the "/boot/rockchip/" folder of the eMMC card
 - Replace `/boot/rockchip/rk3328-mkspi.dtb` with this [rk3328-mkspi.dtb](files/rk3328-mkspi.dtb) to get WiFi access directly after booting
