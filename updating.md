@@ -29,10 +29,10 @@ nav_order: 6
       - "/dev/spidev*" is not created (touchscreen and accel-sensors require spidev)
   - **Fix:**
     - **Revert to old kernel**  
-      See [Factory reset using Sovol’s armbian-update.deb](bootloop.html#factory-reset-using-sovols-armbian-updatedeb)  
-      a) Factory reset (kills all prior settings)  
-         - Download the armbian-update.deb and flash it using an USB-stick (as shown in the previous link).  
-      b) Revert just kernel (keeps settings)  
+      See [Factory reset using Sovol’s armbian-update.deb](bootloop.html#factory-reset-using-sovols-armbian-updatedeb)
+      - Option a) Factory reset (kills all prior settings)
+         - Download the armbian-update.deb and flash it using an USB-stick (as shown in the previous link).
+      - Option b) Revert just kernel (keeps settings)
          - Upload armbian-update.deb to your KlipperScreen.  
            E.g. using the web-frontend: Navigate to "Machine" and use the "upload file" button (or use scp or whatever for uploading).
          - Use ssh/putty to log into your KlipperScreen.
@@ -44,11 +44,11 @@ nav_order: 6
 	   `sudo dpkg -i xtract/root/system_deb/linux-image-edge-rockchip64_22.05.0-trunk_arm64.deb`
          - Install (downgrade) the dtb file:  
 	   `sudo cp xtract/home/mks/rk3328-roc-cc.dtb /boot/dtb/rockchip/`
-    - **Keep that kernel-version** (choose one of the following options):  
-      a) Don't update "System" at all.  
-      b) Keep just that kernel-version (allows updating "System"):  
-         `sudo apt-mark hold linux-image-edge-rockchip64 linux-dtb-edge-rockchip64`  
-      c) Freeze the kernel using "armbian-config".  
+    - **Keep that kernel-version** (choose one of the following options):
+      - Option a) Don't update "System" at all.
+      - Option b) Keep just that kernel-version (allows updating "System"):  
+           `sudo apt-mark hold linux-image-edge-rockchip64 linux-dtb-edge-rockchip64`
+      - Option c) Freeze the kernel using "armbian-config".
 
 ### Updating Klipper
 - First log into the device using ssh or putty.
