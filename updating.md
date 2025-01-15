@@ -11,75 +11,75 @@ nav_order: 6
 {:toc}
 ----
 
-See also: <https://github.com/3DPrintDemon/How-to-Update-Sovol-Klipper-Screen-To-Latest-Klipper-SV06-and-SV07>
+<!-- See also: <https://github.com/3DPrintDemon/How-to-Update-Sovol-Klipper-Screen-To-Latest-Klipper-SV06-and-SV07 -->
 
 ## Update Manager
 
 ## Problems
 
 ### System / Kernel (black screen)
-```
-- Updating "System" breaks KlipperScreen
-  (sometimes even breaks wifi-access)
-  Cause: Stock armbian kernels are incompatible with KlipperScreen
+
+- **Updating "System" breaks KlipperScreen**  
+  - **Cause**: Stock armbian kernels are incompatible with KlipperScreen
     - kernel on KlipperScreen is linux-5.16.20-rockchip64 (Version: 22.05.0-trunk)
       - This kernel is not found on the armbian servers (latest version: 5.16.11-rockchip64)
-    - All later kernels are incompatible:
+    - All standard kernels are incompatible:
+      - Screen stays black
+      - WiFi is not working
       - "/dev/spidev*" is not created (touchscreen and accel-sensors require spidev)
-      - my guess: might have to do with the devicetree files
-  Temporary fix:
-    - Revert to old kernel
-      Image location: see https://netztorte.de/3d/doku.php?id=firmware#where_to_download
-      a) Re-flash (kills all prior settings)
-         - Find image online (armbian-update.deb)
-	 - Flash via USB-stick
-      b) Revert just kernel (keeps settings)
-         - upload armbian-update.deb to your klipperscreen
-           e.g. using the web-frontend: Navigate to "Machine" and use the "upload file" button
-           (or use scp or whatever for uploading)
-         - use ssh/putty to log into your klipperscreen
-         - change into the directory where you uploaded armbian-update.deb to
-           for the mainsail example: "cd ~/printer_data/config"
-         - Extract kernel package:
-	     "dpkg -x armbian-update.deb xtract"
-         - install (downgrade) kernel:
-	     "sudo dpkg -i xtract/root/system_deb/linux-image-edge-rockchip64_22.05.0-trunk_arm64.deb"
-         - install (downgrade) the dtb:
-	     "sudo cp xtract/home/mks/rk3328-roc-cc.dtb /boot/dtb/rockchip/"
-    - Keep that kernel-version (choose one of the following options):
-      a) don't update "System" at all (stinks)
-      b) keep just that kernel-version (allows updating "System")
-         - "sudo apt-mark hold linux-image-edge-rockchip64 linux-dtb-edge-rockchip64"
-      c) freeze the kernel using "armbian-config"
-         (see https://github.com/3DPrintDemon/How-to-Update-Sovol-Klipper-Screen-To-Latest-Klipper-SV06-and-SV07)
+  - **Fix:**
+    - **Revert to old kernel**  
+      See [Factory reset using Sovol’s armbian-update.deb](bootloop.html#factory-reset-using-sovols-armbian-updatedeb)  
+      a) Factory reset (kills all prior settings)  
+         - Download the armbian-update.deb and flash it using an USB-stick (as shown in the previous link).  
+      b) Revert just kernel (keeps settings)  
+         - Upload armbian-update.deb to your KlipperScreen.  
+           E.g. using the web-frontend: Navigate to "Machine" and use the "upload file" button (or use scp or whatever for uploading).
+         - Use ssh/putty to log into your KlipperScreen.
+         - Change into the directory where you uploaded armbian-update.deb to.  
+           For the mainsail example: `cd ~/printer_data/config`
+         - Extract kernel package:  
+	   `dpkg -x armbian-update.deb xtract`
+         - Install (downgrade) kernel:  
+	   `sudo dpkg -i xtract/root/system_deb/linux-image-edge-rockchip64_22.05.0-trunk_arm64.deb`
+         - Install (downgrade) the dtb file:  
+	   `sudo cp xtract/home/mks/rk3328-roc-cc.dtb /boot/dtb/rockchip/`
+    - **Keep that kernel-version** (choose one of the following options):  
+      a) Don't update "System" at all.  
+      b) Keep just that kernel-version (allows updating "System"):  
+         `sudo apt-mark hold linux-image-edge-rockchip64 linux-dtb-edge-rockchip64`  
+      c) Freeze the kernel using "armbian-config".  
+
+### Updating Klipper
+- First log into the device using ssh or putty.
+- You need to recompile and install klipper *twice*.  
+  Once for the virtual mcu ("mcu-rpi") on the KlipperScreen, and another time for the printer-board ("mcu"), which needs to be flashed via SD-card after that.
+- **Compiling klipper for "mcu rpi"** (virtual mcu of the Klipper screen):
+```
+cd klipper
+make menuconfig
+```
+  - Select "Micro-controller Architecture" and set to "Linux process".
+```
+make clean ; make ; sudo make flash
 ```
 
-
-### Klipper-0.12.80+ (secondary mcu update)
+- **Compiling klipper for "mcu"** (the printer board):
 ```
-- Compiling klipper for "mcu rpi" (virtual mcu of the Klipper screen)
-  # cd klipper
-  # make menuconfig
-  - select "Micro-controller Architecture" and set to "Linux process"
-  # make clean ; make ; make flash
-  - ("make flash" replaces "/usr/local/bin/klipper_mcu" with "out/klipper.elf")
-- Compiling klipper for "mcu" (the printer board)
-  (as from https://github.com/bassamanator/Sovol-SV06-firmware/discussions/111):
-  # cd klipper
-  # make menuconfig
-  - change settings ("=" are unchanged defaults)
-    = Enable extra low-level configuration options: [*]
-    = Micro-controller Architecture: STMicroelectronics STM32
+cd klipper
+make menuconfig
+```
+  - Change following settings
+    * Micro-controller Architecture: STMicroelectronics STM32
     * Processor model: STM32F103
-    * Disable SWD at startup (for GigaDevice stm32f103 clones): [*]
     * Bootloader offset: 28KiB bootloader
-    = Clock Reference: 8 MHz crystal
     * Communication interface: Serial (on USART1 PA10/PA9)
-    = Baud rate for serial port: 250000
-  # make clean ; make
-  - copy "out/klipper.bin" to SD-card and rename it (must end in ".bin")
-    !!! use a different name than that from prior updates !!!
 ```
+  # make clean ; make
+```
+  - Copy "out/klipper.bin" to SD-card and rename it (must end in ".bin").  
+    !!! Use a different name than that from prior updates (e.g. add some random numbers) !!!  
+    (The printer remembers the filename that was used for flashing and won't use it again.)
 
 
 ### Armbian Buster: End Of Life
@@ -91,7 +91,8 @@ The repositories for this version have been taken offline in spring 2024.
   * It is possible to flash a recent Armbian version, but it takes more than just a few mouseclicks.  
      See these guides:
     * Rebuilding from scratch using Maxim's Armbian bookworm:
-      * My guide: [Rebuilding](rebuilding.html)
+      * My recent guide (Armbian v25): [Rebuilding v25](armbian-mainline-setup.html)
+      * My previous guide (Armbian v24): [Rebuilding v24](rebuilding.html)
       * Vasyl's guide: <https://github.com/vasyl83/SV07update>
     * You can also find a readily prepared image (built as on my guide) here: [Image](image.html)
 
