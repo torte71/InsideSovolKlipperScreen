@@ -51,7 +51,7 @@ nav_order: 6
       - Option c) Freeze the kernel using "armbian-config".
 
 ### Updating Klipper
-- First log into the device using ssh or putty.
+- First [log in](access.html#ssh-putty) to the device using ssh or putty.
 - You need to recompile and install klipper *twice*.  
   Once for the virtual mcu ("mcu-rpi") on the KlipperScreen, and another time for the printer-board ("mcu"), which needs to be flashed via SD-card after that.
 - **Compiling klipper for "mcu rpi"** (virtual mcu of the Klipper screen):
@@ -80,6 +80,11 @@ make menuconfig
   - Copy "out/klipper.bin" to SD-card and rename it (must end in ".bin").  
     !!! Use a different name than that from prior updates (e.g. add some random numbers) !!!  
     (The printer remembers the filename that was used for flashing and won't use it again.)
+    - The printer is very picky about the format of the SD-card, make sure to format it with *exactly* these settings:
+      - Card size: Smaller than 32GB, but bigger than 2GB (you can create a smaller partition on bigger cards)
+      - Filesystem: FAT32 (FAT12/FAT16 also works). *Don't use exFAT or NTFS or anything other!*
+      - Sector size: *Must* be set to 4096 (bytes per sector)
+      - Better don't have any other files or directories on that card.
 
 
 ### Armbian Buster: End Of Life
