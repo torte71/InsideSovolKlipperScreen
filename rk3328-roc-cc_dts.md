@@ -3,9 +3,15 @@ title: rk3328-roc-cc / rk3328-mkspi
 layout: page
 parent: Modifications by Sovol
 ---
-## rk3328-roc-cc / rk3328-mkspi
+# rk3328-roc-cc / rk3328-mkspi
+{: .no_toc }
+### Contents:
+{: .no_toc }
+- TOC
+{:toc}
+----
 
-Source of Sovol's rk3328-roc-cc.dtb from 5.16.20 kernel [download](files/rk3328-roc-cc.dts)
+Source of Sovol's rk3328-roc-cc.dtb from 5.16.20 kernel [download(source)](files/rk3328-roc-cc.dts)
 
 The files [rk3328-roc-cc.dtb](files/rk3328-roc-cc.dtb) and [rk3328-mkspi.dtb](files/rk3328-mkspi.dtb) are identical, rk3328-mkspi is the new name since Armbian v25.2.
 
@@ -16,6 +22,217 @@ To apply the patch by your own:
   * Modify rk3328-roc-cc.dts: Change line 863 from "rockchip,spi_test_bus1_cs2" to "armbian,spi-dev"
   * Compile dts back to dtb: `dtc -I dts -O dtb rk3328-roc-cc.dts -o /boot/dtb/rockchip/rk3328-roc-cc.dtb`
 
+## Different versions
+
+There are 3 different versions of Sovol's dtb-file (my patched one not included):
+- The ones from armbian-update.deb and klipad50-20231229 are working and almost identical (the one from armbian-update.deb allows a slightly lower cpu voltage).
+- The ones from klipad50-20230904 are *wrong* (e.g. missing WiFi).  Seems that Sovol used a wrong file in that image.
+- The klipad images come with an additional dtb directory, which is not used by the system.
+
+1. **armbian-update.deb (for sv06/sv06+/sv07/sv07+)**  
+   (from <https://wiki.sovol3d.com>)
+   - sha256 checksums:
+```
+     ac662abec1bb434a079e478274a49cc8a374f257fa99a16f934441cb13a0010a  rk3328-roc-cc.sv06.dtb
+     ac662abec1bb434a079e478274a49cc8a374f257fa99a16f934441cb13a0010a  rk3328-roc-cc.sv06+.dtb
+     ac662abec1bb434a079e478274a49cc8a374f257fa99a16f934441cb13a0010a  rk3328-roc-cc.sv07.dtb
+     ac662abec1bb434a079e478274a49cc8a374f257fa99a16f934441cb13a0010a  rk3328-roc-cc.sv07+.dtb
+```
+
+2. **Klipad50-image-20231229** (used)  
+   (from <https://wiki.sovol3d.com/en/SV07>)
+   - sha256 checksums:
+```
+     2b26ef092758d3e4a7d15f2c0d88866d3fa084b1b97a7c586fbc02d54584345c  rk3328-roc-cc.20231229.dtb
+```
+   - Differences to dtb from armbian-update.deb:  
+```
+     regulators:DCDC_REG1("vdd_logic"):regulator-min-microvolt = <0x118c30>; # 0x118c30=1150000; armbian-update: 0xdbba0=900000
+     regulators:DCDC_REG2("vdd_arm"):regulator-min-microvolt i = <0x155cc0>; # 0x155cc0=1400000; armbian-update: 0xe7ef0=950000
+```
+
+3. **Klipad50-image-20230904** (used+unused) + Klipad50-image-20231229 (unused)  
+   (from <https://github.com/Sovol3d/SOVOL_KLIPAD50_SYSTEM>)
+   - sha256 checksums:
+```
+     fc43e183d8477e1d2d92d652a9a9e165e65bb1951a9dbefd035a15fe116ebfde  rk3328-roc-cc.20230904.dtb
+     fc43e183d8477e1d2d92d652a9a9e165e65bb1951a9dbefd035a15fe116ebfde  rk3328-roc-cc.20230904-unused.dtb
+     fc43e183d8477e1d2d92d652a9a9e165e65bb1951a9dbefd035a15fe116ebfde  rk3328-roc-cc.20231229-unused.dtb
+```
+   - Differences to dtb from armbian-update.deb:
+
+```
+     analog-sound:status = "disable";   # armbian-update: "okay";
+     hdmi-sound:status = "okay";        # armbian-update: "disabled";
+     spdif-out:status = "okay";         # "disabled";
+     spdif-sound:status = "okay";       # "disabled";
+     i2s@ff010000:status = "disabled";  # "okay";
+     spdif@ff030000:status = "okay";    # "disabled";
+     spi@ff190000:cs-gpios = <0x31 0x08 0x01 0x31 0x07 0x01 0x29 0x12 0x01>;    # <0x31 0x07 0x01>;
+     * klipad-20231229:
+                spi_for_lcd@0 {
+                        compatible = "ilitek,ili9341";
+                        pinctrl-names = "default";
+                        pinctrl-0 = <0x32>;
+                        reg = <0x00>;
+                        spi-max-frequency = <0x17d7840>;
+                        bgr;
+                        fps = <0x1e>;
+                        rotate = <0x10e>;
+                        buswidth = <0x08>;
+                        dc-gpios = <0x31 0x06 0x00>;
+                        reset-gpios = <0x31 0x04 0x01>;
+                        led-gpios = <0x31 0x05 0x00>;
+                        status = "okay";
+                };
+                spi_for_touch@1 {
+                        reg = <0x01>;
+                        compatible = "ti,tsc2046";
+                        pinctrl-names = "default";
+                        pinctrl-0 = <0x33 0x34>;
+                        ti,x-max = [0e c0];
+                        ti,x-min = [00 a4];
+                        ti,y-min = [00 c9];
+                        ti,y-max = [0f 4f];
+                        ti,x-plate-ohms = [00 28];
+                        ti,pressure-max = [00 ff];
+                        ti,swap-xy = <0x01>;
+                        touchscreen-inverted-y = <0x01>;
+                        interrupt-parent = <0x29>;
+                        interrupts = <0x16 0x00>;
+                        spi-max-frequency = <0x1e8480>;
+                        pendown-gpio = <0x29 0x16 0x00>;
+                        vcc-supply = <0x1e>;
+                        wakeup-source;
+                        status = "okay";
+                };
+                spi_for_cs2@2 {
+                        reg = <0x02>;
+                        compatible = "rockchip,spi_test_bus1_cs2";
+                        pinctrl-names = "default";
+                        pinctrl-0 = <0x35>;
+                        spi-max-frequency = <0x4c4b40>;
+                        status = "okay";
+                };
+     * armbian-update:
+                spi_for_cs2@0 {
+                        reg = <0x00>;
+                        compatible = "rockchip,spi_test_bus1_cs2";
+                        pinctrl-names = "default";
+                        pinctrl-0 = <0x35>;
+                        spi-max-frequency = <0x4c4b40>;
+                        status = "okay";
+                };
+     spi@ff190000:cs-gpios = <0x31 0x08 0x01 0x31 0x07 0x01 0x29 0x12 0x01>;    # <0x31 0x07 0x01>;
+     opp-786000000:(status)             # missing; armbian-update: status = "disabled";
+     opp-798000000:(status)             # missing; armbian-update: status = "disabled";
+     hdmi@ff3c0000:pinctrl-0 = <0x4c 0x4d 0x4e>;        # pinctrl-0 = <0x4c 0x4d 0x4e 0x205>;
+     codec@ff410000:(mute-gpios)        # missing; armbian-update: mute-gpios = <0x7c 0x00 0x01>;
+     mmc@ff510000:(pinctrl-names)       # missing; armbian-update: pinctrl-names = "default";
+     mmc@ff510000:(pinctrl-0)           # missing; armbian-update: pinctrl-0 = <0xf1 0xec 0xeb>;
+     mmc@ff510000:status = "disabled";  # "okay";
+     mmc@ff510000:(cap-sd-highspeed)    # missing; armbian-update: cap-sd-highspeed;
+     mmc@ff510000:(cap-sdio-irq)        # missing; armbian-update: cap-sdio-irq;
+     mmc@ff510000:(non-removable)       # missing; armbian-update: non-removable;
+     mmc@ff510000:(bus-width)           # missing; armbian-update: bus-width = <0x04>;
+     mmc@ff510000:(mmc-pwrseq)          # missing; armbian-update: mmc-pwrseq = <0x200>;
+     * klipad-20231229:
+        pinctrl {
+                compatible = "rockchip,rk3328-pinctrl";
+                rockchip,grf = <0x3f>;
+                #address-cells = <0x02>;
+                #size-cells = <0x02>;
+                ranges;
+                phandle = <0xac>;
+     * armbian-update:
+        pinctrl {
+                compatible = "rockchip,rk3328-pinctrl";
+                rockchip,grf = <0x3f>;
+                #address-cells = <0x02>;
+                #size-cells = <0x02>;
+                ranges;
+                phandle = <0xac>;
+                pinctrl-names = "default";
+                pinctrl-0 = <0x32>;
+     * klipad-20231229:
+                        (missing)
+     * armbian-update:
+                        hdmi-backlight {
+                                rockchip,pins = <0x03 0x05 0x00 0xaf>;
+                                phandle = <0x205>;
+                        };
+     * klipad-20231229:
+                touchscreen {
+                        pinctrl_tsc2046_pendown {
+                                rockchip,pins = <0x01 0x16 0x00 0x66>;
+                                phandle = <0x33>;
+                        };
+                        pinctrl_tsc2046_cs {
+                                rockchip,pins = <0x03 0x07 0x00 0x66>;
+                                phandle = <0x34>;
+                        };
+                };
+                lcd {
+                        pinctrl_ili9341_cs {
+                                rockchip,pins = <0x03 0x08 0x00 0x66>;
+                                phandle = <0x32>;
+                        };
+                };
+                spi0_cs2 {
+                        pinctrl_spi0_cs2 {
+                                rockchip,pins = <0x01 0x12 0x00 0x66>;
+                                phandle = <0x35>;
+                        };
+                };
+     * armbian-update:
+                spi0_cs2 {
+                        pinctrl_spi0_cs2 {
+                                rockchip,pins = <0x03 0x07 0x00 0x66>;
+                                phandle = <0x35>;
+                        };
+                };
+                sdio-pwrseq {
+                        wifi-enable-h {
+                                rockchip,pins = <0x01 0x12 0x00 0x64>;
+                                phandle = <0x201>;
+                        };
+                };
+                wireless-wlan {
+                        wifi-wake-host {
+                                rockchip,pins = <0x01 0x13 0x00 0x6e>;
+                        };
+                };
+     * klipad-20231229:
+                        (missing)
+     * armbian-update:
+        wireless-wlan {
+                compatible = "wlan-platdata";
+                rockchip,grf = <0x3f>;
+                sdio_vref = <0xce4>;
+                status = "okay";
+                WIFI,host_wake_irq = <0x29 0x13 0x00>;
+                wifi_chip_type = "rtl8723bs";
+        };
+        sdio_pwrseq0 {
+                compatible = "mmc-pwrseq-simple";
+                pinctrl-names = "default";
+                pinctrl-0 = <0x201>;
+                reset-gpios = <0x29 0x12 0x01>;
+                phandle = <0x200>;
+        };
+     * klipad-20231229: __symbols_ (not in armbian-update)
+                pinctrl_tsc2046_pendown = "/pinctrl/touchscreen/pinctrl_tsc2046_pendown";
+                pinctrl_tsc2046_cs = "/pinctrl/touchscreen/pinctrl_tsc2046_cs";
+                pinctrl_ili9341_cs = "/pinctrl/lcd/pinctrl_ili9341_cs";
+     * armbian-update: __symbols__ (not in klipad-23231229)
+                hdmi_backlight = "/pinctrl/hdmi_pin/hdmi-backlight";
+                wifi_enable_h = "/pinctrl/sdio-pwrseq/wifi-enable-h";
+                sdio_pwrseq = "/sdio_pwrseq0";
+```
+
+
+
+## Contents of rk3328-roc-cc.dts (decompiled from armbian-update.deb:rk3328-roc-cc.dtb)
 
 ```
 /dts-v1/;
@@ -2969,7 +3186,7 @@ To apply the patch by your own:
 };
 ```
 
-### wifi patch
+## WiFi / spi-dev patch
 
 Patch to get spi-dev working:
 
@@ -2988,7 +3205,8 @@ Patch to get spi-dev working:
 ```
 
 ----
-Back to [rebuilding](rebuilding.html)
+Back to [Rebuilding v24](rebuilding.html)  
+Back to [Rebuilding v25](armbian-mainline-setup.html)
 
 ----
 Back to [start](index.html)
