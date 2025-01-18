@@ -28,10 +28,12 @@ It is based on Maxims Medvedevs image for Makerbase boards and using a recent ar
     
 Maxims image: [Release 0.3.4-24.2.0-trunk; Armbian-unofficial_24.2.0-trunk_Mkspi_bookworm_current_6.6.17.img.xz](https://github.com/redrathnure/armbian-mkspi/releases)
 
+## Flashing the printer board ("mcu")
 
 Please note that the **printer itself ("mcu") needs to be updated as well** (not just the KlipperScreen), otherwise it will complain about an outdated klipper version on the mcu and not be able to print.
 For convenience, there is a **ready compiled mcu_firmware.bin** in the image (which you can easily access directly after flashing, it's located in the root of the eMMC/USB-stick).
 
+## Flashing the the image to eMMC card
 
 If you have an eMMC adapter, you can use these guides to flash the image:
   * Complete backup and restore with eMMC adapter: <https://www.youtube.com/watch?v=PrC8zaVCHys>
@@ -50,9 +52,10 @@ Instructions for updating the "mcu_firmware.bin" can be found in the following l
   * <https://github.com/3DPrintDemon/How-to-Update-Sovol-Klipper-Screen-To-Latest-Klipper-SV06-and-SV07/tree/main#updating-the-host-mcu-rpi--mcu-firmware>
 
 
+## Contents of the image
+
 The image was created as described here: [rebuilding](rebuilding.html)  
     
-Contents of the image:
   * [Maxims image](https://github.com/redrathnure/armbian-mkspi/releases) (Version 0.3.4-24.2.0-trunk; bookworm; current-6.6.17 kernel)
   * [Customized dtb](files/rk3328-roc-cc.dtb) for enabling wifi & spidev
   * Default Klipper install: KIAUH, Klipper (v0.12.0-131-gd9043345), Moonraker (v0.8.0-324-ga3e4dac5), Mainsail (v2.10.0), Fluidd (v1.29.0), KlipperScreen (v0.3.9-64-g1c9d82a), Crowsnest (v4.1.6-1-ge96cd46f), G-Code-Shell-Command
@@ -64,12 +67,27 @@ Contents of the image:
   * Packages and files of the Makerbase/Sovol additions can be found in "/root/sovolize/" for easy install/deinstall using dpkg.
 
 
-Settings you might want to change (or at least know):
+## Settings you might want to change (or at least know)
+
+### Login passwords
+
   * Password for user "root": `makerbase`
   * Password for user "mks": `makerbase`
   * Location/Timezone: Europe/Germany
 
+### Timezone
+
 To change the timezone, execute `sudo armbian-config` and select "Personal" and then "Timezone".
+
+### Expand filesystem size
+
+If you flash the ready image to an eMMC card bigger than 8GB, it will still only use the first 8GB of that card, the rest is unused.
+
+To expand the filesystem that it uses the full size of the eMMC card:
+  - Log into the device using ssh/putty
+  - Execute `sudo /usr/lib/armbian/armbian-resize-filesystem`
+
+### Language
 
 The language has to be changed in KlipperScreen, Mainsail and Fluidd separately.
 

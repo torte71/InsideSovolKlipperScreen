@@ -25,10 +25,12 @@ It is based on Maxims Medvedevs image for Makerbase boards and using a recent ar
 
 Maxims image: [1.0.1-25.2.0-trunk; Armbian-unofficial_25.02.0-trunk_Mkspi_bookworm_current_6.12.8.img.xz](https://github.com/redrathnure/armbian-mkspi/releases/download/mkspi%2F1.0.1-25.2.0-trunk/Armbian-unofficial_25.02.0-trunk_Mkspi_bookworm_current_6.12.8.img.xz)
 
+## Flashing the printer board ("mcu")
 
 Please note that the **printer itself ("mcu") needs to be updated as well** (not just the KlipperScreen), otherwise it will complain about an outdated klipper version on the mcu and not be able to print.
 For convenience, there is a **ready compiled klipper0120410.bin** in the image (which you can easily access directly after flashing, it's located in the root of the eMMC/USB-stick).
 
+## Flashing the the image to eMMC card
 
 If you have an eMMC adapter, you can use these guides to flash the image:
   * Complete backup and restore with eMMC adapter: <https://www.youtube.com/watch?v=PrC8zaVCHys>
@@ -46,6 +48,7 @@ so it reads `dd of=backup.img if=/dev/mmcblk1 status=progress`.
 Instructions for updating the "klipper0120410.bin" can be found in the following link (scroll down to "RENAME THE FILE", just before the photos of the printer).
   * <https://github.com/3DPrintDemon/How-to-Update-Sovol-Klipper-Screen-To-Latest-Klipper-SV06-and-SV07/tree/main#updating-the-host-mcu-rpi--mcu-firmware>
 
+## Contents of the image
 
 The image was created as described here: [Rebuilding on Armbian-mainline v25.2](armbian-mainline-setup.html)
 
@@ -64,12 +67,27 @@ Contents of the image:
   * Packages and files of the Makerbase/Sovol additions can be found in "/root/" for easy install/deinstall using dpkg.  
     The sources for these packages can be found in "/root/sources/"
 
-Settings you might want to change (or at least know):
+## Settings you might want to change (or at least know)
+
+### Login passwords
+
   * Password for user "root": `makerbase`
   * Password for user "mks": `makerbase`
   * Location/Timezone: Europe/Germany
 
+### Timezone
+
 To change the timezone, execute `sudo armbian-config` and select "Personal" and then "Timezone" (or use `tzselect`).
+
+### Expand filesystem size
+
+If you flash the ready image to an eMMC card bigger than 8GB, it will still only use the first 8GB of that card, the rest is unused.
+
+To expand the filesystem that it uses the full size of the eMMC card:
+  - Log into the device using ssh/putty
+  - Execute `sudo /usr/lib/armbian/armbian-resize-filesystem`
+
+### Language
 
 The language has to be changed in KlipperScreen, Mainsail and Fluidd separately.
 
