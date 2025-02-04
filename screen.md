@@ -2,7 +2,7 @@
 title: Screen rotation
 layout: page
 parent: Configuring
-//nav_order: 12
+nav_order: 4
 ---
 # Screen rotation (for KlipperScreen)
 {: .no_toc }

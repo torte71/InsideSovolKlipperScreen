@@ -1,7 +1,7 @@
 ---
 title: Hardware
 layout: page
-nav_order: 3
+nav_order: 2
 ---
 # Hardware
 {: .no_toc }

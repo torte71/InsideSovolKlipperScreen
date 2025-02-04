@@ -1,7 +1,8 @@
 ---
 title: Modifications by Sovol
 layout: page
-nav_order: 5
+nav_order: 3
+parent: Firmware
 has_toc: false
 ---
 # Modifications by Sovol / Makerbase

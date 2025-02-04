@@ -2,7 +2,7 @@
 title: Expand G-Code storage space
 layout: page
 parent: Configuring
-//nav_order: 9
+nav_order: 3
 ---
 # Expand G-Code storage space
 {: .no_toc }

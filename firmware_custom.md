@@ -2,7 +2,7 @@
 title: Custom firmware options
 layout: page
 parent: Firmware
-//nav_order: 3
+nav_order: 1
 ---
 # Custom firmware options
 

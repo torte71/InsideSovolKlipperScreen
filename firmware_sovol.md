@@ -2,7 +2,7 @@
 title: Original firmware (by Sovol)
 layout: page
 parent: Firmware
-//nav_order: 3
+nav_order: 2
 ---
 # Original firmware (by Sovol)
 {: .no_toc }

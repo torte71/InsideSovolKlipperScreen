@@ -1,7 +1,7 @@
 ---
 title: Shutdown
 layout: page
-nav_order: 4.1
+nav_order: 7
 has_toc: false
 ---
 # Klipper Shutdown (Windows version)

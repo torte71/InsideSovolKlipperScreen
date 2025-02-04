@@ -2,7 +2,7 @@
 title: Beeper macro
 layout: page
 parent: Configuring
-//nav_order: 11
+nav_order: 2
 ---
 # Beeper macro (for use in Klipper)
 {: .no_toc }

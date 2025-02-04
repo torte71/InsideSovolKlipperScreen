@@ -4,7 +4,7 @@ layout: page
 //nav_order: 14
 parent: Troubleshooting
 ---
-# Getting Access / Log In
+# Getting access / Log In
 {: .no_toc }
 ### Contents:
 {: .no_toc }
