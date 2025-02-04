@@ -1,7 +1,8 @@
 ---
 title: Getting Access / Log In
 layout: page
-nav_order: 14
+//nav_order: 14
+parent: Troubleshooting
 ---
 # Getting Access / Log In
 {: .no_toc }

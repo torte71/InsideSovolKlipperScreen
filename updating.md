@@ -1,7 +1,8 @@
 ---
 title: Updating
 layout: page
-nav_order: 6
+parent: Original firmware (by Sovol)
+//nav_order: 6
 ---
 # Updating
 {: .no_toc }
@@ -26,7 +27,7 @@ nav_order: 6
     - All standard kernels are incompatible:
       - Screen stays black
       - WiFi is not working
-      - "/dev/spidev*" is not created (touchscreen and accel-sensors require spidev)
+      - "/dev/spidev*" is not created (ADXL543 acceleration sensor requires spidev)
   - **Fix:**
     - **Revert to old kernel**  
       See [Factory reset using Sovol’s armbian-update.deb](bootloop.html#factory-reset-using-sovols-armbian-updatedeb)
@@ -49,42 +50,6 @@ nav_order: 6
       - Option b) Keep just that kernel-version (allows updating "System"):  
            `sudo apt-mark hold linux-image-edge-rockchip64 linux-dtb-edge-rockchip64`
       - Option c) Freeze the kernel using "armbian-config".
-
-### Updating Klipper
-- First [log in](access.html#ssh-putty) to the device using ssh or putty.
-- You need to recompile and install klipper *twice*.  
-  Once for the virtual mcu ("mcu-rpi") on the KlipperScreen, and another time for the printer-board ("mcu"), which needs to be flashed via SD-card after that.
-- **Compiling klipper for "mcu rpi"** (virtual mcu of the Klipper screen):
-```
-cd klipper
-make menuconfig
-```
-  - Select "Micro-controller Architecture" and set to "Linux process".
-```
-make clean ; make ; sudo make flash
-```
-
-- **Compiling klipper for "mcu"** (the printer board):
-```
-cd klipper
-make menuconfig
-```
-  - Change following settings
-    * Micro-controller Architecture: STMicroelectronics STM32
-    * Processor model: STM32F103
-    * Bootloader offset: 28KiB bootloader
-    * Communication interface: Serial (on USART1 PA10/PA9)
-```
-  # make clean ; make
-```
-  - Copy "out/klipper.bin" to SD-card and rename it (must end in ".bin").  
-    !!! Use a different name than that from prior updates (e.g. add some random numbers) !!!  
-    (The printer remembers the filename that was used for flashing and won't use it again.)
-    - The printer is very picky about the format of the SD-card, make sure to format it with *exactly* these settings:
-      - Card size: Smaller than 32GB, but bigger than 2GB (you can create a smaller partition on bigger cards)
-      - Filesystem: FAT32 (FAT12/FAT16 also works). *Don't use exFAT or NTFS or anything other!*
-      - Sector size: *Must* be set to 4096 (bytes per sector)
-      - Better don't have any other files or directories on that card.
 
 
 ### Armbian Buster: End Of Life

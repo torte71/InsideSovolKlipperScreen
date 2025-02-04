@@ -1,9 +1,10 @@
 ---
-title: Wifi
+title: Wifi antenna
 layout: page
-nav_order: 10
+parent: Hardware
+//nav_order: 10
 ---
-# Wifi
+# Wifi antenna
 {: .no_toc }
 ### Contents:
 {: .no_toc }

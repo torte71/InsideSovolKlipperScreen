@@ -23,19 +23,20 @@ nav_order: 1
 
 ## Klipperized Sovol SV06+/SV07+ (mostly)
 
-### Hardware
-  * [Hardware](hardware.html) description of the MKS Klipad50
-
-### [Firmware](firmware.html)
-  * [Where to download](firmware.html#where-to-download)
-  * [SD-card not accepted](firmware.html#sd-card-not-accepted)
-
 ### Klipper Shutdown
   * Scripts to safely shutdown.md klipper and power off using HS110 wifi.md power plug
     * [Windows version](shutdown.html)
     * [Linux version](shutdown_linux.html)
 
 ## Sovol KlipperScreen (Makerbase MKS KLIPAD50)
+
+### Hardware
+  * [Hardware](hardware.html) description of the MKS Klipad50
+  * Replaced [WiFi antenna](wifi.html)
+
+### [Firmware](firmware.html)
+  * [Where to download](firmware.html#where-to-download)
+  * [SD-card not accepted](firmware.html#sd-card-not-accepted)
 
 ### [Modifications by Sovol](sovol_mods.html#modifications_by_sovol)
   * [Files in /root](sovol_mods.html#files-in-root)
@@ -63,8 +64,13 @@ nav_order: 1
 ### [Configuring](configuring.html)
   * [Logging, etc.](configuring.html#logging-etc)
     * [Timezone updates spamming syslog](configuring.html#timezone-updates-spamming-syslog)
+  * [Extending storage space for gcode files](gcode_storage.html#expand-g-code-storage-space)
+  * [Beeper](beeper.html) macro (for use inKlipper)
+  * [Screen rotation](screen.html) for KlipperScreen/Xorg
 
-### Boot loops / Black screen ("unbricking")
+### Troubleshooting
+
+#### Boot loops / Black screen ("unbricking")
   * [Boot loops / Black screen](bootloop.html)
     * [Some causes for the looping boot animation](bootloop.html#some-causes-for-the-looping-boot-animation)
     * [Typical causes for the damaged files](bootloop.html#typical-causes-for-the-damaged-files)
@@ -74,24 +80,12 @@ nav_order: 1
       * [Factory reset using Sovol's "armbian-update.deb"](bootloop.html#factory-reset-using-sovols-armbian-updatedeb)
       * [Full reflash of the eMMC using Sovol's KLIPAD50_IMAGE](bootloop.html#full-reflash-of-the-emmc-using-sovols-klipad50_image)
 
-### Expand G-Code storage space
-  * [Extending storage space for gcode files](gcode_storage.html#expand-g-code-storage-space)
-
-### Wifi
-  * [Better wifi antenna](wifi.html)
-
-### Beeper
-  * [Beeper](beeper.html)
-
-### Screen
-  * [Rotation](screen.html)
-
-### [Getting Access / Log In](access.html)
+#### [Getting Access / Log In](access.html)
   * [Serial (over USB)](access.html#serial-over-usb)
   * [USB-Keyboard](access.html#usb-keyboard)
   * [SSH (or putty)](access.html#ssh-putty)
 
-### Booting
+#### Booting
   * [Booting from external device](booting.html)
     * [Boot the same image from an USB-stick](booting.html#boot-the-same-image-from-an-usb-stick)
     * [Boot image from USB-stick via serial console](booting.html#boot-image-from-usb-stick-via-serial-console)

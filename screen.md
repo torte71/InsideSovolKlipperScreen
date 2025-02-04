@@ -1,9 +1,10 @@
 ---
-title: Screen
+title: Screen rotation
 layout: page
-nav_order: 12
+parent: Configuring
+//nav_order: 12
 ---
-# Screen
+# Screen rotation (for KlipperScreen)
 {: .no_toc }
 ### Contents:
 {: .no_toc }

@@ -1,7 +1,8 @@
 ---
 title: Boot loops / Black screen ("unbricking")
 layout: page
-nav_order: 8
+//nav_order: 8
+parent: Troubleshooting
 ---
 # Boot loops / Black screen ("unbricking")
 {: .no_toc }
