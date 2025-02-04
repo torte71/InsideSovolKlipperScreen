@@ -2,7 +2,7 @@
 title: Custom firmware archive
 layout: page
 parent: Custom firmware options
-//nav_order: 3
+nav_order: 2
 ---
 # Custom firmware archive
 {: .no_toc }
