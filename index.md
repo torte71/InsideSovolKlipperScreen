@@ -35,8 +35,27 @@ nav_order: 1
   * Replaced [WiFi antenna](wifi.html)
 
 ### [Firmware](firmware.html)
+
+#### [Original firmware (by Sovol)](firmware_sovol.html)
   * [Where to download](firmware.html#where-to-download)
-  * [SD-card not accepted](firmware.html#sd-card-not-accepted)
+  * [Updating](updating.html)
+    * [Update manager](updating.html#update-manager)
+    * [Problems](updating.html#problems)
+      * [System / Kernel (black screen)](updating.html#system--kernel-black-screen)
+      * [Klipper-0.12.80+ (secondary mcu update)](updating.html#klipper-01280-secondary-mcu-update)
+      * [Armbian Buster: End Of Life](updating.html#armbian-buster-end-of-life)
+      * [KlipperScreen / Python 3.8](updating.html#klipperscreen--python-38)
+      * [Moonraker Timelapse](updating.html#moonraker-timelapse)
+
+#### [Custom firmware options](firmware_custom.html)
+  * [Archive](custom_firmware_archive.html)
+    * Armbian mainline v25.2
+      * [Rebuilding](armbian_mainline_setup.html)
+      * [Sovolized Armbian Klipper Image](armbian_mainline_image.html)
+    * Armbian v24.2
+      * [Rebuilding](rebuilding.html)
+      * [Sovolized Armbian Klipper Image](image.html)
+
 
 ### [Modifications by Sovol](sovol_mods.html#modifications_by_sovol)
   * [Files in /root](sovol_mods.html#files-in-root)
@@ -52,14 +71,8 @@ nav_order: 1
   * [reverting](sovol_mods.html#reverting)
     * [power loss recovery (plr)](sovol_mods.html#power-loss-recovery-plr-1)
 
-### [Updating](updating.html)
-  * [Update Manager](updating.html#update-manager)
-  * [Problems](updating.html#problems)
-    * [System / Kernel (black screen)](updating.html#system--kernel-black-screen)
-    * [Klipper-0.12.80+ (secondary mcu update)](updating.html#klipper-01280-secondary-mcu-update)
-    * [Armbian Buster: End Of Life](updating.html#armbian-buster-end-of-life)
-    * [KlipperScreen / Python 3.8](updating.html#klipperscreen--python-38)
-    * [Moonraker Timelapse](updating.html#moonraker-timelapse)
+### [Updating Klipper](updating_klipper.html)
+  * [SD-card not accepted](updating_klipper.html#sd-card-not-accepted)
 
 ### [Configuring](configuring.html)
   * [Logging, etc.](configuring.html#logging-etc)
@@ -80,7 +93,7 @@ nav_order: 1
       * [Factory reset using Sovol's "armbian-update.deb"](bootloop.html#factory-reset-using-sovols-armbian-updatedeb)
       * [Full reflash of the eMMC using Sovol's KLIPAD50_IMAGE](bootloop.html#full-reflash-of-the-emmc-using-sovols-klipad50_image)
 
-#### [Getting Access / Log In](access.html)
+#### [Getting access / Log in](access.html)
   * [Serial (over USB)](access.html#serial-over-usb)
   * [USB-Keyboard](access.html#usb-keyboard)
   * [SSH (or putty)](access.html#ssh-putty)
@@ -91,11 +104,3 @@ nav_order: 1
     * [Boot image from USB-stick via serial console](booting.html#boot-image-from-usb-stick-via-serial-console)
     * [Boot from USB-stick with unbootable eMMC](booting.html#boot-from-usb-stick-with-unbootable-emmc)
 
-### [Rebuilding](rebuilding.html)
-  * [Base system](rebuilding.html#base-system)
-  * [Klipper](rebuilding.html#klipper)
-  * [Sovol mods](rebuilding.html#sovol-mods)
-  * [Internal wifi.md + spi-dev](rebuilding.html#internal-wifi--spidev)
-
-### Image
-  * [Sovolized Armbian Klipper Image](image.html)
