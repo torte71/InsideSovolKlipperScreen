@@ -13,7 +13,7 @@ nav_order: 17
 ----
 
 {: .note }
-> There is a [newer version](armbian-mainline-image.html) for mainline Armbian v25.2
+> There is a [newer version](armbian-mkspi-mainline-image-v25-2.html) for mainline Armbian v25.2 (MKS-PI)
 
 ## For SV06/SV06+/SV07/SV07+ KlipperScreen (Makerbase MKS KLIPAD50)
 

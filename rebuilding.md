@@ -14,7 +14,7 @@ has_toc: false
 ----
 
 {: .note }
-> There is a [newer version](armbian-mainline-setup.html) for mainline Armbian v25.2
+> There is a [newer version](armbian-mkspi-mainline-setup-v25-2.html) for mainline Armbian v25.2 (MKS-PI)
 
 Sovol's KlipperScreen is running on debian buster, which is outdated now, meaning you can no longer update system packages like ssh, etc.
 

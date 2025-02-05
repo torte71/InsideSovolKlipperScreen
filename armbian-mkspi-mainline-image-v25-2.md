@@ -1,10 +1,10 @@
 ---
-title: Sovolized Armbian-mainline Klipper Image v25.2
+title: Sovolized Armbian-mainline Klipper Image v25.2 (MKS-PI)
 layout: page
-parent: Rebuilding on Armbian-mainline v25.2
+parent: Rebuilding on Armbian-mainline v25.2 (MKS-PI)
 nav_order: 17
 ---
-# Sovolized Armbian-mainline Klipper Image v25.2
+# Sovolized Armbian-mainline Klipper Image v25.2 (MKS-PI)
 {: .no_toc }
 ### Contents:
 {: .no_toc }
@@ -50,7 +50,7 @@ Instructions for updating the "klipper0120410.bin" can be found in the following
 
 ## Contents of the image
 
-The image was created as described here: [Rebuilding on Armbian-mainline v25.2](armbian-mainline-setup.html)
+The image was created as described here: [Rebuilding on Armbian-mainline v25.2 (MKS-PI)](armbian-mkspi-mainline-setup-v25-2.html)
 
 Contents of the image:
   * [Maxims image](https://github.com/redrathnure/armbian-mkspi/releases) (1.0.1-25.2.0-trunk; Armbian-unofficial_25.02.0-trunk_Mkspi_bookworm_current_6.12.8.img.xz)

@@ -13,7 +13,7 @@ nav_order: 3
 
 ## [Original firmware](firmware_sovol.html) by Sovol
 
-## [Custom firmware](armbian-mainline-setup.md) options
+## [Custom firmware](armbian-mkspi-mainline-setup-v25-2.html) options
 
 ----
 Back to [start](index.html)
