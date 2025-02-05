@@ -3205,8 +3205,8 @@ Patch to get spi-dev working:
 ```
 
 ----
-Back to [Rebuilding v24](rebuilding.html)  
-Back to [Rebuilding v25](armbian-mkspi-mainline-setup-v25-2.html)
+Back to [Rebuilding v24 (MKS-PI)](armbian-mkspi-setup-v24-2.html)  
+Back to [Rebuilding v25 (MKS-PI)](armbian-mkspi-mainline-setup-v25-2.html)
 
 ----
 Back to [start](index.html)

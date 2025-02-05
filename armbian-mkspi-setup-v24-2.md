@@ -1,11 +1,11 @@
 ---
-title: Rebuilding on Armbian v24.2
+title: Rebuilding on Armbian v24.2 (MKS-PI)
 layout: page
 nav_order: 16
 parent: Custom firmware archive
 has_toc: false
 ---
-# Rebuilding on Armbian v24.2
+# Rebuilding on Armbian v24.2 (MKS-PI)
 {: .no_toc }
 ### Contents:
 {: .no_toc }

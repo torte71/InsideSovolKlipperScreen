@@ -23,8 +23,8 @@ nav_order: 1
       * [Rebuilding (MKS-PI v25.2)](armbian-mkspi-mainline-setup-v25-2.html)
       * [Sovolized Armbian Klipper Image (MKS-PI v25.2)](armbian-mkspi-mainline-image-v25-2.html)
     * Armbian v24.2
-      * [Rebuilding](rebuilding.html)
-      * [Sovolized Armbian Klipper Image](image.html)
+      * [Rebuilding (MKS-PI v24.2)](armbian-mkspi-setup-v24-2.html)
+      * [Sovolized Armbian Klipper Image (MKS-PI v24.2)](armbian-mkspi-image-v24-2.html)
 
 ## [Original firmware (by Sovol)](firmware_sovol.html)
   * [Where to download](firmware.html#where-to-download)

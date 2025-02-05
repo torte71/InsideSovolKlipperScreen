@@ -62,9 +62,9 @@ The repositories for this version have been taken offline in spring 2024.
      See these guides:
     * Rebuilding from scratch using Maxim's Armbian bookworm:
       * My recent guide (Armbian v25): [Rebuilding v25 (MKS-PI)](armbian-mkspi-mainline-setup-v25-2.html)
-      * My previous guide (Armbian v24): [Rebuilding v24](rebuilding.html)
+      * My previous guide (Armbian v24): [Rebuilding v24 (MKS-PI)](armbian-mkspi-setup-v24-2.html)
       * Vasyl's guide: <https://github.com/vasyl83/SV07update>
-    * You can also find a readily prepared image (built as on my guide) here: [Image](image.html)
+    * You can also find a readily prepared image (built as on my guide) here: [Image (MKS-PI v24.2)](armbian-mkspi-image-v24-2.html)
 
 
 ### KlipperScreen / Python 3.8

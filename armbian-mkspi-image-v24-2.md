@@ -1,10 +1,10 @@
 ---
-title: Sovolized Armbian Klipper Image v24.2
+title: Sovolized Armbian Klipper Image v24.2 (MKS-PI)
 layout: page
-parent: Rebuilding on Armbian v24.2
+parent: Rebuilding on Armbian v24.2 (MKS-PI)
 nav_order: 17
 ---
-# Sovolized Armbian Klipper Image v24.2
+# Sovolized Armbian Klipper Image v24.2 (MKS-PI)
 {: .no_toc }
 ### Contents:
 {: .no_toc }
@@ -54,7 +54,7 @@ Instructions for updating the "mcu_firmware.bin" can be found in the following l
 
 ## Contents of the image
 
-The image was created as described here: [rebuilding](rebuilding.html)  
+The image was created as described here: [Rebuilding (MKS-PI v24.2)](armbian-mkspi-setup-v24-2.html)  
     
   * [Maxims image](https://github.com/redrathnure/armbian-mkspi/releases) (Version 0.3.4-24.2.0-trunk; bookworm; current-6.6.17 kernel)
   * [Customized dtb](files/rk3328-roc-cc.dtb) for enabling wifi & spidev
