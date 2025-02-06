@@ -19,7 +19,7 @@ nav_order: 17
 
 A ready-to-use replacement image for Sovol's KlipperScreen can be downloaded at:  
     
-<https://drive.google.com/file/d/1xy5em404ZeeOhga0X9CXQ6KVAzr-tuLX/view?usp=sharing>
+<https://github.com/torte71/mksklipad50-klipper-images/releases/tag/v24.2.0.03>
     
 (Extract it using [7zip](https://www.7-zip.org/))
 
