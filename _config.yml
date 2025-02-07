@@ -25,10 +25,23 @@ callouts:
     title: Warning
     color: red
 
-#plugins:
+plugins:
+  - jekyll-seo-tag
 #  - jekyll-relative-links
 
-url: https://torte71.github.io/InsideSovolKlipperScreen
+compress_html:
+  ignore:
+    envs: all
+
+url: https://torte71.github.io
+baseurl: "/InsideSovolKlipperScreen"
+repository: torte71/InsideSovolKlipperScreen
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /files/mks-klipad50-1536x864.png
 
 aux_links:
   GitHub: https://github.com/torte71/InsideSovolKlipperScreen
