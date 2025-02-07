@@ -39,9 +39,6 @@ jobs:
           cache-version: 0 # Increment this number if you need to re-download cached gems
       - name: Init Search
         run: bundle exec just-the-docs rake search:init
-        #run: bundle exec rake search:init
-        #env:
-        #  BUNDLE_GEMFILE: fixtures/Gemfile-jekyll-${{ matrix.jekyll-version }}
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
@@ -65,3 +62,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+

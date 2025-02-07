@@ -67,7 +67,7 @@ Here you will find several ways to log into the KlipperScreen.
     * Plug in a normal USB-keyboard into any of the KlipperScreen's USB-ports. Rather use a simple keyboard, i.e. not a wireless one and not one that requires special drivers, etc.
     * Have the KlipperScreen powered up
     * Switch to text-mode:
-      * At the same time, press the keys "STRG" + "ALT" + "F1" (repeat, if that doesn't work immediately)
+      * At the same time, press the keys "CTRL" + "ALT" + "F1" (repeat, if that doesn't work immediately)
       * On success, you will see a lot of text lines (rotated to landscape view).
     * Log in:
       * HINT: In this setup, the keyboard uses US-keylayout! Keep that in mind esp. if you changed your password. E.g. german keyboards have the "y" and "z" keys switched.

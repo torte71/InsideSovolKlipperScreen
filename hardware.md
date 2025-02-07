@@ -30,6 +30,7 @@ These single board computers are built by Makerbase and sold as Sovol's "Klipper
 - System on eMMC card
 - Internal I2C bus
 - 1GB RAM
+- RK3328 Rockchip CPU (Quad-Core ARM Cortex-A53)
 
 ## Board revisions
 
