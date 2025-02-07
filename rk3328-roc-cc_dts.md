@@ -1,15 +1,27 @@
 ---
-title: rk3328-roc-cc / rk3328-mkspi
+title: rk3328-roc-cc / rk3328-mkspi dtb
 layout: page
 parent: Modifications by Sovol
 ---
-# rk3328-roc-cc / rk3328-mkspi
+# rk3328-roc-cc / rk3328-mkspi dtb
 {: .no_toc }
 ### Contents:
 {: .no_toc }
 - TOC
 {:toc}
 ----
+
+## New devicetree files (for MKS-Klipad50)
+
+In the recent Armbian images for the MKS-Klipad50, the devicetree file is named "rk3328-mksklipad50.dtb".
+
+It is rewritten from scratch (based on the original Sovol/Makerbase rk3328-mkspi.dtb) to make it maintainable again, and it contains all changes for running on recent images (WiFi/SPI fix, disabled unnecessary stuff).
+
+The source can be seen [here](https://github.com/armbian/build/blob/main/patch/kernel/archive/rockchip64-6.12/dt/rk3328-mksklipad50.dts).
+
+The changes in addition to the WiFi/SPI fix can be seen in [this branch](https://github.com/torte71/armbian-mksklipad50/commits/merge/).
+
+## Original devicetree files
 
 Source of Sovol's rk3328-roc-cc.dtb from 5.16.20 kernel [download(source)](files/rk3328-roc-cc.dts)
 
@@ -60,7 +72,7 @@ There are 3 different versions of Sovol's dtb-file (my patched one not included)
      fc43e183d8477e1d2d92d652a9a9e165e65bb1951a9dbefd035a15fe116ebfde  rk3328-roc-cc.20231229-unused.dtb
 ```
    - Differences to dtb from armbian-update.deb:
-
+<details markdown="block"><summary>click here to unfold</summary>
 ```
      analog-sound:status = "disable";   # armbian-update: "okay";
      hdmi-sound:status = "okay";        # armbian-update: "disabled";
@@ -229,11 +241,12 @@ There are 3 different versions of Sovol's dtb-file (my patched one not included)
                 wifi_enable_h = "/pinctrl/sdio-pwrseq/wifi-enable-h";
                 sdio_pwrseq = "/sdio_pwrseq0";
 ```
-
+</details>
 
 
 ## Contents of rk3328-roc-cc.dts (decompiled from armbian-update.deb:rk3328-roc-cc.dtb)
 
+<details markdown="block"><summary>click here to unfold</summary>
 ```
 /dts-v1/;
 
@@ -3185,6 +3198,7 @@ There are 3 different versions of Sovol's dtb-file (my patched one not included)
 	};
 };
 ```
+</details>
 
 ## WiFi / spi-dev patch
 
