@@ -169,6 +169,9 @@ Modifications from Sovol useful for this image:
 
   * Splash screen
     * Afaik it's not possible to directly use Sovols original boot animation, as it is in a different format (old kernel based vs. actual plymouth). The file resides in `/usr/lib/firmware/bootsplash.armbian` and is ~250MB big. I haven't found a way to decompile it into separate pictures - if someone does, it will probably be possible to "cook" a plymouth style boot animation from it.
+      * Rebuilding splash screens should be possible using [bootsplash-packer](https://github.com/armbian/build/tree/master/packages/blobs/splash) from the "armbian/build" repository (do `git clone https://github.com/armbian/build` and find it in `./packages/blobs/splash/`).\
+        Source of the [linux-bootsplash](https://github.com/philmmanjaro/linux-bootsplash) with [documentation](https://github.com/philmmanjaro/linux-bootsplash/blob/master/0010-bootsplash.patch)\
+	(thanks to nubecoder for [investigation](https://github.com/torte71/InsideSovolKlipperScreen/issues/3#issuecomment-2585248153))
     * Enable plymouth splash screen:
       * Become root: `sudo su` (enter password when asked)
       * Edit `/boot/armbianEnv.txt` and change it to `bootlogo=true`

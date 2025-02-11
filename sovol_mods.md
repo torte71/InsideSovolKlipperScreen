@@ -15,7 +15,7 @@ has_toc: false
 
 Please note that this is just work-in-progress.  
 The changes listed here may not be complete and are just quickly tested.  
-Thanks to Vasyl Gontar for his additions/corrections to this list.
+Thanks to Vasyl Gontar and nubecoder for their additions/corrections to this list.
 
   * KlipperScreen
     * incomplete ".git" directory (throws errors on KIAUH update page)
@@ -64,7 +64,9 @@ Thanks to Vasyl Gontar for his additions/corrections to this list.
     * used by `makerbase-soft-shutdown.service`
   * hid-flash
     * **unknown binary, source code missing**
-    * probably precompiled `klipper/lib/hidflash`
+    * ~~probably precompiled `klipper/lib/hidflash`~~
+    * probably taken from [MS1987/STM32_HID_Bootloader](https://github.com/MS1987/STM32_HID_Bootloader/)\
+      (thanks to nubecoder for [investigation](https://github.com/torte71/InsideSovolKlipperScreen/issues/3#issue-2781797653))
     * <details markdown="block"><summary>click to see references</summary>
 ```
 /home/mks/ff-hid-flash.txt:Binary file /home/mks/_root/hid-flash matches
@@ -103,6 +105,8 @@ Binary file /root/hid-flash matches
 
   * uart
     * **unknown binary, source code missing**
+    * probably TFT [firmware uploader](https://github.com/QIDITECH/QIDI_PLUS3/blob/main/main.cpp#L95) for QIDI_PLUS3\
+      (thanks to nubecoder for [investigation](https://github.com/torte71/InsideSovolKlipperScreen/issues/3#issue-2781797653))
     * references:
 ```
 (tons of references found -> left out)
@@ -111,6 +115,8 @@ Binary file /root/hid-flash matches
 
   * udp_server
     * **unknown binary, source code missing**
+    * webserver that changes `/root/www/dev_info.txt`, seems related to QIDI printers\
+      (thanks to nubecoder for [investigation](https://github.com/torte71/InsideSovolKlipperScreen/issues/3#issue-2781797653))
     * references:
 ```
 /var/lib/dpkg/info/makerbase-client.md5sums:6f515dc45b55e81f496c64036318c75e  root/udp_server
@@ -122,6 +128,11 @@ Binary file /var/lib/selinux/default/active/policy.kern matches
 ----
 
 ## Services
+
+### Sources of Makerbase services
+  * The files below have been collected (and repackaged) from the original Sovol KlipperScreen images
+  * The [MS1987/SOVOLMKDEB](https://github.com/MS1987/SOVOL_MKDEB) repository seem to be the source of the original packages\
+    (thanks to nubecoder for [investigation](https://github.com/torte71/InsideSovolKlipperScreen/issues/3#issue-2781797653))
 
 ### makerbase-auto-fresh.service
   * **Installs system updates**
@@ -190,7 +201,9 @@ Binary file /var/lib/selinux/default/active/policy.kern matches
 
 ### power loss recovery (plr)
   * **resumes print after power failure**
-  * origin: https://github.com/The--Captain/plr-klipper
+  * ~~origin: https://github.com/The--Captain/plr-klipper~~
+  * seems to be based on [YUMI_PLR](https://github.com/Yumi-Lab/YUMI_PLR)\
+    (thanks to nubecoder for [investigation](https://github.com/torte71/InsideSovolKlipperScreen/issues/3#issue-2781797653))
   * Used files:
     * [~/printer_data/config/plr.cfg](files/plr.cfg)
     * [~/plr.sh](files/plr.sh)
