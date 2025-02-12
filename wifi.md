@@ -2,7 +2,6 @@
 title: Wifi antenna
 layout: page
 parent: Hardware
-//nav_order: 10
 ---
 # Wifi antenna
 {: .no_toc }

@@ -2,7 +2,6 @@
 title: Updating
 layout: page
 parent: Original firmware (by Sovol)
-//nav_order: 6
 ---
 # Updating
 {: .no_toc }

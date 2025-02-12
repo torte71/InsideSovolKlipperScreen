@@ -2,7 +2,6 @@
 title: Rebuilding on Armbian-mainline v25.2 (MKS-PI)
 layout: page
 parent: Custom firmware archive
-//nav_order: 18
 has_toc: false
 ---
 # Rebuilding on Armbian-mainline v25.2 (MKS-PI)
