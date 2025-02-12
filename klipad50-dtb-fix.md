@@ -1,8 +1,8 @@
 ---
 title: Klipad50 DTB fix
 layout: page
-parent: Rebuilding on Armbian-mainline v25.2
-nav_order: 17
+nav_order: 2
+parent: Rebuilding on Armbian-mainline v25.2 (MKS-PI)
 ---
 # Klipad50 DTB fix
 {: .no_toc }

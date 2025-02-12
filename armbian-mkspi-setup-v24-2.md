@@ -1,7 +1,7 @@
 ---
 title: Rebuilding on Armbian v24.2 (MKS-PI)
 layout: page
-nav_order: 16
+nav_order: 999
 parent: Custom firmware archive
 has_toc: false
 ---

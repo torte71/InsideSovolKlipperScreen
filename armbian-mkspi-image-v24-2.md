@@ -2,7 +2,6 @@
 title: Sovolized Armbian Klipper Image v24.2 (MKS-PI)
 layout: page
 parent: Rebuilding on Armbian v24.2 (MKS-PI)
-nav_order: 17
 ---
 # Sovolized Armbian Klipper Image v24.2 (MKS-PI)
 {: .no_toc }
