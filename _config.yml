@@ -27,6 +27,7 @@ callouts:
 
 plugins:
   - jekyll-seo-tag
+  - jekyll-sitemap
 #  - jekyll-relative-links
 
 compress_html:
@@ -42,6 +43,10 @@ defaults:
       path: ""
     values:
       image: /files/mks-klipad50-1536x864.png
+  - scope:
+      path: "google*.html"
+    values:
+      sitemap: false
 
 aux_links:
   GitHub: https://github.com/torte71/InsideSovolKlipperScreen
