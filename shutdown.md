@@ -56,7 +56,7 @@ To power it on, execute `hs110_on.cmd`.
 
 ### hs110_off.cmd
   * Replace the "192.168.1.60" with the actual IP address of your HS110 wifi power plug.
-  * See <#troubleshooting> if this command does not power off the device  
+  * See [Troubleshooting](#troubleshooting) if this command does not power off the device  
 ```
 tplink_smartplug.py -t 192.168.1.60 -c off
 ```
