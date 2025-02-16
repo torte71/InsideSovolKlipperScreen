@@ -61,8 +61,8 @@ The settings for these LEDs can be found in following directories:
 To change them, you must either be "root" or you change their permissions to allow e.g. the user "mks" writing to it.
 The easiest way is adding following commands to `/etc/rc.local`:
 ```
-chown mks:mks /sys/class/leds/firefly\:blue\:user/\*
-chown mks:mks /sys/class/leds/firefly\:green\:power/\*
+chown mks:mks /sys/class/leds/firefly:blue:user/*
+chown mks:mks /sys/class/leds/firefly:green:power/*
 ```
 
 After a reboot, the following commands will work for user "mks".
