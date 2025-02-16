@@ -13,6 +13,7 @@ nav_order: 1
 
 ## Hardware
   * [Hardware](hardware.html) description of the MKS Klipad50
+  * [GPIO naming](gpio_naming.html)
   * Replaced [WiFi antenna](wifi.html)
 
 ## [Firmware](firmware.html)
