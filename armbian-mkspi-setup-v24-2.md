@@ -150,11 +150,7 @@ Modifications from Sovol useful for this image:
       * Log into the device (ssh/putty/serial)
       * `sudo dpkg -i printer_data/gcodes/makerbase-beep-service.deb`
       * (change the path, if you've uploaded to a different location)
-      * fix access rights to gpio82:
-        * `sudo nano /etc/rc.local`
-        * add following lines (before the `exit 0` line)
-        * `chgrp mks /sys/class/gpio/gpio82/value`
-        * `chmod g+w /sys/class/gpio/gpio82/value`
+      * (Modifying `/etc/rc.local`, as stated in prior versions, is not required)
     * To uninstall:
       * `sudo dpkg -r makerbase-beep-service`
 
