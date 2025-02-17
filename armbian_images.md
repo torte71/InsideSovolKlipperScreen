@@ -14,11 +14,34 @@ nav_order: 1
 
 Support for the MKS-Klipad50 board is now integrated in mainline Armbian.
 
-That means, that the kernel (and related stuff) can now simply be updated just like any other package, without any hazzles from overwritten devicetree files.
+That means, that the kernel (and related stuff) can now simply be updated just like any other package, without any hazzles from overwritten devicetree files and similar problems.
 
-## Download locations
-- Custom [Images](https://github.com/torte71/armbian-mksklipad50) on GitHub
-- Community Images on Armbian (coming soon)
+## Download options
+
+- **Latest MKS-Klipad50 [images](https://www.armbian.com/mks-klipad50/) on Armbian**
+- **Community [releases](https://github.com/armbian/community/releases/) on Armbian**\
+  (Make sure to choose images with "Mksklipad50" in their name)
+
+### Available image types
+- Debian Minimal/IOT
+  - Smallest images containing just a minimal set of installed packages
+  - Require some work replacing networkd with NetworkManager (for installing KlipperScreen)
+
+- Ubuntu Server
+  - Comes with some more preinstalled packages compared to Minimal/IOT
+  - Network setup (for installing KlipperScreen) is a bit easier, as NetworkManager is already installed and configured
+
+- Ubuntu Desktop
+  - These images don't really make sense on that device and won't be build in the future.
+
+### Why not Debian/Server?
+That's for maintainability reasons:
+- Armbian automatic builds do not offer all possible combinations of distributions (Debian, Ubuntu) and package selections (Minimal, Server, Desktop) due to limited resources.
+- Debian/Server is a combination currently not offered for Armbian automatic builds.
+- Providing my own Debian/Server builds would require constant work keeping them up to date.
+- The Ubuntu images contain just a small subset of the original Ubuntu setup:
+  - All proprietary "Canonical" stuff has been removed in the Armbian Ubuntu images.
+  - Basically it is a Debian image, just with some more recent packages.
 
 ## What works well
   - Summarized: Everything that worked with the original image.
