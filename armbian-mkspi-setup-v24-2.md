@@ -229,6 +229,3 @@ Download and replace `/boot/dtb/rockchip/rk3328-roc-cc.dtb` with this version an
         * `CROWSNEST_ARGS="-c /home/mks/printer_data/config/crowsnest.conf -s 10"`
       * Make sure there aren't any backup copies of `~/printer_data/systemd/crowsnest.env`, as they might override the new setting.
 
-----
-Back to [start](index.html)
-

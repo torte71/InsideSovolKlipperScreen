@@ -125,5 +125,3 @@ change `/root/beep.sh`
         fi
 ```
 
-----
-Back to [start](index.html)

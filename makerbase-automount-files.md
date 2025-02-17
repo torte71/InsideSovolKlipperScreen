@@ -216,5 +216,3 @@ hash ntfs-3g && AUTOMOUNT_TYPE="ntfs-3g"
 AUTOMOUNT_OPTS='errors=remount-ro,relatime,utf8,users,flush,gid=100,dmask=000,fmask=111'
 ```
 
-----
-Back to [start](index.html)

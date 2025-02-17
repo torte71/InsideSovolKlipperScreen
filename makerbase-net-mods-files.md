@@ -30,5 +30,3 @@ ExecStartPost=/usr/sbin/rfkill unblock wifi
 WantedBy=multi-user.target
 ```
 
-----
-Back to [start](index.html)

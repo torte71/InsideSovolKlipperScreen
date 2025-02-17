@@ -215,5 +215,3 @@ call hs110_off
 # Linux version
 Linux versions of these scripts are [available here](shutdown_linux).
 
-----
-Back to [start](index.html)

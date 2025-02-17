@@ -9,5 +9,3 @@ nav_order: 3
 
 ## [Custom firmware](firmware_custom.html) options
 
-----
-Back to [start](index.html)

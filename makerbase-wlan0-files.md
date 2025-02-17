@@ -58,5 +58,3 @@ network={
 
 ```
 
-----
-Back to [start](index.html)

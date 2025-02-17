@@ -69,5 +69,3 @@ do
 done
 ```
 
-----
-Back to [start](index.html)

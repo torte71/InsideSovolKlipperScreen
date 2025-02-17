@@ -60,5 +60,3 @@ Section "InputClass"
 EndSection
 ```
 
-----
-Back to [start](index.html)

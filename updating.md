@@ -86,5 +86,3 @@ By removing that check, it should be possible to install the timelapse script.
 See Gergo's [Youtube guide](https://www.youtube.com/watch?v=86CFV_CbrvQ&t=457s)
 
 
-----
-Back to [start](index.html)

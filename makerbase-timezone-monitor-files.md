@@ -94,5 +94,3 @@ while true; do
 done
 ```
 
-----
-Back to [start](index.html)

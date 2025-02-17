@@ -69,6 +69,3 @@ was_interrupted = False
     * vasyl83's guide using two thumb drives: <https://github.com/vasyl83/SV07update>
     * You may also want to take a look on my guides how to [boot from external devices](booting.html) or [getting access](access.md) (both are quite technical)
 
-
-----
-Back to [start](index.html)

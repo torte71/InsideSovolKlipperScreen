@@ -167,8 +167,3 @@ echo Power off HS110 smartplug...
 bash hs110_off
 ```
 
-----
-Back to [shutdown](shutdown.html)
-
-----
-Back to [start](index.html)

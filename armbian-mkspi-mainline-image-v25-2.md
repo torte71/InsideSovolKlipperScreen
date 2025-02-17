@@ -95,7 +95,3 @@ The language has to be changed in KlipperScreen, Mainsail and Fluidd separately.
 
 Thanks to all who helped testing, bug chasing and documenting.
 Special thanks to Vasyl Gontar for his support and of course to Maxim Medvedev for his work re-creating the build-system for the Makerbase boards.
-
-----
-Back to [start](index.html)
-

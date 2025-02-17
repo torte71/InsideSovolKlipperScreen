@@ -112,7 +112,3 @@ Here you will find several ways to log into the KlipperScreen.
 
   * Putty: <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>
 
-
-----
-Back to [start](index.html)
-

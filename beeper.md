@@ -97,5 +97,3 @@ done
   * Make the shell script executable:
     * Execute `chmod +x /home/mks/printer_data/config/macros/macro-beep.sh`
 
-----
-Back to [start](index.html)

@@ -249,5 +249,3 @@ gcode:
  
 ```
 
-----
-Back to [start](index.html)

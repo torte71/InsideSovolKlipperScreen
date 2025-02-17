@@ -184,5 +184,3 @@ We are done.
 ## A last tip
 When there is no usb-drive inserted, create a directory called "_NO_USB_MOUNTED_" (or whatever name you like) in the gcode directory. If the usb-drive is not inserted or broken, this directory will be visible and you know, that gcode files will not end up on the usb-drive, but on the internal file system.
 
-----
-Back to [start](index.html)
