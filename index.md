@@ -56,11 +56,6 @@ nav_order: 1
   * [SD-card not accepted](updating_klipper.html#sd-card-not-accepted)
 
 ## [Configuring](configuring.html)
-  * [Logging, etc.](configuring.html#logging-etc)
-    * [Timezone updates spamming syslog](configuring.html#timezone-updates-spamming-syslog)
-  * [Extending storage space for gcode files](gcode_storage.html#expand-g-code-storage-space)
-  * [Beeper](beeper.html) macro (for use inKlipper)
-  * [Screen rotation](screen.html) for KlipperScreen/Xorg
   * [Orca profiles](orca_profiles.html)
     * [joescalon SV06+ profile+buildplate](orca_profiles.html#joescalon-sv06-profilebuildplate)
       * [my (based on joescalon)](orca_profiles.html#my-based-on-joescalon)
@@ -68,6 +63,12 @@ nav_order: 1
     * [joescalon SV07+ profile+buildplate](orca_profiles.html#joescalon-sv07-profilebuildplate)
     * [Christian Vicks profiles](orca_profiles.html#christian-vicks-profiles)
     * [Automatic z-offset adjustment per filament](orca_profiles.html#automatic-z-offset-adjustment-per-filament)
+  * [Beeper](beeper.html) macro (for use inKlipper)
+  * [Extending storage space for gcode files](gcode_storage.html#expand-g-code-storage-space)
+  * [Screen rotation](screen.html) for KlipperScreen/Xorg
+  * [Status LEDs](status_leds.html) customization
+  * [Timezone](timezone.html) configuration
+    * [Timezone updates spamming syslog](timezone.html#sovol-image-timezone-updates-spamming-syslog)
 
 
 ## Troubleshooting
