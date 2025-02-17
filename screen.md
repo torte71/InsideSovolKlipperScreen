@@ -44,7 +44,7 @@ EndSection
 # expand to twice the size horizontally   0.5 0 0 0 1 0 0 0 1
 ```
 
-    * portrait mode for redrathnure's image:
+    * portrait mode for recent images:
 ```
 Section "Device"
         Identifier "default"

@@ -107,7 +107,7 @@ if [ -d "/sys/class/gpio/gpio$BEEP_GPIO" ]; then
 fi
 ```
 
-## required changes for recent images (redrathnure)
+## Required changes for recent images
 change `/root/beep.sh`
   * from:
 ```

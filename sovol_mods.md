@@ -22,7 +22,8 @@ Thanks to Vasyl Gontar and nubecoder for their additions/corrections to this lis
     * revision must be around 926d78de01efb114d00e021364b04bbe6f28690b (Mar 8 2023)
     * translations are younger (~ Jun 16 2023)
     * some changes (theme "sovol dark" instead of "z-bolt")
-
+    * added timezone config screen for first-time setup
+    * modifications for PowerLossRecovery?
 
   * fluidd: git information removed?
   * mainsail: git information removed?
@@ -32,12 +33,10 @@ Thanks to Vasyl Gontar and nubecoder for their additions/corrections to this lis
     * ~/plr.sh modified? old version?: G31 (called from CANCEL_PRINT) calls ~/clear_plr.sh
 
   * Kernel:
-    * (unsure, if changed - but not working for all later kernels -> spi-dev missing)
-      * "/boot/dtb/rockchip/overlay/rockchip-fixup.scr"
-      * "/boot/dtb/rockchip/rk3328-roc-cc.dtb"
-      * see https://irq5.io/2018/07/24/boot-time-device-tree-overlays-with-u-boot/
-      * see https://github.com/redrathnure/armbian-mkspi
-    * Serial console (u-boot messages): 1500000,8,n,1
+    * Changes for 5:3 HDMI screen, strangely renamed SPI devicenodes
+      * modified "/boot/dtb/rockchip/rk3328-roc-cc.dtb"
+      * see <https://github.com/armbian/build/compare/master...makerbase-mks:armbian-build:master>
+      * see <https://github.com/redrathnure/armbian-mkspi>
 
   * u-boot (bootloader)
     * <del>Sovols bootloader allows booting from an external device (USB-stick)</del>
