@@ -46,7 +46,16 @@ That means, that the kernel (and related stuff) can now simply be updated just l
     - Original image behaviour: Indentical
     - There is a power button, which behaves like an ACPI-power-button (press 3 seconds to power off, press again to power up) and there is a rk805-powerkey device detected and set up as input device, but I could not get any events from it, neiter in the original image, nor in this version.
 
-### Enable unsupported devices (devicetree overlays)
+  - RTL8152-USB3-ethernet adapter on USB3-port
+    - This specific usb-ethernet adapter tends to stop working in the usb3 port after some time.
+      - Constant error messages: `xhci-hcd xhci-hcd.0.auto: WARN: HC couldn't access mem fast enough for slot 1 ep 6`
+      - This does not happen when plugged into an USB-2 port.
+      - Other devices on that USB-3 port seem not to be affected. (Needs more investigation)
+      - After removing the usb-ethernet, the driver needs several seconds before it detects the removal.
+        - Once the removal is detected and `usb usb5-port1: attempt power cycle` appears in dmesg output, the adapter seems to work OK after re-inserting it into the same usb3 port.
+    - Similar issue: <https://forum.radxa.com/t/rtl8153-usb3-not-working/2888>
+
+## Enable unsupported devices (devicetree overlays)
 
 There are two devicetree overlays that enable some devices for experiments, but they are probably not useful for normal users.
 
