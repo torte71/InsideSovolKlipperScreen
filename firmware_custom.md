@@ -6,10 +6,23 @@ nav_order: 1
 ---
 # Custom firmware options
 
-## Please be patient a little more...
+## "Barebone" Armbian images
 
-### The MKS-Klipad50 changes have just been included into mainline Armbian (February 2025).
+Armbian provides regularly updated image files for the MKS-Klipad50.
 
-### Updated build instructions and ready Klipper images will follow very soon.
+These images come with a minimal software setup, there are no Klipper components installed.
 
-#### See the [custom firmware archive](firmware_custom_archive.html) for previous instructions and images.
+See [Armbian images](armbian_images.html#download-options) for a description of the different types and download locations.
+
+## Klipper setup guide
+
+You can follow my [rebuilding guide](rebuilding.html), a step-by-step instruction to install Klipper and Makerbase/Sovol additions using the barebone Armbian images.
+
+## Ready Klipper images
+
+A readily prepared image that mimicks the original Sovol image will follow soon on this [page](image.html).
+
+You can use one of the previous images from the [custom firmware archive](firmware_custom_archive.html).
+
+These old images can be [upgraded](upgrading_mkspi.html) to use the current kernels, the resulting image will be almost identical to the recent ones.
+
