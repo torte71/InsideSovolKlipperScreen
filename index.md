@@ -19,7 +19,7 @@ nav_order: 1
 ## [Firmware](firmware.html)
 
 ## [Custom firmware options](firmware_custom.html)
-  * [Archive](custom_firmware_archive.html)
+  * [Archive](firmware_custom_archive.html)
     * Armbian mainline v25.2 (MKS-PI)
       * [Rebuilding (MKS-PI v25.2)](armbian-mkspi-mainline-setup-v25-2.html)
       * [Sovolized Armbian Klipper Image (MKS-PI v25.2)](armbian-mkspi-mainline-image-v25-2.html)
