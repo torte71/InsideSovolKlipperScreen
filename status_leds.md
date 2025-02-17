@@ -5,6 +5,12 @@ parent: Configuring
 nav_order: 5
 ---
 # Status LEDs
+{: .no_toc }
+### Contents:
+{: .no_toc }
+- TOC
+{:toc}
+----
 
 ## Customizing the status LEDs
 
@@ -50,3 +56,30 @@ Note: In the original Sovol image, these LEDs have wrong names (but work identic
 - Blue LED: `firefly:yellow:user`
 - Green LED: `firefly:blue:power`
 
+### Additional trigger kernel modules
+
+More triggers are available through kernel modules
+
+- [ledtrig-backlight](https://www.kernel.org/doc/Documentation/devicetree/bindings/leds/backlight/gpio-backlight.yaml): Turns on/off when the screen is blanked/unblanked
+- [ledtrig-pattern](https://www.kernel.org/doc/Documentation/devicetree/bindings/leds/leds-trigger-pattern.txt): Customizable blinking pattern, [ABI](https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-class-led-trigger-pattern)
+- [ledtrig-tty](https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-class-led-trigger-tty): Trigger by TTY activity
+- [ledtrig-gpio](https://www.kernel.org/doc/Documentation/devicetree/bindings/leds/common.yaml): Default triggers as decribed above
+- [ledtrig-transient](https://www.kernel.org/doc/Documentation/leds/ledtrig-transient.txt)
+- [ledtrig-oneshot](https://docs.kernel.org/leds/ledtrig-oneshot.html), [ABI](https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-class-led-trigger-oneshot)
+- ledtrig-timer
+- [ledtrig-camera](https://www.kernelconfig.io/config_leds_trigger_camera) same as [led-flash](https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-class-led-flash)?
+- [ledtrig-netdev](https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-class-led-trigger-netdev): Trigger by network activity
+
+#### Example for ledtrig-netdev: Blink on WiFi activity
+
+- Become root: `sudo su`
+- Load kernel module: `modprobe ledtrig-netdev`
+- Change into led's sysfs directory: `cd /sys/class/leds/firefly:blue:user`
+- Set "trigger" to "netdev": `echo netdev > trigger`
+- Select "wlan0" as trigger source: `echo wlan0 > device_name`
+- Blink on RX and TX activity: `echo 1 > rx ; echo 1 > tx`
+- Log out from "root" account: `exit`
+
+Note: Options like "device_name", "rx", "tx" and the "netdev" trigger are only available after loading the netdev kernel module.
+
+To make these changes permanent, you can add the required commands e.g. to `/etc/rc.local`.
