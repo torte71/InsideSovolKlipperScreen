@@ -36,6 +36,13 @@ You have the choice between the [community-builds](https://github.com/armbian/co
 
 ## Steps to create a "sovolish" Klipper installation based on these images:
 
+{: .important-title }
+> Tip
+>
+> If you have trouble following these steps, you may take a look at Vasyl's guide:
+> <https://github.com/vasyl83/SV07update>\
+> It covers a previous image version, but can still help understanding the steps on this guide a little better.
+
 ### Downloading and flashing the image
 - Choose an image file from the above links. I recommend Maxim's images, as they are easier to set up.  
   - Images used for testing:

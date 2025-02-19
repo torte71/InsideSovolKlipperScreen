@@ -11,6 +11,13 @@ nav_order: 4
 {:toc}
 ----
 
+{: .important-title }
+> Tip
+>
+> If you have trouble following these steps, you may take a look at Vasyl's guide:
+> <https://github.com/vasyl83/SV07update?tab=readme-ov-file#12-updating-the-host-mcu-rpi--mcu-firmware>\
+> It explains the same steps in a more beginner-friendly way.
+
 ## Recompiling Klipper
 - First [log in](access.html#ssh-putty) to the device using ssh or putty.
 - You need to recompile and install klipper *twice*.  

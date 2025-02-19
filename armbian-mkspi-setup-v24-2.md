@@ -16,6 +16,13 @@ has_toc: false
 {: .note }
 > There is a [newer version](armbian-mkspi-mainline-setup-v25-2.html) for mainline Armbian v25.2 (MKS-PI)
 
+{: .important-title }
+> Tip
+>
+> If you have trouble following these steps, you may take a look at Vasyl's guide:
+> <https://github.com/vasyl83/SV07update>\
+> It explains the same steps in a more beginner-friendly way.
+
 Sovol's KlipperScreen is running on debian buster, which is outdated now, meaning you can no longer update system packages like ssh, etc.
 
 The default armbian kernels do not work, e.g. the screen will stay black (no /dev/spidev*.* gets created).
