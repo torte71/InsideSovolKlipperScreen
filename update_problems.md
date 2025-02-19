@@ -1,5 +1,5 @@
 ---
-title: Updating
+title: Update problems
 layout: page
 parent: Original firmware (by Sovol)
 ---
