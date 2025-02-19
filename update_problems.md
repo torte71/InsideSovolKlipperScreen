@@ -3,7 +3,7 @@ title: Updating
 layout: page
 parent: Original firmware (by Sovol)
 ---
-# Updating
+# Update problems
 {: .no_toc }
 ### Contents:
 {: .no_toc }
@@ -13,11 +13,7 @@ parent: Original firmware (by Sovol)
 
 <!-- See also: <https://github.com/3DPrintDemon/How-to-Update-Sovol-Klipper-Screen-To-Latest-Klipper-SV06-and-SV07 -->
 
-## Update Manager
-
-## Problems
-
-### System / Kernel (black screen)
+## System / Kernel (black screen)
 
 - **Updating "System" breaks KlipperScreen**  
   - **Cause**: Stock armbian kernels are incompatible with KlipperScreen
@@ -51,7 +47,7 @@ parent: Original firmware (by Sovol)
       - Option c) Freeze the kernel using "armbian-config".
 
 
-### Armbian Buster: End Of Life
+## Armbian Buster: End Of Life
 Sovol's KlipperScreen still uses the outdated Armbian "buster" version, they've not released a newer firmware version to the current day (Oct. 2024).
 The repositories for this version have been taken offline in spring 2024.
   * Updating the system packages using apt (e.g. `apt-get update` or `apt-get upgrade`) does not work any longer, because these updates do not exist any more.
@@ -66,7 +62,7 @@ The repositories for this version have been taken offline in spring 2024.
     * You can also find a readily prepared image (built as on my guide) here: [Image (MKS-PI v24.2)](armbian-mkspi-image-v24-2.html)
 
 
-### KlipperScreen / Python 3.8
+## KlipperScreen / Python 3.8
 The last version of KlipperScreen that works with python 3.7 is v0.4.1.
 I guess the easiest fix is resetting KlipperScreen to that revision and never updating it afterwards. That means:
   * Log into the KlipperScreen using SSH or Putty and enter the following commands:
@@ -80,7 +76,7 @@ Other options are:
   * Maybe its possible to manually download, compile and install python 3.8, but I'd expect many issues with that (possibly missing dependencies, too little free space on the emmc). <https://devguide.python.org/getting-started/setup-building/>
 
 
-### Moonraker Timelapse
+## Moonraker Timelapse
 The moonraker timelapse script has a dependency check at the starts, which prevents the installation on the outdated Armbian buster version.
 By removing that check, it should be possible to install the timelapse script.
 See Gergo's [Youtube guide](https://www.youtube.com/watch?v=86CFV_CbrvQ&t=457s)

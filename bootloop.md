@@ -14,7 +14,7 @@ parent: Troubleshooting
 ## Some causes for the looping boot animation
   * Damaged "saved_variables.cfg"
   * Other damaged configuration files (printer.cfg, moonraker.cfg, etc.)
-  * KlipperScreen in a too recent version (depends on python-3.8, which is not available for Sovol's outdated armbian buster). See [klipperscreen:python-3.8](updating.html#klipperscreen--python-38) for a fix.
+  * KlipperScreen in a too recent version (depends on python-3.8, which is not available for Sovol's outdated armbian buster). See [klipperscreen:python-3.8](update_problems.html#klipperscreen--python-38) for a fix.
 
 ## Typical causes for the damaged files
   * No more space left on the filesystem

@@ -21,5 +21,5 @@ nav_order: 6
   - [Booting](booting.html)
 
 ## Update problems (original Sovol image)
-  - [Updating](updating.html)
+  - [Update problems](update_problems.html)
 
