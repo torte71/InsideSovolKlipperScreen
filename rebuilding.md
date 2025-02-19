@@ -95,6 +95,11 @@ See [Armbian images](armbian_images.html#download-options) for a description of 
   - Select your access point in the dialog
   - Enter your WiFi password
 
+{: .note :}
+> There is a bug in v25.5.0-trunk.4 which prevents wifi setup at boot.\
+> Execute `armbian-config --cmd BNS001`\
+> Select wlan0, \<Configure\>, your AP, enter password, select "dhcp", confirm MAC with \<Enter\>
+
 - Locale setup
   - When asked "Set user language based on your location?":
     - Choose what you want. I prefer "no", because untranslated error-messages give better online search results
