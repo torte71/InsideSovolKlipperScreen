@@ -54,14 +54,14 @@ gcode:
   RUN_SHELL_COMMAND CMD=beep PARAMS='{beep_count} {beep_duration} {pause_duration}'
 
 [gcode_shell_command beep]
-command: bash /home/mks/printer_data/config/macros/macro-beep.sh
+command: bash /home/mks/printer_data/config/macro/macro_beep.sh
 timeout: 10
 verbose: False
 ```
 {% endraw  %}
 
-## Add shell script ("macro-beep.sh")
-  * Create `/home/mks/printer_data/config/macros/macro-beep.sh`:
+## Add shell script ("macro_beep.sh")
+  * Create `/home/mks/printer_data/config/macro/macro_beep.sh`:
 
 {% raw  %}
 ```
@@ -95,5 +95,5 @@ done
 ```
 {% endraw  %}
   * Make the shell script executable:
-    * Execute `chmod +x /home/mks/printer_data/config/macros/macro-beep.sh`
+    * Execute `chmod +x /home/mks/printer_data/config/macro/macro_beep.sh`
 
