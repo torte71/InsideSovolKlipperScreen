@@ -13,13 +13,6 @@ has_toc: false
 {:toc}
 ----
 
-{: .warning }
-> There is an upcoming Armbian release planned for February 20th.
->
-> Until then the version numbers will change frequently!
->
-> You may want to wait for the release/versions to settle.
-
 Since February 2025, the MKS-Klipad50 board is natively supported by Armbian.
 
 The required Makerbase kernel patches ported by Maxim Medvedev have been integrated into mainline Armbian in December 2024.
@@ -50,9 +43,9 @@ See [Armbian images](armbian_images.html#download-options) for a description of 
 - Choose an image file from the above links.\
   (The server images are a little bit easier to set up)
   - Images used for testing:
-    - Ubuntu noble server image: (link will follow soon) <!-- [v0.1.0-25.05.0-current](https://github.com/torte71/mksklipad50-armbian-images/releases/download/0.0.2/Armbian-unofficial_25.02.0-trunk_Mksklipad50_bookworm_current_6.12.12.img.xz) -->
-    - Debian bookworm minimal image: <https://dl.armbian.com/mksklipad50/Bookworm_current_minimal>
-- Extract the image (e.g. using [7zip](https://www.7-zip.org/)).
+    - Ubuntu noble server image: [Noble-Server-v25.5.0-trunk.87](https://github.com/armbian/community/releases/download/25.5.0-trunk.87/Armbian_community_25.5.0-trunk.87_Mksklipad50_noble_current_6.12.15.img.xz)
+    - Debian bookworm minimal image: [Bookworm-Minimal-v25.5.0-trunk.87](https://github.com/armbian/community/releases/download/25.5.0-trunk.87/Armbian_community_25.5.0-trunk.87_Mksklipad50_bookworm_current_6.12.15_minimal.img.xz)
+- Extract the image (e.g. using [7zip](https://www.7-zip.org/)) - or use Etcher, which can write .img.xz images directly.
 - Write the extracted .img file to the eMMC card (e.g. using [Balena Etcher](https://www.balena.io/etcher/)).
 
 ### Accessing the screen
@@ -94,11 +87,6 @@ See [Armbian images](armbian_images.html#download-options) for a description of 
   - Answer "y" to "connect via wireless?" (or just press ENTER)
   - Select your access point in the dialog
   - Enter your WiFi password
-
-{: .note :}
-> There is a bug in v25.5.0-trunk.4 which prevents wifi setup at boot.\
-> Execute `armbian-config --cmd BNS001`\
-> Select wlan0, \<Configure\>, your AP, enter password, select "dhcp", confirm MAC with \<Enter\>
 
 - Locale setup
   - When asked "Set user language based on your location?":

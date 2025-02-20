@@ -19,7 +19,7 @@ That means, that the kernel (and related stuff) can now simply be updated just l
 ## Download options
 
 - **Latest MKS-Klipad50 [images](https://www.armbian.com/mks-klipad50/) on Armbian**
-- **Community [releases](https://github.com/armbian/community/releases/) on Armbian**\
+- **Community [releases](https://github.com/armbian/community/releases/) on Armbian** (will be replaced by standard releases soon)\
   (Make sure to choose images with "Mksklipad50" in their name)
 
 ### Available image types
@@ -32,7 +32,7 @@ That means, that the kernel (and related stuff) can now simply be updated just l
   - Network setup (for installing KlipperScreen) is a bit easier, as NetworkManager is already installed and configured
 
 - Ubuntu Desktop
-  - These images don't really make sense on that device and won't be build in the future.
+  - These images don't really make sense on that device and won't be built in the future.
 
 ### Why not Debian/Server?
 That's for maintainability reasons:
