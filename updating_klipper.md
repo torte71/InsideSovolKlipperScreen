@@ -67,3 +67,55 @@ make menuconfig
 
 Some info about SD-cards taken from [here](https://forum.sovol3d.com/t/sv06-mainboard-brick-after-updating-sovol-firmware/862/68).
 
+## SD-card formatting
+
+{: .note :}
+> Use these steps only if your card is max. 32GB sized.\
+> If your card is bigger than 32GB, skip these steps and continue with [Partitioning the SD-card](#partitioning-the-sd-card).
+
+1. Insert the SD-card to your PC.
+1. Open the explorer. Locate the card, click it with the right mouse button and select "Format":\
+![sd-01-select](files/sd-01-select.png)
+1. Use *exactly* these settings (FAT32, 4096bytes), others do *not* work.\
+   (If there is no "FAT32" option, then the card has the wrong size. It needs to be 2GB to 32GB.)
+![sd-02-format-all](files/sd-02-format-all.png)
+![sd-03-format-fat32](files/sd-03-format-fat32.png)
+![sd-04-format-4096bytes](files/sd-04-format-4096bytes.png)
+1. Continue at [Flashing the printer board ("mcu")](#flashing-the-printer-board-mcu)
+
+## Partitioning the SD-card
+
+{: .note :}
+> Use these steps only if your card is bigger than 32GB.\
+> For smaller cards follow the [SD-card formatting](#sd-card-formatting) steps.
+
+1. Press \<Windows\>+R key combination, enter "diskmgmt.msc" and press \<Enter\>.
+![partition-01-select](files/partition-01-select.png)
+1. Locate the SD-card, right click it in the lower pane and select "delete volume":
+![partition-02-delete-volume](files/partition-02-delete-volume.png)
+1. Right click the lower pane again and select "create new volume":
+![partition-03-new-volume](files/partition-03-new-volume.png)
+1. Press "Next" on the welcome screen:
+![partition-04-welcome](files/partition-04-welcome.png)
+1. Set the volume size to 8192 MB (allowed sizes are 2048 to 32767):
+![partition-05-new-volume-size](files/partition-05-new-volume-size.png)
+1. Make sure to use a drive-letter that is not in use e.g. by a network drive:
+![partition-06-new-volume-letter](files/partition-06-new-volume-letter.png)
+1. Make sure to set sector size to "4096" and filesystem is "FAT32" (other options will not work):
+![partition-07-new-volume-format](files/partition-07-new-volume-format.png)
+1. Select "next" in the confirmation dialogue:
+![partition-08-new-volume-confirm](files/partition-08-new-volume-confirm.png)
+1. Finally, the new partition will look like this:
+![partition-09-done](files/partition-09-done.png)
+
+## Flashing the printer board ("mcu")
+
+1. After formatting is done, copy the firmware file to the SD-card.\
+   *Remember to give it a different name for every(!) flash operation!*
+![sd-05-firmware](files/sd-05-firmware.png)
+1. Eject the SD-card from the PC.
+1. Power down the printer.
+1. Insert the SD-card to the printer (directly accessible on SV06/SV06+, on SV07/SV07+ you need to remove the front panel).
+1. Power on the printer and wait.
+1. If flashing was successful, Klipper will be able to connect to your printer.
+1. If Klipper is not able to connect to your printer after ~5 minutes, flashing did not work. Repeat the above steps.

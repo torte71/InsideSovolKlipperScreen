@@ -20,7 +20,7 @@ A ready-to-use replacement image for Sovol's KlipperScreen can be downloaded at:
     
 <https://github.com/torte71/mksklipad50-klipper-images/releases/tag/v24.2.0.03>
     
-(Extract it using [7zip](https://www.7-zip.org/))
+(Extract it using [7zip](https://www.7-zip.org/) - or use balena etcher, it can directly write .img.xz images.)
 
 It is based on Maxims Medvedevs image for Makerbase boards and using a recent armbian-bookworm.
 (Sovol's image based on armbian-buster is outdated, there are no packages available for it any longer. So you can't easily add any additional packages.)  
@@ -46,9 +46,10 @@ If you don't have that adapter, you can follow these guides for flashing using U
 Just follow its step to point 6 "Flashing the image onto EMMC" and switch the source ("if=") and destination ("of="),
 so it reads `dd of=backup.img if=/dev/mmcblk1 status=progress`.
 
+~~Instructions for updating the "mcu_firmware.bin" can be found in the following link (scroll down to "RENAME THE FILE", just before the photos of the printer).~~
+  * ~~<https://github.com/3DPrintDemon/How-to-Update-Sovol-Klipper-Screen-To-Latest-Klipper-SV06-and-SV07/tree/main#updating-the-host-mcu-rpi--mcu-firmware>~~
 
-Instructions for updating the "mcu_firmware.bin" can be found in the following link (scroll down to "RENAME THE FILE", just before the photos of the printer).
-  * <https://github.com/3DPrintDemon/How-to-Update-Sovol-Klipper-Screen-To-Latest-Klipper-SV06-and-SV07/tree/main#updating-the-host-mcu-rpi--mcu-firmware>
+Instructions for updating the "mcu_firmware.bin" can be found on the [Updating Klipper](updating_klipper.html) page.
 
 
 ## Contents of the image
