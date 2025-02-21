@@ -18,11 +18,11 @@ See [Armbian images](armbian_images.html#download-options) for a description of 
 
 You can follow my [rebuilding guide](rebuilding.html), a step-by-step instruction to install Klipper and Makerbase/Sovol additions using the barebone Armbian images.
 
-## Ready Klipper images
+## Ready "Klipperized" images
 
-A readily prepared image that mimicks the original Sovol image will follow soon on this [page](image.html).
+A readily prepared image that mimicks the original Sovol image is available on this [page](image.html).
 
-You can use one of the previous images from the [custom firmware archive](firmware_custom_archive.html).
+You can also use one of the previous images from the [custom firmware archive](firmware_custom_archive.html).
 
 These old images can be [upgraded](upgrading_mkspi.html) to use the current kernels, the resulting image will be almost identical to the recent ones.
 
