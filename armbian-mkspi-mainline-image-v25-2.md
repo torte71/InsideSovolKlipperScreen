@@ -18,7 +18,7 @@ A ready-to-use replacement image for Sovol's KlipperScreen can be downloaded at:
 
 <https://github.com/torte71/mksklipad50-klipper-images/releases/tag/v25.2.0.05>
 
-(Extract it using [7zip](https://www.7-zip.org/) - or use balena etcher, it can directly write .img.xz images.)
+(Extract it using [7zip](https://www.7-zip.org/))
 
 It is based on Maxims Medvedevs image for Makerbase boards and using a recent armbian-bookworm.
 (Sovol's image based on armbian-buster is outdated, there are no packages available for it any longer. So you can't easily add any additional packages.)
