@@ -12,7 +12,7 @@ has_toc: false
 ### Current firmware (based on MKS-Klipad50 images):
 
 - MKS-Klipad50 v25.5
-  - No ready built Klipper image yet
+  - Ready built [image](image.html)
   - Rebuilding [guide](rebuilding.html)
 
 ### Previous firmwares (based on MKS-PI images):
