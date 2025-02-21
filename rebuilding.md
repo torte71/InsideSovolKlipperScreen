@@ -62,7 +62,7 @@ See [Armbian images](armbian_images.html#download-options) for a description of 
       - Data bits: 8
       - Stop bits: 1
       - Parity: None
-      - Flow control: None
+      - Flow control: None (or use XON/XOFF to reduce some onscreen garbage)
   - Option 2) Direct access:
     - Plug an USB-keyboard into any of the device's USB ports
     - Disadvantages:
@@ -115,9 +115,9 @@ The next steps are **only required for the minimal image**
   - Press \<CTRL-X\>, "Y", \<ENTER\> to save and confirm the filename.\
     (This is also possible using armbian-config -\> "Localisation" -\> "Change System Hostname")
 
-- Install "git" (required for downloading KIAUH):  
-  - Execute `apt install git`
-  - The Ubuntu Server image already has "git" installed, so you can skip this step
+- Install "git" (required for downloading KIAUH) and "evtest" (required for makerbase-beep-service):
+  - Execute `apt install -y git evtest`
+  - The Ubuntu Server image already has "git" and "evtest" installed, so you can skip this step.
 
 ### Setting up Klipper
 
@@ -136,7 +136,7 @@ The next steps are **only required for the minimal image**
 ```
 cd
 git clone https://github.com/dw-0/kiauh
-cd /kiauh
+cd kiauh
 ./kiauh.sh
 ```
   - Use the default setting for *every* question (i.e. just press ENTER, unless it asks for a password)
@@ -177,17 +177,16 @@ EndSection
     - Press \<CTRL-X\> to quit
     - Press "Y" to save
     - Press ENTER to confirm filename
+    - Clean up additional Xorg config:\
+      It does not interfere with the above config, but it is cleaner to remove it to avoid duplicate configurations.
+      - Execute `sudo rm /etc/X11/xorg.conf.d/02-driver.conf`
     - Restart KlipperScreen:
       - Execute `sudo service KlipperScreen restart`
-  - Note for **Ubuntu Server** image:
-    - Opposed to Debian based images, the Ubuntu image comes with an additional XOrg config file `/etc/X11/xorg.conf.d/02-driver.conf`.\
-      It does not interfere with the above config, but it is cleaner to remove it to avoid duplicate configurations:\
-      `sudo rm /etc/X11/xorg.conf.d/02-driver.conf`
 
 - Set up numpy (required for input shaping)
   - Execute
 ```
-sudo apt install python3-numpy python3-matplotlib libatlas-base-dev libopenblas-dev
+sudo apt install -y python3-numpy python3-matplotlib libatlas-base-dev libopenblas-dev
 ~/klippy-env/bin/pip install -v numpy
 ```
 
@@ -212,9 +211,10 @@ sudo service klipper restart
   - Change following settings ("=" are unchanged defaults)
     - = Enable extra low-level configuration options: [ ]
     - \* Micro-controller Architecture: STMicroelectronics STM32
-    - \* Processor model: STM32F103
+    - = Processor model: STM32F103
     - \* Bootloader offset: 28KiB bootloader
     - \* Communication interface: Serial (on USART1 PA10/PA9)
+  - Press "Q" and "Y" to quit and save
   - Execute `make clean && make`
   - Copy "out/klipper.bin" to SD-card and rename it (must end in ".bin")  
     !!! Use a different name than that from prior updates !!!
@@ -288,6 +288,10 @@ dpkg -i plr-klipper.deb
       * Select a theme (e.g. "solar"): Execute `plymouth-set-default-theme solar ; update-initramfs -u`
       * Restart the system: Execute `reboot`
       * Themes are defined in `/usr/share/plymouth/themes/`
+
+### Cleaning up package cache
+This is not required, but you gain ~250MB of free space by removing old downloaded packages:
+- Execute `sudo apt clean`
 
 ### Adding printer.cfg
 If you have backups of your config files, you can upload them using mainsail or fluidd.
