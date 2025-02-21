@@ -66,8 +66,9 @@ That's for maintainability reasons:
       On the original image, "hwclock" always times out, even though gmac2phy is enabled in their configuration. So "we" are at least a bit better.
 
   - Power button
-    - Original image behaviour: Indentical
-    - There is a power button, which behaves like an ACPI-power-button (press 3 seconds to power off, press again to power up) and there is a rk805-powerkey device detected and set up as input device, but I could not get any events from it, neiter in the original image, nor in this version.
+    - Original image behaviour: Identical
+    - There is a power button, which behaves like an ACPI-power-button (press 3 seconds to power off, press again to power up) and there is a rk805-powerkey device detected and set up as input device. ~~but I could not get any events from it, neiter in the original image, nor in this version.~~
+      - Shutdown using this button *does* work, as long as aforementioned IRQ#33/IRQ#40 exception did not happen.
 
   - RTL8152-USB3-ethernet adapter on USB3-port
     - This specific usb-ethernet adapter tends to stop working in the usb3 port after some time.
@@ -77,6 +78,11 @@ That's for maintainability reasons:
       - After removing the usb-ethernet, the driver needs several seconds before it detects the removal.
         - Once the removal is detected and `usb usb5-port1: attempt power cycle` appears in dmesg output, the adapter seems to work OK after re-inserting it into the same usb3 port.
     - Similar issue: <https://forum.radxa.com/t/rtl8153-usb3-not-working/2888>
+
+  - Backlight not turned off for DPMS powersave
+    - Original image behaviour: Identical
+    - It is possible to use the gpio-backlight driver by adding a backlight node to the devicetree, then the backlight will be toggled whenever the screensaver gets activated/deactivated.
+      - There seems to be a bug in current kernels, which does not initialize the driver correctly. Once this gets resolved, I will add backlight support to the devicetree.
 
 ## Enable unsupported devices (devicetree overlays)
 
