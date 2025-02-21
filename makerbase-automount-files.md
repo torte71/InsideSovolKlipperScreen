@@ -216,3 +216,28 @@ hash ntfs-3g && AUTOMOUNT_TYPE="ntfs-3g"
 AUTOMOUNT_OPTS='errors=remount-ro,relatime,utf8,users,flush,gid=100,dmask=000,fmask=111'
 ```
 
+## Changes for v25.5 images (and later)
+{% raw  %}
+```
+--- makerbase-automount.org     2023-10-02 00:38:53.000000000 +0000
++++ makerbase-automount 2025-02-21 14:11:34.697457246 +0000
+@@ -76,9 +76,13 @@
+ fi
+
+ # Check /etc/fstab for an entry corresponding to the device
+-[ "$UUID" ] && fstab=$(grep /etc/fstab -e "^[^#]*${UUID}") || \
+-[ "$LABEL" ] && fstab=$(grep /etc/fstab -e "^[^#]*${LABEL}") || \
+-fstab=$(grep /etc/fstab -e "^[ \t]*$dev[ \t]")
++if [ "$UUID" ]; then
++  fstab=$(grep /etc/fstab -e "^[^#]*${UUID}")
++elif [ "$LABEL" ]; then
++  fstab=$(grep /etc/fstab -e "^[^#]*${LABEL}")
++else
++  fstab=$(grep /etc/fstab -e "^[ \t]*$dev[ \t]")
++fi
+
+ # Don't manage devices that are already in fstab
+ if [ "$fstab" ]
+```
+{% endraw  %}
+
