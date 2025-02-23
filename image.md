@@ -1,9 +1,9 @@
 ---
-title: Sovolized Armbian-mainline Klipper Image v25.2 (MKS-KLIPAD50)
+title: Sovolized Armbian-mainline Klipper Image v25.5 (MKS-KLIPAD50)
 layout: page
 parent: Rebuilding on Armbian-mainline v25.5 (MKS-KLIPAD50)
 ---
-# Sovolized Armbian-mainline Klipper Image v25.2 (MKS-KLIPAD50)
+# Sovolized Armbian-mainline Klipper Image v25.5 (MKS-KLIPAD50)
 ## For SV06/SV06+/SV07/SV07+ KlipperScreen (Makerbase MKS KLIPAD50)
 {: .no_toc }
 ### Contents:
