@@ -23,16 +23,19 @@ That means, that the kernel (and related stuff) can now simply be updated just l
   (Make sure to choose images with "Mksklipad50" in their name)
 
 ### Available image types
-- Debian Minimal/IOT
+- Debian (Bookworm) Minimal/IOT
   - Smallest images containing just a minimal set of installed packages
   - Require some work replacing networkd with NetworkManager (for installing KlipperScreen)
 
-- Ubuntu Server
+- Ubuntu (Noble) Server
   - Comes with some more preinstalled packages compared to Minimal/IOT
   - Network setup (for installing KlipperScreen) is a bit easier, as NetworkManager is already installed and configured
 
-- Ubuntu Desktop
-  - These images don't really make sense on that device and won't be built in the future.
+- Ubuntu (Noble) Desktop *- Not recommended! -*
+  - These images don't really make sense on that device and are not built any longer (but still exist in the archives).
+
+- Experimental Rolling / Nightly builds (Debian Trixie, Ubuntu Plucky) *- Not recommended! -*
+  - These are **only for linux experts**. Unless you are familiar with e.g. udev, systemd, shell-scripts and able to debug them on your own, you should not use them.
 
 ### Why not Debian/Server?
 That's for maintainability reasons:
