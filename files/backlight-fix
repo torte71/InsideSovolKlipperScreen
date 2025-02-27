@@ -1,0 +1,100 @@
+#!/bin/bash
+
+# ------------------------------------------------------------
+
+# for old OS (buster)
+backlight_buster() {
+  DTBDIR=/boot/dtb/rockchip/
+  DTBBASE=rk3328-roc-cc
+  DTSFILE=${DTBBASE}.dts
+  DTBFILE=${DTBDIR}/${DTBBASE}.dtb
+
+  if [[ $1 == install ]] ; then
+    [ -e ${DTBFILE}.nobacklight ] || cp ${DTBFILE} ${DTBFILE}.nobacklight
+    dtc -I dtb -O dts ${DTBFILE} -o ${DTSFILE}
+    patch -p0 << __PATCH_EOF__
+--- ${DTSFILE}	2025-02-26 00:00:00 +0000
++++ ${DTSFILE}	2025-02-26 00:00:00 +0000
+@@ -2686,6 +2686,12 @@
+ 		};
+ 	};
+ 
++	backlight {
++		compatible = "gpio-backlight";
++		gpios = <0x31 5 0>;
++		default-on;
++	};
++
+ 	__symbols__ {
+ 		ddr_timing = "/ddr_timing";
+ 		cpu0 = "/cpus/cpu@0";
+__PATCH_EOF__
+    dtc -I dts -O dtb ${DTSFILE} -o ${DTBFILE}
+  elif [[ $1 == remove ]] ; then
+    if [ -e ${DTBFILE}.nobacklight ] ; then
+      cp ${DTBFILE}.nobacklight ${DTBFILE}
+    else
+      echo Error: Could not find ${DTBFILE}.nobacklight
+      exit 1
+    fi
+  fi
+}
+
+# ------------------------------------------------------------
+
+# for recent OS (bookworm, trixie, noble, jammy)
+backlight_bookworm() {
+  OVERLAYNAME=backlight
+  USEROVERLAY=/boot/overlay-user
+  ARMBIANENV=/boot/armbianEnv.txt
+
+  if [[ $1 == install ]] ; then
+    cat << __OVERLAY_EOF__ > ${OVERLAYNAME}.dtso
+/dts-v1/;
+/plugin/;
+
+&{/} {
+	backlight {
+		compatible = "gpio-backlight";
+		gpios = <&gpio3 5 0>;
+		default-on;
+	};
+};
+__OVERLAY_EOF__
+    mkdir -p $USEROVERLAY
+    dtc -@ -I dts -O dtb ${OVERLAYNAME}.dtso -o $USEROVERLAY/${OVERLAYNAME}.dtbo
+    if ! grep -q "user_overlays" $ARMBIANENV ; then
+      echo "user_overlays=${OVERLAYNAME}" >> $ARMBIANENV
+    else
+      if ! grep -q "user_overlays.*${OVERLAYNAME}" $ARMBIANENV ; then
+	sed -i "/user_overlays/ s/.*/& ${OVERLAYNAME}/" $ARMBIANENV
+      fi
+    fi
+  elif [[ $1 == remove ]] ; then
+    sed -i "/user_overlays/ s/${OVERLAYNAME}//" $ARMBIANENV
+  fi
+}
+
+# ------------------------------------------------------------
+
+[ -e /etc/os-release ] && . /etc/os-release
+if [ -z $VERSION_CODENAME ]; then
+  echo Error: Could not detect os-release
+  exit 1
+else
+  echo "OS: $VERSION_CODENAME"
+fi
+
+if [[ $1 == install ]] || [[ $1 == remove ]]; then
+  if [[ $VERSION_CODENAME == buster ]] ; then
+    echo "Replacing devicetree for old OS. Action=$1"
+    VER=buster
+  else
+    echo "Using devicetree overlay for recent OS. Action=$1"
+    VER=bookworm
+  fi
+  backlight_$VER $1
+else
+  echo "Syntax: $(basename $0) <install>|<remove>"
+  exit 1
+fi
