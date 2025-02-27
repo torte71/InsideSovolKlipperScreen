@@ -39,7 +39,7 @@ and recent Armbian images for MKS-PI or MKS-Klipad50 (bookworm, trixie, noble, j
 
 ### Installation
 
-To enable backligh switching:
+To enable backlight switching:
 - Download the script: `wget https://torte71.github.io/InsideSovolKlipperScreen/files/backlight-fix`
 - Install: `sudo bash backlight-fix install`
 - Uninstall:  `sudo bash backlight-fix remove`
