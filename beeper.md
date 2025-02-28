@@ -97,3 +97,42 @@ done
   * Make the shell script executable:
     * Execute `chmod +x /home/mks/printer_data/config/macro/macro_beep.sh`
 
+## Invocation
+
+The new "BEEP" macro can now be used in your printer.cfg. It supports following parameters:
+- `BC=xxx`
+  - The number of beeps (**B**eep **C**ount)
+  - Must be a whole number like 1, 2, 3, ...
+  - Default value: 3
+- `BD=x.y`
+  - The length of one beep in seconds (**B** **D**uration)
+  - Allows fractional numbers like 0.3
+  - Default value: 0.2
+- `PD=x.y`
+  - The length of the pause after one beep in seconds (**P**ause **D**uration)
+  - Allows fractional numbers like 0.3
+  - Default value: 1
+All parameters are optional, default values will be used when they are not given.
+
+### Simple example without parameters
+```
+[gcode_macro M600]
+gcode:
+    RESPOND TYPE=echo MSG="Change filament"
+    BEEP
+    SAVE_GCODE_STATE NAME=M600_state
+    PAUSE
+    RESTORE_GCODE_STATE NAME=M600_state
+```
+
+### Example with parameters
+```
+[gcode_macro M600]
+gcode:
+    RESPOND TYPE=echo MSG="Change filament"
+    BEEP BC=3 BD=1 BP=0.1
+    SAVE_GCODE_STATE NAME=M600_state
+    PAUSE
+    RESTORE_GCODE_STATE NAME=M600_state
+```
+
