@@ -105,13 +105,14 @@ The new "BEEP" macro can now be used in your printer.cfg. It supports following 
   - Must be a whole number like 1, 2, 3, ...
   - Default value: 3
 - `BD=x.y`
-  - The length of one beep in seconds (**B** **D**uration)
+  - The length of one beep in seconds (**B**eep **D**uration)
   - Allows fractional numbers like 0.3
   - Default value: 0.2
 - `PD=x.y`
   - The length of the pause after one beep in seconds (**P**ause **D**uration)
   - Allows fractional numbers like 0.3
   - Default value: 1
+
 All parameters are optional, default values will be used when they are not given.
 
 ### Simple example without parameters
