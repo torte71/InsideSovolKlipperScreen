@@ -82,4 +82,11 @@ More triggers are available through kernel modules
 
 Note: Options like "device_name", "rx", "tx" and the "netdev" trigger are only available after loading the netdev kernel module.
 
-To make these changes permanent, you can add the required commands e.g. to `/etc/rc.local`.
+## Making the changes permanent
+
+In recent Armbian versions, the default LED properties like "trigger", "brightness" and "invert" are automatically preserved between reboots.
+
+When using custom triggers, it may be necessary to set their properties manually. You can do this e.g. by adding the required commands to `/etc/rc.local` (before the "exit 0" line, but after the "#" comment lines).
+
+If you need additional kernel modules for custom triggers, you can add them to `/etc/modules` to get them automatically loaded at boot.
+
