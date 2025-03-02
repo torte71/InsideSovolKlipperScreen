@@ -82,6 +82,12 @@ To expand the filesystem that it uses the full size of the eMMC card:
 
 The language has to be changed in KlipperScreen, Mainsail and Fluidd separately.
 
+### Config files
+
+The image comes with a printer.cfg for the (non-plus) SV06. You need to replace it with a version for your printer model.
+
+(Using the unmodified image on SV07 printers will show warnings about temperatur sensors. These will go away once you've replaced the printer.cfg with a correct version for your printer.)
+
 ----
 
 Thanks to all who helped testing, bug chasing and documenting.
