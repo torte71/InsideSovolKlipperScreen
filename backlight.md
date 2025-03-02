@@ -45,4 +45,3 @@ To enable backlight switching:
 - Uninstall:  `sudo bash backlight-fix remove`
 - Reboot is required: `sudo reboot`
 
-(There will be a bunch of warnings when installing on buster, but these can safely be ignored.)
