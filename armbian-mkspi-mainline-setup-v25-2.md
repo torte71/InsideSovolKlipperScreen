@@ -153,7 +153,7 @@ The following steps require a working internet connection
   (Automatically reinstalls [rk3328-mkspi.dtb](files/rk3328-mkspi.dtb) whenever a dtb-package install/remove has been detected.
   Idea based on <https://askubuntu.com/questions/63717/execute-command-after-dpkg-installation>)
 ```
-wget https://torte71.github.io/tmteststuff/files/klipad50-dtb-fix.deb
+wget https://torte71.github.io/InsideSovolKlipperScreen/files/klipad50-dtb-fix.deb
 dpkg -i klipad50-dtb-fix.deb
 ```
 <!-- DONT USE YET --- wget https://torte71.github.io/InsideSovolKlipperScreen/files/klipad50-dtb-fix.deb  -->
@@ -276,7 +276,7 @@ cd
     * Uses [makerbase-beep-service.deb](files/makerbase-beep-service.deb)
     * To install, execute 
 ```
-wget https://torte71.github.io/tmteststuff/files/makerbase-beep-service.deb
+wget https://torte71.github.io/InsideSovolKlipperScreen/files/makerbase-beep-service.deb
 dpkg -i makerbase-beep-service.deb
 ```
     * (Modifying `/etc/rc.local`, as stated in prior versions, is not required)
@@ -287,7 +287,7 @@ dpkg -i makerbase-beep-service.deb
     * Uses [makerbase-automount-service.deb](files/makerbase-automount-service.deb)
     * To install, execute 
 ```
-wget https://torte71.github.io/tmteststuff/files/makerbase-automount-service.deb
+wget https://torte71.github.io/InsideSovolKlipperScreen/files/makerbase-automount-service.deb
 dpkg -i makerbase-automount-service.deb
 ```
     * To uninstall:
@@ -297,7 +297,7 @@ dpkg -i makerbase-automount-service.deb
     * Uses [makerbase-soft-shutdown-service.deb](files/makerbase-soft-shutdown-service.deb)
     * To install, execute 
 ```
-wget https://torte71.github.io/tmteststuff/files/makerbase-soft-shutdown-service.deb
+wget https://torte71.github.io/InsideSovolKlipperScreen/files/makerbase-soft-shutdown-service.deb
 dpkg -i makerbase-soft-shutdown-service.deb
 ```
     * To uninstall:
@@ -307,7 +307,7 @@ dpkg -i makerbase-soft-shutdown-service.deb
     * Uses unofficial package: [plr-klipper.deb](files/plr-klipper.deb)
     * To install, execute 
 ```
-wget https://torte71.github.io/tmteststuff/files/plr-klipper.deb
+wget https://torte71.github.io/InsideSovolKlipperScreen/files/plr-klipper.deb
 dpkg -i plr-klipper.deb
 ```
     * To uninstall:

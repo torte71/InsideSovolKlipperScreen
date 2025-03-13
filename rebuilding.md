@@ -238,7 +238,7 @@ cd
     * Uses [makerbase-beep-service.deb](files/makerbase-beep-service.deb)
     * To install, execute 
 ```
-wget https://torte71.github.io/tmteststuff/files/makerbase-beep-service.deb
+wget https://torte71.github.io/InsideSovolKlipperScreen/files/makerbase-beep-service.deb
 dpkg -i makerbase-beep-service.deb
 ```
     * To uninstall:
@@ -248,7 +248,7 @@ dpkg -i makerbase-beep-service.deb
     * Uses [makerbase-automount-service.deb](files/makerbase-automount-service.deb)
     * To install, execute 
 ```
-wget https://torte71.github.io/tmteststuff/files/makerbase-automount-service.deb
+wget https://torte71.github.io/InsideSovolKlipperScreen/files/makerbase-automount-service.deb
 dpkg -i makerbase-automount-service.deb
 ```
     * To uninstall:
@@ -258,7 +258,7 @@ dpkg -i makerbase-automount-service.deb
     * Uses [makerbase-soft-shutdown-service.deb](files/makerbase-soft-shutdown-service.deb)
     * To install, execute 
 ```
-wget https://torte71.github.io/tmteststuff/files/makerbase-soft-shutdown-service.deb
+wget https://torte71.github.io/InsideSovolKlipperScreen/files/makerbase-soft-shutdown-service.deb
 dpkg -i makerbase-soft-shutdown-service.deb
 ```
     * To uninstall:
@@ -268,7 +268,7 @@ dpkg -i makerbase-soft-shutdown-service.deb
     * Uses unofficial package: [plr-klipper.deb](files/plr-klipper.deb)
     * To install, execute 
 ```
-wget https://torte71.github.io/tmteststuff/files/plr-klipper.deb
+wget https://torte71.github.io/InsideSovolKlipperScreen/files/plr-klipper.deb
 dpkg -i plr-klipper.deb
 ```
     * To uninstall:
