@@ -37,7 +37,6 @@ has_toc: false
 >
 ````
 sudo su
-cd
 ```
 >
 > And when you are done, execute `exit` to switch back to the default user (or do a reboot).
@@ -80,7 +79,6 @@ cd
 >
 ````
 sudo su
-cd
 ```
 >
 > And when you are done, execute `exit` to switch back to the default user (or do a reboot).
@@ -100,6 +98,11 @@ cd
 
 - Update board packages (and others)
   - Execute `apt update && apt -y upgrade`
+
+- Force updating bootloader
+  - Execute `sed -i "/^FORCE_UBOOT_UPDATE/ s/=.*/=yes/" /etc/armbian-release`
+  - Execute `dpkg-reconfigure linux-u-boot-mksklipad50-current`
+  - Execute `sed -i "/^FORCE_UBOOT_UPDATE/ s/=.*/=/" /etc/armbian-release`
 
 - Reboot
   - Execute `reboot`
