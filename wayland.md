@@ -108,8 +108,14 @@ service KlipperScreen restart
 Note about **cage 0.2.0**
 - Option "-r" does not exist anymore (remove "-rrr" from above command)
 - Use "wlr-randr" for rotation
-```
-apt install wlr-randr
-DISPLAY=:0.0 wlr-randr --output HDMI-A-1 --transform 270
-```
+  - Install: `apt install wlr-randr`
+  - Execute: `wlr-randr --output HDMI-A-1 --transform 270`
+
+Note about **screensaver**
+- There is no real screensaver support yet
+- You may implement your own screensaver using "swayidle", e.g. if you use the [backlight-fix](backlight.html)
+  - Install: `sudo apt install swayidle`
+  - Execute `sudo chown mks:mks /sys/class/backlight/backlight/bl_power`
+  - Execute `swayidle timeout 300 'echo 4 > /sys/class/backlight/backlight/bl_power' resume 'echo 0 > /sys/class/backlight/backlight/bl_power'`\
+    (This will turn off backlight after 300 seconds of inactivity by writing "4" to `bl_power` and on activity it will write "0" to `bl_power` to turn it back on.)
 
