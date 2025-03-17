@@ -103,3 +103,13 @@ service KlipperScreen restart
 - Edit `/etc/systemd/system/KlipperScreen.service` and revert it to the first "Environment=" line
 - Restart KlipperScreen: `service KlipperScreen restart`
 
+----
+
+Note about **cage 0.2.0**
+- Option "-r" does not exist anymore (remove "-rrr" from above command)
+- Use "wlr-randr" for rotation
+```
+apt install wlr-randr
+DISPLAY=:0.0 wlr-randr --output HDMI-A-1 --transform 270
+```
+
