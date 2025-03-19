@@ -55,11 +55,10 @@ The repositories for this version have been taken offline in spring 2024.
   * At least one can not accidentally brick the device by updating the kernel or .dtb files any longer, as these files simply do not exist any longer.
   * It is possible to flash a recent Armbian version, but it takes more than just a few mouseclicks.  
      See these guides:
-    * Rebuilding from scratch using Maxim's Armbian bookworm:
-      * My recent guide (Armbian v25): [Rebuilding v25 (MKS-PI)](armbian-mkspi-mainline-setup-v25-2.html)
-      * My previous guide (Armbian v24): [Rebuilding v24 (MKS-PI)](armbian-mkspi-setup-v24-2.html)
-      * Vasyl's guide: <https://github.com/vasyl83/SV07update>
-    * You can also find a readily prepared image (built as on my guide) here: [Image (MKS-PI v24.2)](armbian-mkspi-image-v24-2.html)
+    * [Rebuilding](rebuilding.html) from scratch using Armbian for MKS-Klipad50
+    * Vasyl's guide (older version based on MKS-PI images): <https://github.com/vasyl83/SV07update>
+  * You can also use a readily prepared image (built as on my guide)
+    * [Image](image.html)
 
 
 ## KlipperScreen / Python 3.8

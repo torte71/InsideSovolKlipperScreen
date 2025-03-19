@@ -12,6 +12,9 @@ parent: Rebuilding on Armbian-mainline v25.2 (MKS-PI)
 {:toc}
 ----
 
+{: .note }
+> There is a [newer version](image.html) available
+
 ## For SV06/SV06+/SV07/SV07+ KlipperScreen (Makerbase MKS KLIPAD50)
 
 A ready-to-use replacement image for Sovol's KlipperScreen can be downloaded at:  

@@ -12,7 +12,7 @@ parent: Rebuilding on Armbian v24.2 (MKS-PI)
 ----
 
 {: .note }
-> There is a [newer version](armbian-mkspi-mainline-image-v25-2.html) for mainline Armbian v25.2 (MKS-PI)
+> There is a [newer version](image.html) available
 
 ## For SV06/SV06+/SV07/SV07+ KlipperScreen (Makerbase MKS KLIPAD50)
 

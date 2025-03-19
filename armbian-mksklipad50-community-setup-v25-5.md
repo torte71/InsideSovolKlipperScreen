@@ -1,14 +1,11 @@
 ---
-title: Rebuilding on Armbian-mainline v25.2 (MKS-PI)
+title: Rebuilding on Armbian community v25.5 (MKS-KLIPAD50)
 layout: page
 parent: Custom firmware archive
-nav_order: 998
+nav_order: 997
 has_toc: false
 ---
-{: .note }
-> There is a [newer version](rebuilding.html) available
-
-# Rebuilding on Armbian-mainline v25.2 (MKS-PI)
+# Rebuilding on Armbian community v25.5 (MKS-KLIPAD50)
 {: .no_toc }
 ### Contents:
 {: .no_toc }
@@ -16,28 +13,25 @@ has_toc: false
 {:toc}
 ----
 
-Since December 2024, the Makerbase kernel patches from Maxim Medvedev (redrathnure) have been included into mainline Armbian.
-That makes it possible to keep the kernel up-to-date (and probably even upgrading the distribution).
+{: .note }
+> There is a [newer version](image.html) available
 
-It is still required to replace the DTB file with a special one tailored for the Klipad50, but that may change in the future.  
-For now I have added a dpkg hook that simply replaces the DTB file, whenever a dtb-package install/remove has been detected
-(the DTB file [rk3328-mkspi.dtb](files/rk3328-mkspi.dtb) is exactly the same as the prior [rk3328-roc-cc.dtb](rk3328-roc-cc_dts.html), it is just renamed).
+Since February 2025, the MKS-Klipad50 board is natively supported by Armbian.
+
+The required Makerbase kernel patches ported by Maxim Medvedev have been integrated into mainline Armbian in December 2024.
+
+This means, that it is now possible to update the kernel like any other package, no more hazzles with replacing DTB files, etc.
 
 ## Different image options
 
-You have the choice between the [community-builds](https://github.com/armbian/community/releases) and [Maxim's images](https://github.com/redrathnure/armbian-mkspi/releases).
+You have the choice between Debian Bookworm Minimal/IOT images and Ubuntu Noble Server images.
 
-### Maxims image
-- Comes with more preinstalled packages (e.g. NetworkManager, aptitude, mc, vim, ...)
-- Allows WiFi setup right after boot (if you replaced the DTB file beforehand)
+See [Armbian images](armbian_images.html#download-options) for a description of the different types and download locations.
 
-### Community image
-- Comes with just a minimal set of preinstalled packages
-- Requires additional steps to get NetworkManager play together with networkd
-- WiFi setup directly after boot is not working
-- Requires at least 25.2.0-trunk.195 to support MKSPI boards (select one with "Mkspi" in the name)
-
-## Steps to create a "sovolish" Klipper installation based on these images:
+{: .note }
+> When using images from the archive:
+> - **Use only** images with "Mksklipad50" in their name.
+> - Do **not** use images with "desktop" in their filename or description (unless you have extremely small fingers).
 
 {: .important-title }
 > Tip
@@ -46,18 +40,16 @@ You have the choice between the [community-builds](https://github.com/armbian/co
 > <https://github.com/vasyl83/SV07update>\
 > It covers a previous image version, but can still help understanding the steps on this guide a little better.
 
-### Downloading and flashing the image
-- Choose an image file from the above links. I recommend Maxim's images, as they are easier to set up.  
-  - Images used for testing:
-    - Maxim's (recommended): [1.0.1-25.2.0-trunk](https://github.com/redrathnure/armbian-mkspi/releases/download/mkspi%2F1.0.1-25.2.0-trunk/Armbian-unofficial_25.02.0-trunk_Mkspi_bookworm_current_6.12.8.img.xz)
-    - Community (for the thrills): [25.2.0-trunk.293](https://github.com/armbian/community/releases/download/25.2.0-trunk.293/Armbian_community_25.2.0-trunk.293_Mkspi_bookworm_current_6.12.8_minimal.img.xz)
-- Extract the image (e.g. using [7zip](https://www.7-zip.org/)).
-- Write the extracted .img file to the eMMC card (e.g. using [Balena Etcher](https://www.balena.io/etcher/)).
+## Steps to create a "sovolish" Klipper installation based on these images:
 
-### Replacing rk3328-mkspi.dtb for WiFi
-- Don't remove the eMMC card from the PC yet.
-- Use the Explorer to navigate to the "/boot/rockchip/" folder of the eMMC card
-- Replace `/boot/rockchip/rk3328-mkspi.dtb` with this [rk3328-mkspi.dtb](files/rk3328-mkspi.dtb) to get WiFi access directly after booting
+### Downloading and flashing the image
+- Choose an image file from the above links.\
+  (The server images are a little bit easier to set up)
+  - Images used for testing:
+    - Ubuntu noble server image: [Noble-Server-v25.5.0-trunk.87](https://github.com/armbian/community/releases/download/25.5.0-trunk.87/Armbian_community_25.5.0-trunk.87_Mksklipad50_noble_current_6.12.15.img.xz)
+    - Debian bookworm minimal image: [Bookworm-Minimal-v25.5.0-trunk.87](https://github.com/armbian/community/releases/download/25.5.0-trunk.87/Armbian_community_25.5.0-trunk.87_Mksklipad50_bookworm_current_6.12.15_minimal.img.xz)
+- Extract the image (e.g. using [7zip](https://www.7-zip.org/)) - or use Etcher, which can write .img.xz images directly.
+- Write the extracted .img file to the eMMC card (e.g. using [Balena Etcher](https://www.balena.io/etcher/)).
 
 ### Accessing the screen
 - You can either use a serial connection (recommended) or work directly on the screen
@@ -73,7 +65,7 @@ You have the choice between the [community-builds](https://github.com/armbian/co
       - Data bits: 8
       - Stop bits: 1
       - Parity: None
-      - Flow control: None
+      - Flow control: None (or use XON/XOFF to reduce some onscreen garbage)
   - Option 2) Direct access:
     - Plug an USB-keyboard into any of the device's USB ports
     - Disadvantages:
@@ -85,84 +77,50 @@ You have the choice between the [community-builds](https://github.com/armbian/co
 - Press the power button to boot the device
 - Answer the account setup questions:
   - Enter root password (e.g. "makerbase"), repeat once more
-  - Maxim's image will ask for the "default system command shell"
+  - The server image will ask for the "default system command shell"
     - Choose "1" for "bash" (unless you know better)
   - Enter username (e.g. "mks")
   - Enter user password (e.g. "makerbase"), repeat once more
   - Enter real name (e.g. "Mks")
 
 ### Network setup
-The next steps are slightly different, depending if you use a) an USB-Ethernet adapter, b) WiFi with Maxim's image or c) WiFi with a community image
-- a) USB-Ethernet adapter:
-  - Will continue right at "Set user language based on your location?"
-- b) Wifi with Maxim's image:
+- If you use an USB-Ethernet adapter, skip to "Locale setup"
+
+- If you connect via WiFi:
   - Answer "y" to "connect via wireless?" (or just press ENTER)
   - Select your access point in the dialog
   - Enter your WiFi password
-- a) and b)
+
+- Locale setup
   - When asked "Set user language based on your location?":
     - Choose what you want. I prefer "no", because untranslated error-messages give better online search results
   - When asked for generating locales:
     - If you use a user language other than english, you may want to select a different encoding from the list
-    - Otherwise just use "330" to skip locale generation
-  - Continue at [Preparing Klipper setup](#preparing-klipper-setup)
+    - Otherwise just skip locale generation (choose the highest/last number on that list)
 
-The next steps are **only required for the community image** (scroll down otherwise):
-- c) WiFi with a community image:
-  - Answer "y" to "connect via wireless?" (or just press ENTER)  
-    (Sadly, this just continues without asking to connect it to an access point, so no internet yet)
-  - Set up Wifi using "armbian-config"
-    - Execute `armbian-config`
-    - Select "Network"
-    - Select "NE001 - Configure network interfaces"
-    - Select "NE002 - Add / change interface"
-    - Select "wlan0 unassigned[wifi]"
-    - Select "sta Connect to access point"
-    - Select your access point from the list
-    - Use "OK" to accept and "Yes" to confirm the settings
-    - Quit armbian-config
+The next steps are **only required for the minimal image**
+- Switch to NetworkManager
   - Install NetworkManager:  
-    Execute `apt update && apt install network-manager`
+    - Execute `apt update && apt -y install network-manager`
   - Disable networkd:
     - Execute `systemctl disable systemd-networkd.service`
-  - Switch to NetworkManager:
-    - Execute `armbian-config`
-    - Select "Network"
-    - Select "NE001 - Configure network interfaces"
-    - Select "NE003 - Revert to Armbian defaults"  
-      (this step changes /etc/netplan/10-dhcp-all-interfaces.yaml from networkd to NetworkManager)
-  - Set up WiFi using NetworkManager:
-    - Execute `nmtui`
-    - Activate connection
-      - select accesspoint
-      - enter password
-  - Troubleshooting network:
-    - Check this, if the screen has a long boot delay waiting for "systemd-networkd-wait-online.service".
-    - List the contents of "/etc/netplan/":  
-      Execute `ls -l /etc/netplan/`
-      - There should be no other file but "10-dhcp-all-interfaces.yaml".
-      - Edit this file using `nano /etc/netplan/10-dhcp-all-interfaces.yaml`
-      - Make sure it reads "renderer: NetworkManager" and not "renderer: networkd"  
-	(otherwise change that line in the editor and save it).
+  - Update neplan config
+    - Execute `sed -i "/renderer:/ s/networkd/NetworkManager/" /etc/netplan/*.yaml`
 
 ### Preparing Klipper setup
-- If you didn't generate locales, you may want to set your timezone:
-  - Execute `tzselect`  
-    (just follow the prompts to choose your timezone)
+- If you didn't generate locales, then you may want to set your timezone:
+  - Execute `dpkg-reconfigure tzdata`\
+    (This is also possible using armbian-config -\> "Localisation" -\> "Change global timezone")
 
-The following steps require a working internet connection
+- Rename your device from "mksklipad50" to "mkspi" (as it was in prior images):
+  - Execute `nano /etc/hostname`
+  - Replace "mksklipad50" with "mkspi"
+  - Press \<CTRL-X\>, "Y", \<ENTER\> to save and confirm the filename.\
+    (This is also possible using armbian-config -\> "Localisation" -\> "Change System Hostname")
 
-- Download and install the [Klipad50 DTB fix](klipad50-dtb-fix.html):  
-  (Automatically reinstalls [rk3328-mkspi.dtb](files/rk3328-mkspi.dtb) whenever a dtb-package install/remove has been detected.
-  Idea based on <https://askubuntu.com/questions/63717/execute-command-after-dpkg-installation>)
-```
-wget https://torte71.github.io/InsideSovolKlipperScreen/files/klipad50-dtb-fix.deb
-dpkg -i klipad50-dtb-fix.deb
-```
-<!-- DONT USE YET --- wget https://torte71.github.io/InsideSovolKlipperScreen/files/klipad50-dtb-fix.deb  -->
-
-- Install "git" (required for downloading KIAUH):  
-  Execute `apt install git`
+- Install "git" (required for downloading KIAUH) and "evtest" (required for makerbase-beep-service):
+  - Execute `apt install -y git evtest`
+  - The Ubuntu Server image already has "git" and "evtest" installed, so you can skip this step.
 
 ### Setting up Klipper
 
@@ -181,7 +139,7 @@ dpkg -i klipad50-dtb-fix.deb
 ```
 cd
 git clone https://github.com/dw-0/kiauh
-cd /kiauh
+cd kiauh
 ./kiauh.sh
 ```
   - Use the default setting for *every* question (i.e. just press ENTER, unless it asks for a password)
@@ -222,13 +180,16 @@ EndSection
     - Press \<CTRL-X\> to quit
     - Press "Y" to save
     - Press ENTER to confirm filename
+    - Clean up additional Xorg config:\
+      It does not interfere with the above config, but it is cleaner to remove it to avoid duplicate configurations.
+      - Execute `sudo rm /etc/X11/xorg.conf.d/02-driver.conf`
     - Restart KlipperScreen:
       - Execute `sudo service KlipperScreen restart`
 
 - Set up numpy (required for input shaping)
   - Execute
 ```
-sudo apt install python3-numpy python3-matplotlib libatlas-base-dev libopenblas-dev
+sudo apt install -y python3-numpy python3-matplotlib libatlas-base-dev libopenblas-dev
 ~/klippy-env/bin/pip install -v numpy
 ```
 
@@ -253,9 +214,10 @@ sudo service klipper restart
   - Change following settings ("=" are unchanged defaults)
     - = Enable extra low-level configuration options: [ ]
     - \* Micro-controller Architecture: STMicroelectronics STM32
-    - \* Processor model: STM32F103
+    - = Processor model: STM32F103
     - \* Bootloader offset: 28KiB bootloader
     - \* Communication interface: Serial (on USART1 PA10/PA9)
+  - Press "Q" and "Y" to quit and save
   - Execute `make clean && make`
   - Copy "out/klipper.bin" to SD-card and rename it (must end in ".bin")  
     !!! Use a different name than that from prior updates !!!
@@ -279,10 +241,9 @@ cd
     * Uses [makerbase-beep-service.deb](files/makerbase-beep-service.deb)
     * To install, execute 
 ```
-wget https://torte71.github.io/InsideSovolKlipperScreen/files/makerbase-beep-service.deb
+wget https://torte71.github.io/tmteststuff/files/makerbase-beep-service.deb
 dpkg -i makerbase-beep-service.deb
 ```
-    * (Modifying `/etc/rc.local`, as stated in prior versions, is not required)
     * To uninstall:
       * Execute `sudo dpkg -r makerbase-beep-service`
 
@@ -290,7 +251,7 @@ dpkg -i makerbase-beep-service.deb
     * Uses [makerbase-automount-service.deb](files/makerbase-automount-service.deb)
     * To install, execute 
 ```
-wget https://torte71.github.io/InsideSovolKlipperScreen/files/makerbase-automount-service.deb
+wget https://torte71.github.io/tmteststuff/files/makerbase-automount-service.deb
 dpkg -i makerbase-automount-service.deb
 ```
     * To uninstall:
@@ -300,7 +261,7 @@ dpkg -i makerbase-automount-service.deb
     * Uses [makerbase-soft-shutdown-service.deb](files/makerbase-soft-shutdown-service.deb)
     * To install, execute 
 ```
-wget https://torte71.github.io/InsideSovolKlipperScreen/files/makerbase-soft-shutdown-service.deb
+wget https://torte71.github.io/tmteststuff/files/makerbase-soft-shutdown-service.deb
 dpkg -i makerbase-soft-shutdown-service.deb
 ```
     * To uninstall:
@@ -310,7 +271,7 @@ dpkg -i makerbase-soft-shutdown-service.deb
     * Uses unofficial package: [plr-klipper.deb](files/plr-klipper.deb)
     * To install, execute 
 ```
-wget https://torte71.github.io/InsideSovolKlipperScreen/files/plr-klipper.deb
+wget https://torte71.github.io/tmteststuff/files/plr-klipper.deb
 dpkg -i plr-klipper.deb
 ```
     * To uninstall:
@@ -322,6 +283,7 @@ dpkg -i plr-klipper.deb
       * Rebuilding splash screens should be possible using [bootsplash-packer](https://github.com/armbian/build/tree/master/packages/blobs/splash) from the "armbian/build" repository (do `git clone https://github.com/armbian/build` and find it in `./packages/blobs/splash/`).\
         Source of the [linux-bootsplash](https://github.com/philmmanjaro/linux-bootsplash) with [documentation](https://github.com/philmmanjaro/linux-bootsplash/blob/master/0010-bootsplash.patch)\
 	(thanks to nubecoder for [investigation](https://github.com/torte71/InsideSovolKlipperScreen/issues/3#issuecomment-2585248153))
+
     * Enable plymouth splash screen:
       * Become root: Execute `sudo su` (enter password when asked)
       * Edit `/boot/armbianEnv.txt` and change it to `bootlogo=true`
@@ -329,6 +291,10 @@ dpkg -i plr-klipper.deb
       * Select a theme (e.g. "solar"): Execute `plymouth-set-default-theme solar ; update-initramfs -u`
       * Restart the system: Execute `reboot`
       * Themes are defined in `/usr/share/plymouth/themes/`
+
+### Cleaning up package cache
+This is not required, but you gain ~250MB of free space by removing old downloaded packages:
+- Execute `sudo apt clean`
 
 ### Adding printer.cfg
 If you have backups of your config files, you can upload them using mainsail or fluidd.
@@ -340,4 +306,23 @@ as Sovol's version of the SV06+ config is still broken.
 
 For the ready-to-use images I use the standard (non-plus) SV06 config, as it has the smallest bed defined,
 so the printhead/bed will not accidentally ram into the endstops on the non-plus models.
+
+### Copying Mainsail / Fluidd config
+Mainsail and Fluidd store their settings in a database: `~/printer_data/database/moonraker-sql.db`.\
+(These also contain metadata for the existing gcode files, like thumbnails, print settings, etc.)
+
+In most cases it is possible to copy your old database, but you should stop the moonraker service before doing this:
+- Stop moonraker service: `sudo service moonraker stop`
+- Ensure moonraker really has stopped: `sudo service moonraker stop`
+  - Make sure the output reads "Active: inactive (dead)" and **not** "Active: active (running)"
+- Make a backup of the "database" directory: `cp -a ~/printer_data/database ~/printer_data/database.bak`
+- Copy your old "moonraker-sql.db" (and possibly other files existing in your old "database" directory) into the "database" directory
+- Restart moonraker: `sudo service moonraker stop`
+- If that does not work
+  - Try rebooting the device
+  - Revert to the old database if you encounter problems
+    - Stop moonraker service first (as shown above)
+    - Remove the "database" directory: `rm -rf ~/printer_data/database`
+    - Rename the backed up "database.bak" back to "database": `mv ~/printer_data/database.bak ~/printer_data/database`
+    - Reboot the device
 

@@ -14,7 +14,7 @@ has_toc: false
 ----
 
 {: .note }
-> There is a [newer version](armbian-mkspi-mainline-setup-v25-2.html) for mainline Armbian v25.2 (MKS-PI)
+> There is a [newer version](rebuilding.html) available
 
 {: .important-title }
 > Tip
