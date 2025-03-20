@@ -15,6 +15,10 @@ has_toc: false
 
 ## Bootloop on MKS-Klipad50 community based images
 
+### Affected image versions
+
+Images prior to the standard support image v25.2.3 are affected, if they had kernel updates enabled.
+
 ### Step 1: Stop bootloop (replace uInitrd)
 
 To stop the image from entering the bootloop, the file "uInitrd" needs to be replaced with an older version (e.g. from [25.5.0-trunk.87](https://github.com/armbian/community/releases/download/25.5.0-trunk.87/Armbian_community_25.5.0-trunk.87_Mksklipad50_bookworm_current_6.12.15_minimal.img.xz)).
