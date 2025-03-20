@@ -19,9 +19,7 @@ That means, that the kernel (and related stuff) can now simply be updated just l
 ## Download options
 
 - **Latest MKS-Klipad50 [images](https://www.armbian.com/mks-klipad50/) on Armbian**
-<!--
-- ** Archived MKS-Klipad [images](https://archive.armbian.com/mksklipad50/archive/) on Armbian**
--->
+<!-- - ** Archived MKS-Klipad [images](https://archive.armbian.com/mksklipad50/archive/) on Armbian** -->
 
 ### Available image types
 - Debian (Bookworm) Minimal/IOT
