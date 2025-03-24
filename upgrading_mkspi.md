@@ -41,9 +41,6 @@ sudo su
 >
 > And when you are done, execute `exit` to switch back to the default user (or do a reboot).
 
-- Switch to rolling repository
-  - Execute `sed -i "s/apt\.armbian\.com/beta.armbian.com/" /etc/apt/sources.list.d/armbian.list`
-
 - Allow board updates
   - Execute `apt-mark unhold armbian-bsp-cli-mkspi-current armbian-config armbian-firmware armbian-plymouth-theme armbian-zsh base-files linux-dtb-current-rockchip64 linux-headers-current-rockchip64 linux-image-current-rockchip64 linux-u-boot-mkspi-current`
 
@@ -89,9 +86,6 @@ sudo su
 > https://github.com/torte71/armbian-mksklipad50/releases
 >
 > (Klipad50 images downloaded from armbian.com do not need any changes.)
-
-- Switch to rolling repository
-  - Execute `sed -i "s/apt\.armbian\.com/beta.armbian.com/" /etc/apt/sources.list.d/armbian.list`
 
 - Allow board updates
   - Execute `apt-mark unhold armbian-bsp-cli-mkspi-current armbian-config armbian-firmware armbian-plymouth-theme armbian-zsh base-files linux-dtb-current-rockchip64 linux-headers-current-rockchip64 linux-image-current-rockchip64 linux-u-boot-mkspi-current`
