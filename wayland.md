@@ -107,13 +107,15 @@ service KlipperScreen restart
 
 Note about **cage 0.2.0**
 - Option "-r" does not exist anymore (remove "-rrr" from above command)
-- Use "wlr-randr" for rotation
-  - Install: `apt install wlr-randr`
-  - Execute: `wlr-randr --output HDMI-A-1 --transform 270`
+- Incomplete recipe:
+  - Use "wlr-randr" for rotation
+    - Install: `apt install wlr-randr`
+    - Execute: `wlr-randr --output HDMI-A-1 --transform 270`
 
 Note about **screensaver**
 - There is no real screensaver support yet
-- You may implement your own screensaver using "swayidle", e.g. if you use the [backlight-fix](backlight.html)
+- Consider the [backlight-gpio](backlight.html#a-direkt-access-via-gpios) approach for KlipperScreen.
+- Incomplete recipe: You may implement your own screensaver using "swayidle", e.g. if you use the [backlight-device](backlight.html#b-indirect-access-via-backlight-device-driver) approach.
   - Install: `sudo apt install swayidle`
   - Execute `sudo chown mks:mks /sys/class/backlight/backlight/bl_power`
   - Execute `swayidle timeout 300 'echo 4 > /sys/class/backlight/backlight/bl_power' resume 'echo 0 > /sys/class/backlight/backlight/bl_power'`\
