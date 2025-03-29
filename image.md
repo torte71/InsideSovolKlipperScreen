@@ -13,7 +13,7 @@ parent: Rebuilding on Armbian standard v25.2.3 (MKS-KLIPAD50)
 ----
 A ready-to-use replacement image for Sovol's KlipperScreen can be downloaded at:  
 
-**<https://github.com/torte71/mksklipad50-klipper-images/releases/tag/v25.2.3-01>**
+**<https://github.com/torte71/mksklipad50-klipper-images/releases/tag/v25.2.3-standard-01>**
 
 (Extract it using [7zip](https://www.7-zip.org/) - or use Etcher, it can directly write .img.xz files.)
 
