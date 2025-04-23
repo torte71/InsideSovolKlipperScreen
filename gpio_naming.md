@@ -93,3 +93,16 @@ serial: /tmp/klipper_host_mcu
 pin: rpi:gpiochip2/gpio18
 ```
 
+#### Moonraker naming scheme (possibly other)
+Identical to Klipper naming scheme, but the mcu reference needs to be omitted. (bug?)
+
+- Example: `gpiochip2/gpio18` (not prepended with "rpi:")
+- Example (long):
+
+```
+[power Backlight]
+type: gpio
+pin: gpiochip2/gpio18
+initial_state: on
+```
+
