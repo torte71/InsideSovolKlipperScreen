@@ -8,6 +8,7 @@ has_toc: false
 # Custom firmware archive
 
 ## Images with preinstalled Klipper and Sovol/Makerbase additions
+**For SV06/SV06+/SV07/SV07+ KlipperScreen (Makerbase MKS KLIPAD50)**
 
 ### Current firmware (based on MKS-Klipad50 images):
 
