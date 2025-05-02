@@ -68,8 +68,7 @@ nav_order: 1
     * [joescalon SV07+ profile+buildplate](orca_profiles.html#joescalon-sv07-profilebuildplate)
     * [Christian Vicks profiles](orca_profiles.html#christian-vicks-profiles)
     * [Automatic z-offset adjustment per filament](orca_profiles.html#automatic-z-offset-adjustment-per-filament)
-  * [Beeper](beeper.html) macro (for use in Klipper)
-  * [eMMC Card Backup](backup.html) with and without eMMC-USB adapter
+  * [Beeper](beeper.html) macro (for use inKlipper)
   * [Extending storage space for gcode files](gcode_storage.html#expand-g-code-storage-space)
   * [Screen rotation](screen.html) for KlipperScreen/Xorg
   * [Status LEDs](status_leds.html) customization
