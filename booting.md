@@ -74,9 +74,15 @@ Now interrupt the bootloader:
   - After some lines, the console window will stop and show `Hit any key to stop autoboot:  0`
   - If you see the spaces arriving in the console, you can **now stop pressing the spacebar**
 
-To boot from USB, enter `run bootcmd_usb0` (the word "run" really has to be typed there).
-
-
+Finally tell the bootloader to boot from USB.
+The required command depends on the version of the bootloader (in doubt, simply test both approaches - one of them should work).
+Try using different USB ports, if booting the pen-drive fails.
+  - U-Boot before 25.x: Enter `run bootcmd_usb0` (the word "run" really has to be typed there).
+  - U-Boot 25.x (and newer): Enter
+```
+setenv boot_targets usb
+boot
+```
 
 ## Boot from USB-stick with unbootable eMMC
 

@@ -54,9 +54,15 @@ Here you will find several ways to log into the KlipperScreen.
       * There should appear a line reading `Hit any key to stop autoboot: 0`.
       * When you see the spaces arriving on the screen, you stop pressing the spacebar.
     * Voilà, you're in the bootloader menu, do what you've been told to do there ;) E.g.:
-      * Enter `run bootcmd_usb0` to enter from USB-drive
       * Enter `boot` to continue normal booting
       * Enter `help` for a list of supported commands.
+      * Depending on the bootloader version, use one of the following approaches to boot from USB:
+        * U-Boot before 25.x: Enter `run bootcmd_usb0`
+        * U-Boot 25.x (and newer): Enter
+```
+setenv boot_targets usb
+boot
+```
 
 ## USB-Keyboard
   * Requirements:
