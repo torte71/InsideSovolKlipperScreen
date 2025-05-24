@@ -42,11 +42,13 @@ See [Armbian images](armbian_images.html#download-options) for a description of 
 ## Steps to create a "sovolish" Klipper installation based on these images:
 
 ### Downloading and flashing the image
-- Choose an image file from the above links.\
+- Choose an image file from these links:\
   (The server images are a little bit easier to set up)
   - Images used for testing:
-    - [Armbian 25.2.3 Noble Server / CLI](https://dl.armbian.com/mksklipad50/Noble_current_server)
-    - [Armbian 25.2.3 Bookworm Minimal / IOT](https://dl.armbian.com/mksklipad50/Bookworm_current_minimal)
+    - [Armbian 25.5.1 Noble Server / CLI](https://dl.armbian.com/mksklipad50/Noble_current_server)
+    - [Armbian 25.5.1 Bookworm Minimal / IOT](https://dl.armbian.com/mksklipad50/Bookworm_current_minimal)
+    - Armbian 25.2.3 Noble Server / CLI (soon to be found in [Archive](https://archive.armbian.com/mksklipad50/archive/))
+    - Armbian 25.2.3 Bookworm Minimal / IOT (soon to be found in [Archive](https://archive.armbian.com/mksklipad50/archive/))
 <!-- TODO: Link to https://archive.armbian.com/mksklipad50/archive once available -->    
 - Extract the image (e.g. using [7zip](https://www.7-zip.org/)) - or use Etcher or Rufus, which can write .img.xz images directly.
 - Write the extracted .img file to the eMMC card (e.g. using [Balena Etcher](https://www.balena.io/etcher/) or [Rufus](https://rufus.ie/en/)).
