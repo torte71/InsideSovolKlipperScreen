@@ -22,6 +22,10 @@ That means, that the kernel (and related stuff) can now simply be updated just l
 <!-- - ** Archived MKS-Klipad [images](https://archive.armbian.com/mksklipad50/archive/) on Armbian** -->
 
 ### Available image types
+- Debian (Trixie) Minimal/IOT
+  - Smallest images containing just a minimal set of installed packages
+  - Require some work replacing networkd with NetworkManager (for installing KlipperScreen)
+
 - Debian (Bookworm) Minimal/IOT
   - Smallest images containing just a minimal set of installed packages
   - Require some work replacing networkd with NetworkManager (for installing KlipperScreen)

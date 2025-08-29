@@ -1,8 +1,8 @@
 ---
-title: Rebuilding on Armbian standard v25.8.1 Trixie (MKS-KLIPAD50)
+title: Rebuilding on Armbian standard v25.2.3 (MKS-KLIPAD50)
 layout: page
-parent: Custom firmware options
-nav_order: 3
+parent: Custom firmware archive
+nav_order: 996
 has_toc: false
 ---
 # Rebuilding on Armbian standard v25.2.3 (MKS-KLIPAD50)
@@ -21,7 +21,7 @@ This means, that it is now possible to update the kernel like any other package,
 
 ## Different image options
 
-You have the choice between Debian 13 Trixie Minimal/IOT images (new stable/LTS), Debian 12 Bookworm Minimal/IOT images (old stable/LTS) and Ubuntu Noble Server/CLI images.
+You have the choice between Debian Bookworm Minimal/IOT images and Ubuntu Noble Server/CLI images.
 
 See [Armbian images](armbian_images.html#download-options) for a description of the different types and download locations.
 
@@ -45,12 +45,8 @@ See [Armbian images](armbian_images.html#download-options) for a description of 
 - Choose an image file from these links:\
   (The server images are a little bit easier to set up)
   - Images used for testing:
-    - [Armbian 25.8.1 Trixie Minimal / IOT](https://dl.armbian.com/mksklipad50/Trixie_current_minimal)
-    - [Armbian 25.8.1 Bookworm Minimal / IOT](https://dl.armbian.com/mksklipad50/Bookworm_current_minimal)
-    - [Armbian 25.8.1 Noble Server / CLI](https://dl.armbian.com/mksklipad50/Noble_current_server)
-    - [Armbian 25.8.1 Noble Minimal / IOT](https://dl.armbian.com/mksklipad50/Noble_current_minimal)
-    - Armbian 25.5.1 Noble Server / CLI ([Archive](https://archive.armbian.com/mksklipad50/archive/))
-    - Armbian 25.5.1 Bookworm Minimal / IOT ([Archive](https://archive.armbian.com/mksklipad50/archive/))
+    - [Armbian 25.5.1 Noble Server / CLI](https://dl.armbian.com/mksklipad50/Noble_current_server)
+    - [Armbian 25.5.1 Bookworm Minimal / IOT](https://dl.armbian.com/mksklipad50/Bookworm_current_minimal)
     - Armbian 25.2.3 Noble Server / CLI ([here](https://rsync.armbian.com/incoming/torte71/mksklipad50/archive/); soon to be found in [Archive](https://archive.armbian.com/mksklipad50/archive/))
     - Armbian 25.2.3 Bookworm Minimal / IOT ([here](https://rsync.armbian.com/incoming/torte71/mksklipad50/archive/); soon to be found in [Archive](https://archive.armbian.com/mksklipad50/archive/))
 <!-- TODO: Link to https://archive.armbian.com/mksklipad50/archive once available -->    
@@ -196,15 +192,10 @@ ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="e5e3", ENV{LIBINPUT_CALIBRATION_MATR
   - Restart KlipperScreen:
     - Execute `sudo service KlipperScreen restart`
 
-- Set up numpy and matplotlib (required for input shaping)
-  - Execute (on Bookworm based images):
+- Set up numpy (required for input shaping)
+  - Execute
 ```
 sudo apt install -y python3-numpy python3-matplotlib libatlas-base-dev libopenblas-dev
-~/klippy-env/bin/pip install -v numpy
-```
-  - For recent images based on Trixie, use these commands instead:
-```
-sudo apt install -y python3-numpy python3-matplotlib libatlas3-base libopenblas-dev
 ~/klippy-env/bin/pip install -v numpy
 ```
 
@@ -256,7 +247,7 @@ cd
     * Uses [makerbase-beep-service.deb](files/makerbase-beep-service.deb)
     * To install, execute 
 ```
-wget https://torte71.github.io/InsideSovolKlipperScreen/files/makerbase-beep-service.deb
+wget https://torte71.github.io/tmteststuff/files/makerbase-beep-service.deb
 dpkg -i makerbase-beep-service.deb
 ```
     * To uninstall:
@@ -266,7 +257,7 @@ dpkg -i makerbase-beep-service.deb
     * Uses [makerbase-automount-service.deb](files/makerbase-automount-service.deb)
     * To install, execute 
 ```
-wget https://torte71.github.io/InsideSovolKlipperScreen/files/makerbase-automount-service.deb
+wget https://torte71.github.io/tmteststuff/files/makerbase-automount-service.deb
 dpkg -i makerbase-automount-service.deb
 ```
     * To uninstall:
@@ -276,7 +267,7 @@ dpkg -i makerbase-automount-service.deb
     * Uses [makerbase-soft-shutdown-service.deb](files/makerbase-soft-shutdown-service.deb)
     * To install, execute 
 ```
-wget https://torte71.github.io/InsideSovolKlipperScreen/files/makerbase-soft-shutdown-service.deb
+wget https://torte71.github.io/tmteststuff/files/makerbase-soft-shutdown-service.deb
 dpkg -i makerbase-soft-shutdown-service.deb
 ```
     * To uninstall:
@@ -286,7 +277,7 @@ dpkg -i makerbase-soft-shutdown-service.deb
     * Uses unofficial package: [plr-klipper.deb](files/plr-klipper.deb)
     * To install, execute 
 ```
-wget https://torte71.github.io/InsideSovolKlipperScreen/files/plr-klipper.deb
+wget https://torte71.github.io/tmteststuff/files/plr-klipper.deb
 dpkg -i plr-klipper.deb
 ```
     * To uninstall:

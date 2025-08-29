@@ -13,9 +13,11 @@ nav_order: 7
 ----
 
 {: .note }
-> This is experimental and has only been tested with recent Armbian images.
+> This is experimental and has only been tested with Armbian Bookworm images.
 >
-> It has not been tested with the original Sovol image at all.
+> It does NOT work with Debian Trixie images.
+>
+> It has NOT been tested with the original Sovol image at all.
 
 ## Pros and Cons
 
@@ -23,6 +25,7 @@ Pros:
 - Wayland consumes less CPU power
 
 Cons:
+- Not working with Debian Trixie (rotation)
 - Wayland does not support DPMI blanking
 - Wayland is less tested
 
@@ -97,6 +100,9 @@ Environment="KS_XCLIENT=-rrr /home/mks/.KlipperScreen-env/bin/python /home/mks/K
 udevadm control --reload-rules && udevadm trigger
 service KlipperScreen restart
 ```
+
+{: .note }
+> Debian Trixie comes with cage-0.2.0, which does NOT support screen rotation (see below).
 
 **Reverting to XOrg:**
 

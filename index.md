@@ -19,18 +19,21 @@ nav_order: 1
 ## [Firmware](firmware.html)
 
 ## [Custom firmware options](firmware_custom.html)
-  * Current: Armbian standard v25.2.3 (MKS-Klipad50)
-    * [Rebuilding (MKS-Klipad50 standard v25.2.3)](rebuilding.html)
-    * [Sovolized Armbian Klipper Image (MKS-Klipad50 standard v25.2.3)](image.html)
+  * Current: Armbian standard v25.8.1 Trixie (MKS-Klipad50)
+    * [Rebuilding (MKS-Klipad50 standard v25.8.1)](rebuilding.html)
+    * [Sovolized Armbian Klipper Image (MKS-Klipad50 standard v25.8.1)](image.html)
   * [Archive](firmware_custom_archive.html)
-    * Armbian community v25.5 (MKS-Klipad50)
+    * Armbian standard v25.2.3 Bookworm (MKS-Klipad50)
+      * [Rebuilding (MKS-Klipad50 standard v25.2.3)](armbian-mksklipad50-standard-setup-v25-2.md)
+      * [Sovolized Armbian Klipper Image (MKS-Klipad50 standard v25.2.3)](armbian-mksklipad50-standard-image-v25-2.md)
+    * Armbian community v25.5 Bookworm (MKS-Klipad50)
       * THIS VERSION IS **OLDER** THAN ARMBIAN STANDARD V25.2.3 !
       * [Rebuilding (MKS-Klipad50 community v25.5)](armbian-mksklipad50-community-setup-v25-5.html)
       * [Sovolized Armbian Klipper Image (MKS-Klipad50 community v25.5)](armbian-mksklipad50-community-image-v25-5.html)
-    * Armbian mainline v25.2 (MKS-PI)
+    * Armbian mainline v25.2 Bookworm (MKS-PI)
       * [Rebuilding (MKS-PI v25.2)](armbian-mkspi-mainline-setup-v25-2.html)
       * [Sovolized Armbian Klipper Image (MKS-PI v25.2)](armbian-mkspi-mainline-image-v25-2.html)
-    * Armbian v24.2
+    * Armbian v24.2 Bookworm
       * [Rebuilding (MKS-PI v24.2)](armbian-mkspi-setup-v24-2.html)
       * [Sovolized Armbian Klipper Image (MKS-PI v24.2)](armbian-mkspi-image-v24-2.html)
 
