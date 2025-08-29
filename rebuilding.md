@@ -5,7 +5,7 @@ parent: Custom firmware options
 nav_order: 3
 has_toc: false
 ---
-# Rebuilding on Armbian standard v25.2.3 (MKS-KLIPAD50)
+# Rebuilding on Armbian standard v25.8.1 Trixie (MKS-KLIPAD50)
 {: .no_toc }
 ### Contents:
 {: .no_toc }
