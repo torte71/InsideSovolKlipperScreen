@@ -26,18 +26,22 @@ That means, that the kernel (and related stuff) can now simply be updated just l
   - Smallest images containing just a minimal set of installed packages
   - Require some work replacing networkd with NetworkManager (for installing KlipperScreen)
 
-- Debian (Bookworm) Minimal/IOT
+- Ubuntu (Noble) Minimal/IOT
   - Smallest images containing just a minimal set of installed packages
   - Require some work replacing networkd with NetworkManager (for installing KlipperScreen)
 
-- Ubuntu (Noble) Server
+- Debian (Bookworm) Minimal/IOT *- Superseded by Trixie -*
+  - Smallest images containing just a minimal set of installed packages
+  - Require some work replacing networkd with NetworkManager (for installing KlipperScreen)
+
+- Ubuntu (Noble) Server *- Not available since 25.11.1 -*
   - Comes with some more preinstalled packages compared to Minimal/IOT
   - Network setup (for installing KlipperScreen) is a bit easier, as NetworkManager is already installed and configured
 
 - Ubuntu (Noble) Desktop *- Not recommended! -*
   - These images don't really make sense on that device and are not built any longer (but still exist in the archives).
 
-- Experimental Rolling / Nightly builds (Debian Trixie, Ubuntu Plucky) *- Not recommended! -*
+- Experimental Rolling / Nightly builds (Debian Forky, Ubuntu Plucky) *- Not recommended! -*
   - These are **only for linux experts**. Unless you are familiar with e.g. udev, systemd, shell-scripts and able to debug them on your own, you should not use them.
 
 ### Why not Debian/Server?

@@ -16,7 +16,7 @@ has_toc: false
 ## Unsupported images
 - Original Sovol/Makerbase image
   - Upgrading from armbian-buster based images is **not** supported.
-  - You need to start from a bookworm based image.
+  - You need to start from a bookworm based image (or newer).
 
 ## Supported images
 - Images based on MKS-PI, e.g.

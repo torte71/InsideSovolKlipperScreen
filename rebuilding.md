@@ -21,7 +21,8 @@ This means, that it is now possible to update the kernel like any other package,
 
 ## Different image options
 
-You have the choice between Debian 13 Trixie Minimal/IOT images (new stable/LTS), Debian 12 Bookworm Minimal/IOT images (old stable/LTS) and Ubuntu Noble Server/CLI images.
+You have the choice between Debian 13 Trixie Minimal/IOT images and Ubuntu Noble Server/CLI images.\
+Debian 12 Bookworm is superseded by Trixie and not available as recent images.
 
 See [Armbian images](armbian_images.html#download-options) for a description of the different types and download locations.
 
@@ -33,7 +34,13 @@ See [Armbian images](armbian_images.html#download-options) for a description of 
 -->
 
 {: .important-title }
-> Tip
+> Tip #1
+>
+> If you don't want to install klipper from scratch, you can use a pre-built image instead.
+> These pre-built images can be found [here](image.html).
+
+{: .important-title }
+> Tip #2
 >
 > If you have trouble following these steps, you may take a look at Vasyl's guide:
 > <https://github.com/vasyl83/SV07update>\
@@ -42,13 +49,14 @@ See [Armbian images](armbian_images.html#download-options) for a description of 
 ## Steps to create a "sovolish" Klipper installation based on these images:
 
 ### Downloading and flashing the image
-- Choose an image file from these links:\
-  (The server images are a little bit easier to set up)
+- Choose an image file from these links:
   - Images used for testing:
-    - [Armbian 25.8.1 Trixie Minimal / IOT](https://dl.armbian.com/mksklipad50/Trixie_current_minimal)
-    - [Armbian 25.8.1 Bookworm Minimal / IOT](https://dl.armbian.com/mksklipad50/Bookworm_current_minimal)
-    - [Armbian 25.8.1 Noble Server / CLI](https://dl.armbian.com/mksklipad50/Noble_current_server)
-    - [Armbian 25.8.1 Noble Minimal / IOT](https://dl.armbian.com/mksklipad50/Noble_current_minimal)
+    - [Armbian 25.11.1 Trixie Minimal / IOT](https://dl.armbian.com/mksklipad50/Trixie_current_minimal)
+    - [Armbian 25.11.1 Noble Minimal / IOT](https://dl.armbian.com/mksklipad50/Noble_current_minimal)
+    - Armbian 25.8.1 Trixie Minimal / IOT ([Archive](https://archive.armbian.com/mksklipad50/archive/))
+    - Armbian 25.8.1 Bookworm Minimal / IOT ([Archive](https://archive.armbian.com/mksklipad50/archive/))
+    - Armbian 25.8.1 Noble Server / CLI ([Archive](https://archive.armbian.com/mksklipad50/archive/))
+    - Armbian 25.8.1 Noble Minimal / IOT ([Archive](https://archive.armbian.com/mksklipad50/archive/))
     - Armbian 25.5.1 Noble Server / CLI ([Archive](https://archive.armbian.com/mksklipad50/archive/))
     - Armbian 25.5.1 Bookworm Minimal / IOT ([Archive](https://archive.armbian.com/mksklipad50/archive/))
     - Armbian 25.2.3 Noble Server / CLI ([here](https://rsync.armbian.com/incoming/torte71/mksklipad50/archive/); soon to be found in [Archive](https://archive.armbian.com/mksklipad50/archive/))
