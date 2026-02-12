@@ -15,11 +15,9 @@ A ready-to-use replacement image for Sovol's KlipperScreen can be downloaded at:
 
 **<https://github.com/torte71/mksklipad50-klipper-images/releases/tag/v25.8.1-standard-01>**
 
-(Extract it using [7zip](https://www.7-zip.org/) - or use Etcher, it can directly write .img.xz files.)
+(Extract it using [7zip](https://www.7-zip.org/) - or use [Armbian imager](https://imager.armbian.com/), Rufus or Etcher, which can directly write .img.xz files.)
 
-It is based on a recent Armbian Bookworm for the MKS-Klipad50 (v25.8.1 Trixie Minimal / IOT):\
-[Armbian_25.8.1_Mksklipad50_trixie_current_6.12.41_minimal.img.xz](https://dl.armbian.com/mksklipad50/Trixie_current_minimal)
-<!-- TODO: Link to https://archive.armbian.com/mksklipad50/archive once available -->    
+It is based on a recent Armbian Trixie for the MKS-Klipad50 [(v25.8.1 Trixie Minimal / IOT)](https://archive.armbian.com/mksklipad50/archive/Armbian_25.8.1_Mksklipad50_trixie_current_6.12.41_minimal.img.xz).
 
 ## Flashing the printer board ("mcu")
 
