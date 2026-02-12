@@ -49,21 +49,22 @@ See [Armbian images](armbian_images.html#download-options) for a description of 
 ## Steps to create a "sovolish" Klipper installation based on these images:
 
 ### Downloading and flashing the image
-- Choose an image file from these links:
+- Decide if you want to use Debian-Trixie or Ubuntu-Noble as a base:
   - Images used for testing:
-    - [Armbian 25.11.1 Trixie Minimal / IOT](https://dl.armbian.com/mksklipad50/Trixie_current_minimal)
-    - [Armbian 25.11.1 Noble Minimal / IOT](https://dl.armbian.com/mksklipad50/Noble_current_minimal)
-    - Armbian 25.8.1 Trixie Minimal / IOT ([Archive](https://archive.armbian.com/mksklipad50/archive/))
-    - Armbian 25.8.1 Bookworm Minimal / IOT ([Archive](https://archive.armbian.com/mksklipad50/archive/))
-    - Armbian 25.8.1 Noble Server / CLI ([Archive](https://archive.armbian.com/mksklipad50/archive/))
-    - Armbian 25.8.1 Noble Minimal / IOT ([Archive](https://archive.armbian.com/mksklipad50/archive/))
-    - Armbian 25.5.1 Noble Server / CLI ([Archive](https://archive.armbian.com/mksklipad50/archive/))
-    - Armbian 25.5.1 Bookworm Minimal / IOT ([Archive](https://archive.armbian.com/mksklipad50/archive/))
-    - Armbian 25.2.3 Noble Server / CLI ([here](https://rsync.armbian.com/incoming/torte71/mksklipad50/archive/); soon to be found in [Archive](https://archive.armbian.com/mksklipad50/archive/))
-    - Armbian 25.2.3 Bookworm Minimal / IOT ([here](https://rsync.armbian.com/incoming/torte71/mksklipad50/archive/); soon to be found in [Archive](https://archive.armbian.com/mksklipad50/archive/))
-<!-- TODO: Link to https://archive.armbian.com/mksklipad50/archive once available -->    
-- Extract the image (e.g. using [7zip](https://www.7-zip.org/)) - or use Etcher or Rufus, which can write .img.xz images directly.
-- Write the extracted .img file to the eMMC card (e.g. using [Balena Etcher](https://www.balena.io/etcher/) or [Rufus](https://rufus.ie/en/)).
+    - [Armbian 26.2.1 Trixie Minimal / IOT](https://dl.armbian.com/mksklipad50/Trixie_current_minimal)
+    - [Armbian 26.2.1 Noble Minimal / IOT](https://dl.armbian.com/mksklipad50/Noble_current_minimal)
+    - Older images for the MKS-Klipad50 can be found in the [archive](https://archive.armbian.com/mksklipad50/archive/).\
+      See [Custom firmware archive](firmware_custom_archive.html) for setup steps on older image versions.
+- Option 1: Use *Armbian imager* to do the download and flash
+  - Download, install and start [Armbian imager](https://imager.armbian.com/)
+    - "Choose Brand": Select "Makerbase"
+    - "Choose Board": Select "MKS-Klipad50"
+    - "Choose OS": Select any *stable* image (i.e. NOT with "trunk" in the filename)
+    - "Choose Storage": Locate the emmc drive and finally flash this image to it.
+    - There is also a "Use Custom Image" button, to flash any other image. (That button is only visible before selecting anything else.)
+- Option 2: Manually download and use whatever flashing tool:
+  - Extract the image (e.g. using [7zip](https://www.7-zip.org/)) - or use Armbian imager, Etcher or Rufus, which can write .img.xz images directly.
+  - Write the extracted .img file to the eMMC card (e.g. using [Armbian imager](https://imager.armbian.com/), [Balena Etcher](https://www.balena.io/etcher/) or [Rufus](https://rufus.ie/en/)).
 
 ### Accessing the screen
 - You can either use a serial connection (recommended) or work directly on the screen
@@ -159,20 +160,19 @@ cd kiauh
   - Use the default setting for *every* question (i.e. just press ENTER, unless it asks for a password)
   - Skip options 5 and 6 from the "Install" menu, but select all other
   - Choose the following options:
-    - 1 (Yes) ("Try KIAUH v6?")
-      - 1 (Install)
-	- 1 (Klipper)
-	- 2 (Moonraker)
-	- 3 (Mainsail)
-	- 4 (Fluidd)
-	- 7 (KlipperScreen)
-	- 8 (Crowsnest)
-	- B (Back)
-      - E (Extensions)
-	- 1 (G-Code Shell Command)
-	  - 1 (Install)
-	- B (Back)
-      - Q (Quit)
+    - 1 (Install)
+      - 1 (Klipper)
+      - 2 (Moonraker)
+      - 3 (Mainsail)
+      - 4 (Fluidd)
+      - 7 (KlipperScreen)
+      - 8 (Crowsnest)
+      - B (Back)
+    - E (Extensions)
+      - 1 (G-Code Shell Command)
+	- 1 (Install)
+      - B (Back)
+    - Q (Quit)
 
 - Adjust screen and touch rotation  
   - Screen rotation: Execute `sudo nano /etc/X11/xorg.conf.d/01-armbian-defaults.conf`
@@ -205,16 +205,12 @@ ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="e5e3", ENV{LIBINPUT_CALIBRATION_MATR
     - Execute `sudo service KlipperScreen restart`
 
 - Set up numpy and matplotlib (required for input shaping)
-  - Execute (on Bookworm based images):
-```
-sudo apt install -y python3-numpy python3-matplotlib libatlas-base-dev libopenblas-dev
-~/klippy-env/bin/pip install -v numpy
-```
-  - For recent images based on Trixie, use these commands instead:
+  - Execute (on recent images like *Trixie/Noble* or newer):
 ```
 sudo apt install -y python3-numpy python3-matplotlib libatlas3-base libopenblas-dev
 ~/klippy-env/bin/pip install -v numpy
 ```
+  - Note: For older *Bookworm* based images), use `libatlas-base-dev` instead of `libatlas3-base`
 
 - Set up secondary mcu: (see <https://www.klipper3d.org/RPi_microcontroller.html>)
   - Execute `cd ~/klipper ; make menuconfig`
