@@ -21,8 +21,9 @@ This means, that it is now possible to update the kernel like any other package,
 
 ## Different image options
 
-You have the choice between Debian 13 Trixie Minimal/IOT images and Ubuntu Noble Server/CLI images.\
-Debian 12 Bookworm is superseded by Trixie and not available as recent images.
+You have the choice between Debian 13 Trixie Minimal/IOT images and Ubuntu Noble 24.04 Server/CLI images.\
+Debian 12 Bookworm is superseded by Trixie and not available as recent images.\
+Ubuntu Resolute 26.04 is not yet suitable for Klipper due to an incompatibility with python-3.14.
 
 See [Armbian images](armbian_images.html#download-options) for a description of the different types and download locations.
 
@@ -49,10 +50,12 @@ See [Armbian images](armbian_images.html#download-options) for a description of 
 ## Steps to create a "sovolish" Klipper installation based on these images:
 
 ### Downloading and flashing the image
-- Decide if you want to use Debian-Trixie or Ubuntu-Noble as a base:
+- ~~Decide if you want to use Debian-Trixie or Ubuntu-Noble as a base:~~\
+  As of 2026-05-26: Do not use the Ubuntu-Resolute image yet: Klipper is not yet compatible with python-3.14!\
+  Stay with Debian Trixie for now.
   - Images used for testing:
-    - [Armbian 26.2.1 Trixie Minimal / IOT](https://dl.armbian.com/mksklipad50/Trixie_current_minimal)
-    - [Armbian 26.2.1 Noble Minimal / IOT](https://dl.armbian.com/mksklipad50/Noble_current_minimal)
+    - [Armbian 26.5.1 Trixie Minimal / IOT](https://dl.armbian.com/mksklipad50/Trixie_current_minimal)
+    - ~~Armbian 26.5.1 Noble Minimal / IOT~~
     - Older images for the MKS-Klipad50 can be found in the [archive](https://archive.armbian.com/mksklipad50/archive/).\
       See [Custom firmware archive](firmware_custom_archive.html) for setup steps on older image versions.
 - Option 1: Use *Armbian imager* to do the download and flash
@@ -119,7 +122,7 @@ The next steps are **only required for the minimal image**
     - Execute `apt update && apt -y install network-manager`
   - Disable networkd:
     - Execute `systemctl disable systemd-networkd.service`
-  - Update neplan config
+  - Update netplan config
     - Execute `sed -i "/renderer:/ s/networkd/NetworkManager/" /etc/netplan/*.yaml`
 
 ### Preparing Klipper setup
